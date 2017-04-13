@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A883D84BF88015490A1B2AF /* Pods_DribbbleKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975C1D8C5BE3EC692A1F1C8C /* Pods_DribbbleKitTests.framework */; };
+		99C77CE3CCC0BABF6D98F19D /* Pods_DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4391E9FDD8700C46607 /* DribbbleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +26,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3140A9FEF4B12652C3104FD6 /* Pods-DribbbleKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		89B0C9394DC757969070A564 /* Pods-DribbbleKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKit/Pods-DribbbleKit.release.xcconfig"; sourceTree = "<group>"; };
+		975C1D8C5BE3EC692A1F1C8C /* Pods_DribbbleKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE261AF0653CAAF502FD2693 /* Pods-DribbbleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKit/Pods-DribbbleKit.debug.xcconfig"; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D974C4261E9FD7DE00C46607 /* DribbbleKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DribbbleKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleKitTests.swift; sourceTree = "<group>"; };
 		D974C42D1E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D974C4391E9FDD8700C46607 /* DribbbleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleKit.swift; sourceTree = "<group>"; };
+		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C77CE3CCC0BABF6D98F19D /* Pods_DribbbleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,18 +55,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */,
+				7A883D84BF88015490A1B2AF /* Pods_DribbbleKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F95B495C8CA8C730A368056 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE261AF0653CAAF502FD2693 /* Pods-DribbbleKit.debug.xcconfig */,
+				89B0C9394DC757969070A564 /* Pods-DribbbleKit.release.xcconfig */,
+				3140A9FEF4B12652C3104FD6 /* Pods-DribbbleKitTests.debug.xcconfig */,
+				E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		312AD1CEB638E44B7F2BDE7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */,
+				975C1D8C5BE3EC692A1F1C8C /* Pods_DribbbleKitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D974C4131E9FD7DE00C46607 = {
 			isa = PBXGroup;
 			children = (
 				D974C41F1E9FD7DE00C46607 /* DribbbleKit */,
 				D974C42A1E9FD7DE00C46607 /* DribbbleKitTests */,
 				D974C41E1E9FD7DE00C46607 /* Products */,
+				0F95B495C8CA8C730A368056 /* Pods */,
+				312AD1CEB638E44B7F2BDE7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +105,7 @@
 		D974C41F1E9FD7DE00C46607 /* DribbbleKit */ = {
 			isa = PBXGroup;
 			children = (
+				D974C4371E9FD7EE00C46607 /* Sources */,
 				D974C4201E9FD7DE00C46607 /* DribbbleKit.h */,
 				D974C4211E9FD7DE00C46607 /* Info.plist */,
 			);
@@ -84,6 +119,14 @@
 				D974C42D1E9FD7DE00C46607 /* Info.plist */,
 			);
 			path = DribbbleKitTests;
+			sourceTree = "<group>";
+		};
+		D974C4371E9FD7EE00C46607 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +147,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D974C4311E9FD7DE00C46607 /* Build configuration list for PBXNativeTarget "DribbbleKit" */;
 			buildPhases = (
+				FC01842F137625740BEB31F5 /* [CP] Check Pods Manifest.lock */,
+				D974C4381E9FDB7800C46607 /* Run SwiftLint */,
 				D974C4181E9FD7DE00C46607 /* Sources */,
 				D974C4191E9FD7DE00C46607 /* Frameworks */,
 				D974C41A1E9FD7DE00C46607 /* Headers */,
 				D974C41B1E9FD7DE00C46607 /* Resources */,
+				7BD028ECD4FE1B71855DC8C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D974C4341E9FD7DE00C46607 /* Build configuration list for PBXNativeTarget "DribbbleKitTests" */;
 			buildPhases = (
+				53D1380B7F0F8A6FCA75CE9E /* [CP] Check Pods Manifest.lock */,
 				D974C4221E9FD7DE00C46607 /* Sources */,
 				D974C4231E9FD7DE00C46607 /* Frameworks */,
 				D974C4241E9FD7DE00C46607 /* Resources */,
+				39FB994EEC5B5672B2922E03 /* [CP] Embed Pods Frameworks */,
+				96282B9FFFECCEB51B4C8A0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +197,7 @@
 				TargetAttributes = {
 					D974C41C1E9FD7DE00C46607 = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					D974C4251E9FD7DE00C46607 = {
@@ -191,11 +241,104 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39FB994EEC5B5672B2922E03 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53D1380B7F0F8A6FCA75CE9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7BD028ECD4FE1B71855DC8C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DribbbleKit/Pods-DribbbleKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96282B9FFFECCEB51B4C8A0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D974C4381E9FDB7800C46607 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n${PODS_ROOT}/SwiftLint/swiftlint";
+		};
+		FC01842F137625740BEB31F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D974C4181E9FD7DE00C46607 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +464,9 @@
 		};
 		D974C4321E9FD7DE00C46607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE261AF0653CAAF502FD2693 /* Pods-DribbbleKit.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,13 +478,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.DribbbleKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D974C4331E9FD7DE00C46607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89B0C9394DC757969070A564 /* Pods-DribbbleKit.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -357,7 +505,9 @@
 		};
 		D974C4351E9FD7DE00C46607 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3140A9FEF4B12652C3104FD6 /* Pods-DribbbleKitTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = DribbbleKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.DribbbleKitTests;
@@ -368,7 +518,9 @@
 		};
 		D974C4361E9FD7DE00C46607 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = DribbbleKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.DribbbleKitTests;
@@ -396,6 +548,7 @@
 				D974C4331E9FD7DE00C46607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D974C4341E9FD7DE00C46607 /* Build configuration list for PBXNativeTarget "DribbbleKitTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +557,7 @@
 				D974C4361E9FD7DE00C46607 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
