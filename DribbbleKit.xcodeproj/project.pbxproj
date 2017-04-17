@@ -18,8 +18,7 @@
 		D974C4411E9FF2EF00C46607 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4401E9FF2EF00C46607 /* Bucket.swift */; };
 		D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4421EA1EC9A00C46607 /* Transformer.swift */; };
 		D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4441EA1F0A600C46607 /* Authorization.swift */; };
-		D974C4481EA1F27500C46607 /* OAuthAuthorize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4471EA1F27500C46607 /* OAuthAuthorize.swift */; };
-		D974C44A1EA1F7AC00C46607 /* OAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4491EA1F7AC00C46607 /* OAuthToken.swift */; };
+		D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4491EA1F7AC00C46607 /* OAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +48,8 @@
 		D974C4401E9FF2EF00C46607 /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
 		D974C4421EA1EC9A00C46607 /* Transformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
 		D974C4441EA1F0A600C46607 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		D974C4471EA1F27500C46607 /* OAuthAuthorize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAuthorize.swift; sourceTree = "<group>"; };
-		D974C4491EA1F7AC00C46607 /* OAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthToken.swift; sourceTree = "<group>"; };
+		D974C4491EA1F7AC00C46607 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		D974C44B1EA20F4100C46607 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,6 +98,7 @@
 		D974C4131E9FD7DE00C46607 = {
 			isa = PBXGroup;
 			children = (
+				D974C44B1EA20F4100C46607 /* Playground.playground */,
 				D974C41F1E9FD7DE00C46607 /* DribbbleKit */,
 				D974C42A1E9FD7DE00C46607 /* DribbbleKitTests */,
 				D974C41E1E9FD7DE00C46607 /* Products */,
@@ -160,8 +160,7 @@
 		D974C4461EA1F22A00C46607 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
-				D974C4471EA1F27500C46607 /* OAuthAuthorize.swift */,
-				D974C4491EA1F7AC00C46607 /* OAuthToken.swift */,
+				D974C4491EA1F7AC00C46607 /* OAuth.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -375,12 +374,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D974C4481EA1F27500C46607 /* OAuthAuthorize.swift in Sources */,
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D974C4411E9FF2EF00C46607 /* Bucket.swift in Sources */,
 				D974C43F1E9FEA1200C46607 /* GetBucket.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
-				D974C44A1EA1F7AC00C46607 /* OAuthToken.swift in Sources */,
+				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 			);

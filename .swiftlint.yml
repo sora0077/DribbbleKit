@@ -4,3 +4,6 @@ excluded:
 
 disabled_rules:
   - identifier_name
+
+nesting:
+  type_level: 3
