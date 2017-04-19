@@ -16,6 +16,7 @@
 		D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8471EA73B770059640E /* DeleteBucket.swift */; };
 		D945F84D1EA73B770059640E /* GetBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8481EA73B770059640E /* GetBucket.swift */; };
 		D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8491EA73B770059640E /* UpdateBucket.swift */; };
+		D945F8501EA73E3A0059640E /* ListUserBuckets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F84F1EA73E3A0059640E /* ListUserBuckets.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		D945F8471EA73B770059640E /* DeleteBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteBucket.swift; sourceTree = "<group>"; };
 		D945F8481EA73B770059640E /* GetBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBucket.swift; sourceTree = "<group>"; };
 		D945F8491EA73B770059640E /* UpdateBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBucket.swift; sourceTree = "<group>"; };
+		D945F84F1EA73E3A0059640E /* ListUserBuckets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserBuckets.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				D945F83E1EA732690059640E /* User.swift */,
 				D945F8401EA732730059640E /* GetUser.swift */,
+				D945F84F1EA73E3A0059640E /* ListUserBuckets.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				D945F84A1EA73B770059640E /* Bucket.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
+				D945F8501EA73E3A0059640E /* ListUserBuckets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
