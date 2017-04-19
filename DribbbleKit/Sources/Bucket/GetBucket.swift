@@ -73,13 +73,13 @@ extension GetBucketData {
             canUploadShot: e.value("can_upload_shot"),
             type: e.value("type"),
             pro: e.value("pro"),
-            bucketsURL: Transformer.stringToURL.apply(e.value("buckets_url")),
-            followersURL: Transformer.stringToURL.apply(e.value("followers_count")),
-            followingURL: Transformer.stringToURL.apply(e.value("following_url")),
-            likeURL: Transformer.stringToURL.apply(e.value("likes_url")),
-            shotsURL: Transformer.stringToURL.apply(e.value("shots_url")),
-            teamsURL: Transformer.stringToURL.apply(e.value("teams_url")),
-            createdAt: Transformer.stringToDate.apply(e.value("created_at")),
-            updatedAt: Transformer.stringToDate.apply(e.value("updated_at")))
+            bucketsURL: e.value("buckets_url", Transformer.url),
+            followersURL: e.value("followers_url", Transformer.url),
+            followingURL: e.value("following_url", Transformer.url),
+            likeURL: e.value("likes_url", Transformer.url),
+            shotsURL: e.value("shots_url", Transformer.url),
+            teamsURL: e.value("teams_url", Transformer.url),
+            createdAt: e.value("created_at", Transformer.date),
+            updatedAt: e.value("updated_at", Transformer.date))
     }
 }
