@@ -50,7 +50,7 @@ extension CreateBucketData {
             name: e.value("name"),
             description: e.value("description"),
             shotsCount: e.value("shots_count"),
-            createdAt: Transformer.stringToDate.apply(e.value("created_at")),
-            updatedAt: Transformer.stringToDate.apply(e.value("updated_at")))
+            createdAt: e.value("created_at", Transformer.date),
+            updatedAt: e.value("updated_at", Transformer.date))
     }
 }

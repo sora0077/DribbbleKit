@@ -10,20 +10,39 @@ import Foundation
 import Himotoki
 
 struct Transformer {
-    static let stringToDate: Himotoki.Transformer<String, Date> = {
+    static let date: (KeyPath) -> Himotoki.Transformer<String, Date> = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-        return Himotoki.Transformer {
-            guard let date = formatter.date(from: $0) else {
-                throw DecodeError.typeMismatch(expected: "Date", actual: $0, keyPath: "")
+        return { keyPath in
+            Himotoki.Transformer {
+                guard let date = formatter.date(from: $0) else {
+                    throw DecodeError.typeMismatch(expected: "Date", actual: $0, keyPath: keyPath)
+                }
+                return date
             }
-            return date
         }
     }()
-    static let stringToURL = Himotoki.Transformer<String, URL> {
-        guard let url = URL(string: $0) else {
-            throw DecodeError.typeMismatch(expected: "URL", actual: $0, keyPath: "")
+    static let url: (KeyPath) -> Himotoki.Transformer<String, URL> = { keyPath in
+        Himotoki.Transformer {
+            guard let url = URL(string: $0) else {
+                throw DecodeError.typeMismatch(expected: "URL", actual: $0, keyPath: keyPath)
+            }
+            return url
         }
-        return url
+    }
+}
+
+extension Extractor {
+    func value<T: Decodable, R>(_ keyPath: KeyPath, _ transfomer: (KeyPath) -> Himotoki.Transformer<T, R>) throws -> R {
+        return try transfomer(keyPath).apply(value(keyPath))
+    }
+
+    func valueOptional<T: Decodable, R>(
+        _ keyPath: KeyPath,
+        transfomer: (KeyPath) -> Himotoki.Transformer<T, R>)
+        throws -> R? {
+        return try valueOptional(keyPath).map { value in
+            try transfomer(keyPath).apply(value)
+        }
     }
 }
