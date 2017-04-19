@@ -14,6 +14,10 @@ public struct OAuth {
     public enum Scope: String {
         case `public`, write, comment, upload
     }
+    public enum Error: Swift.Error {
+        case unknown
+        case invalid(error: String, description: String)
+    }
 
     public static func authorizeURL(
         clientId: String,
@@ -24,13 +28,30 @@ public struct OAuth {
         let parameters = [
             "client_id": clientId,
             "redirect_uri": redirectURL?.absoluteString,
-            "scope": scopes.map { $0.rawValue }.joined(separator: " "),
+            "scope": scopes.map { $0.rawValue }.joined(separator: "+"),
             "state": state]
         comps.queryItems = parameters.flatMap { (key, value) in
             guard let value = value else { return nil }
             return URLQueryItem(name: key, value: value)
         }
         return comps.url!
+    }
+
+    public static func parse(from callback: URL) throws -> (code: String, state: String?) {
+        let comps = URLComponents(url: callback, resolvingAgainstBaseURL: true)
+        var parameters: [String: String] = [:]
+        for item in comps?.queryItems ?? [] {
+            if let value = item.value {
+                parameters[item.name] = value
+            }
+        }
+        guard let code = parameters["code"] else {
+            if let error = parameters["error"] {
+                throw Error.invalid(error: error, description: parameters["error_description"] ?? "")
+            }
+            throw Error.unknown
+        }
+        return (code, parameters["state"])
     }
 
     public struct GetToken: APIKit.Request {
@@ -63,10 +84,21 @@ public struct OAuth {
 
 extension OAuth.GetToken.Response: Decodable {
     public static func decode(_ e: Extractor) throws -> OAuth.GetToken.Response {
-        let scope: String = try e.value("scope")
-        return try self.init(
-            accessToken: e.value("access_token"),
-            tokenType: e.value("token_type"),
-            scopes: scope.components(separatedBy: " ").flatMap(OAuth.Scope.init(rawValue:)))
+        do {
+            let scope: String = try e.value("scope")
+            return try self.init(
+                accessToken: e.value("access_token"),
+                tokenType: e.value("token_type"),
+                scopes: scope.components(separatedBy: " ").flatMap(OAuth.Scope.init(rawValue:)))
+        } catch let modelError {
+            do {
+                throw OAuth.Error.invalid(error: try e.value("error"),
+                                          description: try e.value("error_description"))
+            } catch let error as OAuth.Error {
+                throw error
+            } catch {
+                throw modelError
+            }
+        }
     }
 }

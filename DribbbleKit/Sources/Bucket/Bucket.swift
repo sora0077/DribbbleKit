@@ -23,7 +23,7 @@ public struct Bucket {
 }
 
 extension Int {
-    init(_ bucketId: Bucket.Identifier) {
+    public init(_ bucketId: Bucket.Identifier) {
         self = bucketId.value
     }
 }

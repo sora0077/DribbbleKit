@@ -11,7 +11,7 @@ import APIKit
 import Himotoki
 
 public protocol Request: APIKit.Request {
-    associatedtype Data: Decodable
+    associatedtype Data
     typealias Response = DribbbleKit.Response<Data>
 }
 
@@ -52,7 +52,7 @@ public final class Meta {
     }
 }
 
-public struct Response<Data: Decodable> {
+public struct Response<Data> {
     public let meta: Meta
     public let data: Data
 }

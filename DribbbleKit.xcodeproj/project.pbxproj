@@ -19,6 +19,9 @@
 		D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4421EA1EC9A00C46607 /* Transformer.swift */; };
 		D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4441EA1F0A600C46607 /* Authorization.swift */; };
 		D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4491EA1F7AC00C46607 /* OAuth.swift */; };
+		D974C44D1EA67DCA00C46607 /* CreateBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C44C1EA67DCA00C46607 /* CreateBucket.swift */; };
+		D974C44F1EA6DDFF00C46607 /* DeleteBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C44E1EA6DDFF00C46607 /* DeleteBucket.swift */; };
+		D974C4511EA6DF2B00C46607 /* UpdateBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4501EA6DF2B00C46607 /* UpdateBucket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		D974C4441EA1F0A600C46607 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		D974C4491EA1F7AC00C46607 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		D974C44B1EA20F4100C46607 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		D974C44C1EA67DCA00C46607 /* CreateBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBucket.swift; sourceTree = "<group>"; };
+		D974C44E1EA6DDFF00C46607 /* DeleteBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteBucket.swift; sourceTree = "<group>"; };
+		D974C4501EA6DF2B00C46607 /* UpdateBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBucket.swift; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +159,9 @@
 			children = (
 				D974C4401E9FF2EF00C46607 /* Bucket.swift */,
 				D974C43E1E9FEA1200C46607 /* GetBucket.swift */,
+				D974C44C1EA67DCA00C46607 /* CreateBucket.swift */,
+				D974C4501EA6DF2B00C46607 /* UpdateBucket.swift */,
+				D974C44E1EA6DDFF00C46607 /* DeleteBucket.swift */,
 			);
 			path = Bucket;
 			sourceTree = "<group>";
@@ -376,11 +385,14 @@
 			files = (
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D974C4411E9FF2EF00C46607 /* Bucket.swift in Sources */,
+				D974C44F1EA6DDFF00C46607 /* DeleteBucket.swift in Sources */,
 				D974C43F1E9FEA1200C46607 /* GetBucket.swift in Sources */,
+				D974C4511EA6DF2B00C46607 /* UpdateBucket.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
+				D974C44D1EA67DCA00C46607 /* CreateBucket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

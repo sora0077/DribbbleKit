@@ -20,4 +20,10 @@ struct Transformer {
             return date
         }
     }()
+    static let stringToURL = Himotoki.Transformer<String, URL> {
+        guard let url = URL(string: $0) else {
+            throw DecodeError.typeMismatch(expected: "URL", actual: $0, keyPath: "")
+        }
+        return url
+    }
 }
