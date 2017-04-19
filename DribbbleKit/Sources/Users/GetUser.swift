@@ -10,6 +10,7 @@ import Foundation
 import APIKit
 import Himotoki
 
+// MARK: - GetUser
 public struct GetUser<Data: GetUserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
@@ -25,6 +26,20 @@ public struct GetUser<Data: GetUserData>: GetRequest {
     }
 }
 
+// MARK: - GetAuthenticatedUser
+public struct GetAuthenticatedUser<Data: GetUserData>: GetRequest {
+    public typealias Response = DribbbleKit.Response<Data>
+
+    public var path: String { return "/users" }
+
+    public init() {}
+
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeValue(object))
+    }
+}
+
+// MARK: - GetUserData
 public protocol GetUserData: Decodable {
     init(
         id: Int,
