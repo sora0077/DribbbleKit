@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7A883D84BF88015490A1B2AF /* Pods_DribbbleKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975C1D8C5BE3EC692A1F1C8C /* Pods_DribbbleKitTests.framework */; };
 		99C77CE3CCC0BABF6D98F19D /* Pods_DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */; };
+		D945F83F1EA732690059640E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F83E1EA732690059640E /* User.swift */; };
+		D945F8411EA732730059640E /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8401EA732730059640E /* GetUser.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,6 +41,8 @@
 		89B0C9394DC757969070A564 /* Pods-DribbbleKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKit/Pods-DribbbleKit.release.xcconfig"; sourceTree = "<group>"; };
 		975C1D8C5BE3EC692A1F1C8C /* Pods_DribbbleKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE261AF0653CAAF502FD2693 /* Pods-DribbbleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKit/Pods-DribbbleKit.debug.xcconfig"; sourceTree = "<group>"; };
+		D945F83E1EA732690059640E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D945F8401EA732730059640E /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +105,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D945F83D1EA731F20059640E /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				D945F83E1EA732690059640E /* User.swift */,
+				D945F8401EA732730059640E /* GetUser.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		D974C4131E9FD7DE00C46607 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D974C4461EA1F22A00C46607 /* OAuth */,
+				D945F83D1EA731F20059640E /* Users */,
 				D974C43D1E9FE9F900C46607 /* Bucket */,
 				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
 				D974C43B1E9FE66800C46607 /* Session.swift */,
@@ -386,6 +400,7 @@
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D974C4411E9FF2EF00C46607 /* Bucket.swift in Sources */,
 				D974C44F1EA6DDFF00C46607 /* DeleteBucket.swift in Sources */,
+				D945F8411EA732730059640E /* GetUser.swift in Sources */,
 				D974C43F1E9FEA1200C46607 /* GetBucket.swift in Sources */,
 				D974C4511EA6DF2B00C46607 /* UpdateBucket.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
@@ -393,6 +408,7 @@
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D974C44D1EA67DCA00C46607 /* CreateBucket.swift in Sources */,
+				D945F83F1EA732690059640E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
