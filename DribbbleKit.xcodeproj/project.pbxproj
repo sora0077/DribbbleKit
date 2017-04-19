@@ -17,6 +17,7 @@
 		D945F84D1EA73B770059640E /* GetBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8481EA73B770059640E /* GetBucket.swift */; };
 		D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8491EA73B770059640E /* UpdateBucket.swift */; };
 		D945F8501EA73E3A0059640E /* ListUserBuckets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F84F1EA73E3A0059640E /* ListUserBuckets.swift */; };
+		D945F8551EA7443F0059640E /* Shots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8541EA7443F0059640E /* Shots.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +26,11 @@
 		D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4421EA1EC9A00C46607 /* Transformer.swift */; };
 		D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4441EA1F0A600C46607 /* Authorization.swift */; };
 		D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4491EA1F7AC00C46607 /* OAuth.swift */; };
+		D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32741EA74FFC009561E3 /* ListShots.swift */; };
+		D99D32771EA75252009561E3 /* GetShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32761EA75252009561E3 /* GetShot.swift */; };
+		D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32781EA7532C009561E3 /* CreateShot.swift */; };
+		D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327A1EA75643009561E3 /* UpdateShot.swift */; };
+		D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327C1EA75757009561E3 /* DeleteShot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,7 @@
 		D945F8481EA73B770059640E /* GetBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBucket.swift; sourceTree = "<group>"; };
 		D945F8491EA73B770059640E /* UpdateBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateBucket.swift; sourceTree = "<group>"; };
 		D945F84F1EA73E3A0059640E /* ListUserBuckets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserBuckets.swift; sourceTree = "<group>"; };
+		D945F8541EA7443F0059640E /* Shots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shots.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +69,11 @@
 		D974C4441EA1F0A600C46607 /* Authorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
 		D974C4491EA1F7AC00C46607 /* OAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		D974C44B1EA20F4100C46607 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		D99D32741EA74FFC009561E3 /* ListShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShots.swift; sourceTree = "<group>"; };
+		D99D32761EA75252009561E3 /* GetShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetShot.swift; sourceTree = "<group>"; };
+		D99D32781EA7532C009561E3 /* CreateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShot.swift; sourceTree = "<group>"; };
+		D99D327A1EA75643009561E3 /* UpdateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateShot.swift; sourceTree = "<group>"; };
+		D99D327C1EA75757009561E3 /* DeleteShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteShot.swift; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +141,19 @@
 			path = Buckets;
 			sourceTree = "<group>";
 		};
+		D945F8531EA744230059640E /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D945F8541EA7443F0059640E /* Shots.swift */,
+				D99D32741EA74FFC009561E3 /* ListShots.swift */,
+				D99D32761EA75252009561E3 /* GetShot.swift */,
+				D99D32781EA7532C009561E3 /* CreateShot.swift */,
+				D99D327A1EA75643009561E3 /* UpdateShot.swift */,
+				D99D327C1EA75757009561E3 /* DeleteShot.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
 		D974C4131E9FD7DE00C46607 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +200,7 @@
 				D974C4461EA1F22A00C46607 /* OAuth */,
 				D945F83D1EA731F20059640E /* Users */,
 				D945F8441EA73B770059640E /* Buckets */,
+				D945F8531EA744230059640E /* Shots */,
 				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
 				D974C43B1E9FE66800C46607 /* Session.swift */,
 				D974C4421EA1EC9A00C46607 /* Transformer.swift */,
@@ -401,15 +427,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
+				D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
+				D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */,
 				D945F8411EA732730059640E /* GetUser.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
+				D99D32771EA75252009561E3 /* GetShot.swift in Sources */,
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
+				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
+				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D945F84A1EA73B770059640E /* Bucket.swift in Sources */,
+				D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
 				D945F8501EA73E3A0059640E /* ListUserBuckets.swift in Sources */,

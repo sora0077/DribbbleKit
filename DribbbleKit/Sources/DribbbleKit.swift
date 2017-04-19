@@ -70,6 +70,7 @@ public enum DribbbleError: Swift.Error {
     }
     case invalidJSON(message: String)
     case invalidFields(message: String, errors: [Error])
+    case unexpected
 }
 
 extension Request {
