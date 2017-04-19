@@ -30,7 +30,7 @@ public struct GetUser<Data: UserData>: GetRequest {
 public struct GetAuthenticatedUser<Data: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
-    public var path: String { return "/users" }
+    public var path: String { return "/user" }
 
     public init() {}
 
