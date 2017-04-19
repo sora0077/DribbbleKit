@@ -37,10 +37,7 @@ extension Extractor {
         return try transfomer(keyPath).apply(value(keyPath))
     }
 
-    func valueOptional<T: Decodable, R>(
-        _ keyPath: KeyPath,
-        transfomer: (KeyPath) -> Himotoki.Transformer<T, R>)
-        throws -> R? {
+    func valueOptional<T: Decodable, R>(_ keyPath: KeyPath, transfomer: (KeyPath) -> Himotoki.Transformer<T, R>) throws -> R? {
         return try valueOptional(keyPath).map { value in
             try transfomer(keyPath).apply(value)
         }

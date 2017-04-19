@@ -5,5 +5,7 @@ excluded:
 disabled_rules:
   - identifier_name
 
+line_length: 140
+
 nesting:
   type_level: 3
