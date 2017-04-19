@@ -27,3 +27,27 @@ extension Int {
         self = bucketId.value
     }
 }
+
+// MARK: - BucketData
+public protocol BucketData: Decodable {
+    init(
+        id: Bucket.Identifier,
+        name: String,
+        description: String,
+        shotsCount: Int,
+        createdAt: Date,
+        updatedAt: Date
+    ) throws
+}
+
+extension BucketData {
+    public static func decode(_ e: Extractor) throws -> Self {
+        return try self.init(
+            id: e.value("id"),
+            name: e.value("name"),
+            description: e.value("description"),
+            shotsCount: e.value("shots_count"),
+            createdAt: e.value("created_at", Transformer.date),
+            updatedAt: e.value("updated_at", Transformer.date))
+    }
+}

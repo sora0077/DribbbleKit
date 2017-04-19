@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 import Himotoki
 
-public struct CreateBucket<Data: CreateBucketData>: PostRequest {
+public struct CreateBucket<Data: BucketData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
     public var path: String { return "/buckets" }
@@ -29,28 +29,5 @@ public struct CreateBucket<Data: CreateBucketData>: PostRequest {
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         return try Response(meta: Meta(urlResponse: urlResponse), data: decodeValue(object))
-    }
-}
-
-public protocol CreateBucketData: Decodable {
-    init(
-        id: Bucket.Identifier,
-        name: String,
-        description: String,
-        shotsCount: Int,
-        createdAt: Date,
-        updatedAt: Date
-    ) throws
-}
-
-extension CreateBucketData {
-    public static func decode(_ e: Extractor) throws -> Self {
-        return try self.init(
-            id: e.value("id"),
-            name: e.value("name"),
-            description: e.value("description"),
-            shotsCount: e.value("shots_count"),
-            createdAt: e.value("created_at", Transformer.date),
-            updatedAt: e.value("updated_at", Transformer.date))
     }
 }
