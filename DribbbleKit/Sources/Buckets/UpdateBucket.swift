@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 import Himotoki
 
-public struct UpdateBucket<Data: BucketData>: PostRequest {
+public struct UpdateBucket<Data: BucketData>: PutRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
     public var path: String { return "/buckets/\(id.value)" }
