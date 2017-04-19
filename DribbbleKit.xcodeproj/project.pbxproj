@@ -28,6 +28,8 @@
 		D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C4491EA1F7AC00C46607 /* OAuth.swift */; };
 		D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32741EA74FFC009561E3 /* ListShots.swift */; };
 		D99D32771EA75252009561E3 /* GetShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32761EA75252009561E3 /* GetShot.swift */; };
+		D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32781EA7532C009561E3 /* CreateShot.swift */; };
+		D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327A1EA75643009561E3 /* UpdateShot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		D974C44B1EA20F4100C46607 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		D99D32741EA74FFC009561E3 /* ListShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShots.swift; sourceTree = "<group>"; };
 		D99D32761EA75252009561E3 /* GetShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetShot.swift; sourceTree = "<group>"; };
+		D99D32781EA7532C009561E3 /* CreateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShot.swift; sourceTree = "<group>"; };
+		D99D327A1EA75643009561E3 /* UpdateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateShot.swift; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +145,8 @@
 				D945F8541EA7443F0059640E /* Shots.swift */,
 				D99D32741EA74FFC009561E3 /* ListShots.swift */,
 				D99D32761EA75252009561E3 /* GetShot.swift */,
+				D99D32781EA7532C009561E3 /* CreateShot.swift */,
+				D99D327A1EA75643009561E3 /* UpdateShot.swift */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -427,9 +433,11 @@
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
+				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D945F84A1EA73B770059640E /* Bucket.swift in Sources */,
+				D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
 				D945F8501EA73E3A0059640E /* ListUserBuckets.swift in Sources */,
