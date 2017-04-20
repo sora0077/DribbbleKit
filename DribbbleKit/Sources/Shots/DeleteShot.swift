@@ -19,8 +19,4 @@ public struct DeleteShot: DeleteRequest {
     public init(id: Shot.Identifier) {
         self.id = id
     }
-
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return Response(meta: Meta(urlResponse: urlResponse), data: ())
-    }
 }

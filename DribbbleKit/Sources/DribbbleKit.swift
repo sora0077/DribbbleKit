@@ -34,6 +34,10 @@ extension PutRequest {
 }
 extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
+
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Void> {
+        return DribbbleKit.Response(meta: Meta(urlResponse: urlResponse), data: ())
+    }
 }
 extension ListRequest {
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
