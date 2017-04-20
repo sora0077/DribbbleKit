@@ -93,3 +93,11 @@ private extension Dictionary where Key == AnyHashable, Value == Any {
         return  self[key] as? Int ?? 0
     }
 }
+
+func optional<T: Decodable>(_ f: @autoclosure () throws -> T, if cond: (_ missingKeyPath: KeyPath) -> Bool) rethrows -> T? {
+    do {
+        return try f()
+    } catch DecodeError.missingKeyPath(let keyPath) where cond(keyPath) {
+        return nil
+    }
+}
