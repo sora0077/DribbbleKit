@@ -31,6 +31,9 @@
 		D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32781EA7532C009561E3 /* CreateShot.swift */; };
 		D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327A1EA75643009561E3 /* UpdateShot.swift */; };
 		D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327C1EA75757009561E3 /* DeleteShot.swift */; };
+		D9FB68991EA8850D006B2D40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68981EA8850D006B2D40 /* Team.swift */; };
+		D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */; };
+		D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		D99D32781EA7532C009561E3 /* CreateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShot.swift; sourceTree = "<group>"; };
 		D99D327A1EA75643009561E3 /* UpdateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateShot.swift; sourceTree = "<group>"; };
 		D99D327C1EA75757009561E3 /* DeleteShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteShot.swift; sourceTree = "<group>"; };
+		D9FB68981EA8850D006B2D40 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
+		D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -201,6 +207,7 @@
 				D945F83D1EA731F20059640E /* Users */,
 				D945F8441EA73B770059640E /* Buckets */,
 				D945F8531EA744230059640E /* Shots */,
+				D9FB68971EA884F5006B2D40 /* Teams */,
 				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
 				D974C43B1E9FE66800C46607 /* Session.swift */,
 				D974C4421EA1EC9A00C46607 /* Transformer.swift */,
@@ -215,6 +222,16 @@
 				D974C4491EA1F7AC00C46607 /* OAuth.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		D9FB68971EA884F5006B2D40 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				D9FB68981EA8850D006B2D40 /* Team.swift */,
+				D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */,
+				D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */,
+			);
+			path = Teams;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,12 +445,15 @@
 			files = (
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */,
+				D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
 				D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */,
 				D945F8411EA732730059640E /* GetUser.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
 				D99D32771EA75252009561E3 /* GetShot.swift in Sources */,
+				D9FB68991EA8850D006B2D40 /* Team.swift in Sources */,
+				D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */,
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
