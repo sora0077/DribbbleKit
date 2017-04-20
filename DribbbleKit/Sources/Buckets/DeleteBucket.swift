@@ -19,8 +19,4 @@ public struct DeleteBucket: DeleteRequest {
     public init(id: DribbbleKit.Bucket.Identifier) {
         self.id = id
     }
-
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return Response(meta: Meta(urlResponse: urlResponse), data: ())
-    }
 }

@@ -34,6 +34,11 @@
 		D9FB68991EA8850D006B2D40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68981EA8850D006B2D40 /* Team.swift */; };
 		D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */; };
 		D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */; };
+		D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689F1EA88DB9006B2D40 /* Attachments.swift */; };
+		D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A11EA88EFF006B2D40 /* ListAttachments.swift */; };
+		D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A31EA88FA7006B2D40 /* CreateAttachment.swift */; };
+		D9FB68A61EA8908E006B2D40 /* GetAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A51EA8908E006B2D40 /* GetAttachment.swift */; };
+		D9FB68A81EA89105006B2D40 /* DeleteAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A71EA89105006B2D40 /* DeleteAttachment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		D9FB68981EA8850D006B2D40 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
 		D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
+		D9FB689F1EA88DB9006B2D40 /* Attachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
+		D9FB68A11EA88EFF006B2D40 /* ListAttachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAttachments.swift; sourceTree = "<group>"; };
+		D9FB68A31EA88FA7006B2D40 /* CreateAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAttachment.swift; sourceTree = "<group>"; };
+		D9FB68A51EA8908E006B2D40 /* GetAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAttachment.swift; sourceTree = "<group>"; };
+		D9FB68A71EA89105006B2D40 /* DeleteAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAttachment.swift; sourceTree = "<group>"; };
 		E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		FCC8C3E871F9D1CE7BE322F6 /* Pods_DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +166,7 @@
 				D99D32781EA7532C009561E3 /* CreateShot.swift */,
 				D99D327A1EA75643009561E3 /* UpdateShot.swift */,
 				D99D327C1EA75757009561E3 /* DeleteShot.swift */,
+				D9FB689E1EA88D6E006B2D40 /* Attachments */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -232,6 +243,18 @@
 				D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		D9FB689E1EA88D6E006B2D40 /* Attachments */ = {
+			isa = PBXGroup;
+			children = (
+				D9FB689F1EA88DB9006B2D40 /* Attachments.swift */,
+				D9FB68A11EA88EFF006B2D40 /* ListAttachments.swift */,
+				D9FB68A51EA8908E006B2D40 /* GetAttachment.swift */,
+				D9FB68A31EA88FA7006B2D40 /* CreateAttachment.swift */,
+				D9FB68A71EA89105006B2D40 /* DeleteAttachment.swift */,
+			);
+			path = Attachments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +468,8 @@
 			files = (
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */,
+				D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */,
+				D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */,
 				D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
@@ -456,9 +481,12 @@
 				D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */,
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
+				D9FB68A81EA89105006B2D40 /* DeleteAttachment.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
+				D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
+				D9FB68A61EA8908E006B2D40 /* GetAttachment.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D945F84A1EA73B770059640E /* Bucket.swift in Sources */,
 				D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */,

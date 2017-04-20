@@ -34,6 +34,10 @@ extension PutRequest {
 }
 extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
+
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Void> {
+        return DribbbleKit.Response(meta: Meta(urlResponse: urlResponse), data: ())
+    }
 }
 extension ListRequest {
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
@@ -91,5 +95,13 @@ extension Request {
 private extension Dictionary where Key == AnyHashable, Value == Any {
     subscript (intValueForKey key: Key) -> Int {
         return  self[key] as? Int ?? 0
+    }
+}
+
+func optional<T: Decodable>(_ f: @autoclosure () throws -> T, if cond: (_ missingKeyPath: KeyPath) -> Bool) rethrows -> T? {
+    do {
+        return try f()
+    } catch DecodeError.missingKeyPath(let keyPath) where cond(keyPath) {
+        return nil
     }
 }
