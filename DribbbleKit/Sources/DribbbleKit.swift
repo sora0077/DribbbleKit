@@ -19,6 +19,9 @@ public protocol GetRequest: Request {}
 public protocol PostRequest: Request {}
 public protocol PutRequest: Request {}
 public protocol DeleteRequest: Request {}
+public protocol ListRequest: GetRequest {
+    func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Self.Response
+}
 
 extension GetRequest {
     public var method: HTTPMethod { return .get }
@@ -31,6 +34,14 @@ extension PutRequest {
 }
 extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
+}
+extension ListRequest {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
+        guard let list = object as? [Any] else {
+            throw DecodeError.typeMismatch(expected: "Array", actual: "\(object)", keyPath: .empty)
+        }
+        return try response(from: list, urlResponse: urlResponse)
+    }
 }
 
 public final class Meta {

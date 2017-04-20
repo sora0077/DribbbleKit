@@ -50,6 +50,6 @@ extension ShotData {
             width: e.value("width"),
             height: e.value("height"),
             images: e.dictionary("images", Transformer.url),
-            viewCount: e.value("created_at"))
+            viewCount: e.value("view_count"))
     }
 }
