@@ -7,8 +7,6 @@ target 'DribbbleKit' do
 
   # Pods for DribbbleKit
   pod 'SwiftLint'
-  pod 'APIKit'
-  pod 'Himotoki'
 
   target 'DribbbleKitTests' do
     inherit! :search_paths
