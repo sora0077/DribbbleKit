@@ -20,10 +20,10 @@ public enum DribbbleError: Swift.Error {
     case unexpected
 }
 
-func optional<T: Decodable>(_ f: @autoclosure () throws -> T, if cond: (_ missingKeyPath: KeyPath) -> Bool) rethrows -> T? {
+func optional<T: Decodable>(_ f: @autoclosure () throws -> T, keyPath: @autoclosure () -> KeyPath) rethrows -> T? {
     do {
         return try f()
-    } catch let DecodeError.missingKeyPath(keyPath) where cond(keyPath) {
+    } catch let DecodeError.missingKeyPath(missing) where missing == keyPath() {
         return nil
     }
 }

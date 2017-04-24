@@ -36,7 +36,7 @@ public protocol ShotData: Decodable {
         description: String,
         width: Int,
         height: Int,
-        images: [String: URL?],
+        images: [String: URL],
         viewCount: Int
     ) throws
 }
@@ -49,7 +49,7 @@ extension ShotData {
             description: decoder.decode(forKeyPath: "description"),
             width: decoder.decode(forKeyPath: "width"),
             height: decoder.decode(forKeyPath: "height"),
-            images: decoder.decode(forKeyPath: "images", Transformer.url),
+            images: decoder.decode(forKeyPath: "images", skipInvalidElements: true, Transformer.url),
             viewCount: decoder.decode(forKeyPath: "view_count"))
     }
 }
