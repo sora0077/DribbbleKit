@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Himotoki
+import Alter
 
 public struct Shot {
     public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
@@ -16,8 +16,8 @@ public struct Shot {
             self.value = value
         }
 
-        public static func decode(_ e: Extractor) throws -> Shot.Identifier {
-            return try self.init(integerLiteral: Int.decode(e))
+        public static func decode(_ decoder: Decoder) throws -> Shot.Identifier {
+            return try self.init(integerLiteral: Int.decode(decoder))
         }
     }
 }
@@ -42,14 +42,14 @@ public protocol ShotData: Decodable {
 }
 
 extension ShotData {
-    public static func decode(_ e: Extractor) throws -> Self {
+    public static func decode(_ decoder: Decoder) throws -> Self {
         return try self.init(
-            id: e.value("id"),
-            title: e.value("title"),
-            description: e.value("description"),
-            width: e.value("width"),
-            height: e.value("height"),
-            images: e.dictionary("images", Transformer.url),
-            viewCount: e.value("view_count"))
+            id: decoder.decode(forKeyPath: "id"),
+            title: decoder.decode(forKeyPath: "title"),
+            description: decoder.decode(forKeyPath: "description"),
+            width: decoder.decode(forKeyPath: "width"),
+            height: decoder.decode(forKeyPath: "height"),
+            images: decoder.decode(forKeyPath: "images", Transformer.url),
+            viewCount: decoder.decode(forKeyPath: "view_count"))
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 // MARK: - ListUserBucket
 public struct ListUserBucket<Data: BucketData>: GetRequest {
@@ -22,7 +22,7 @@ public struct ListUserBucket<Data: BucketData>: GetRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeArray(object))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
     }
 }
 
@@ -35,6 +35,6 @@ public struct ListAuthenticatedUserBucket<Data: BucketData>: GetRequest {
     public init() {}
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeArray(object))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
     }
 }

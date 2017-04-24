@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Himotoki
+import Alter
 
 public struct Bucket {
     public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
@@ -16,8 +16,8 @@ public struct Bucket {
             self.value = value
         }
 
-        public static func decode(_ e: Extractor) throws -> Bucket.Identifier {
-            return try self.init(integerLiteral: Int.decode(e))
+        public static func decode(_ decoder: Decoder) throws -> Bucket.Identifier {
+            return try self.init(integerLiteral: Int.decode(decoder))
         }
     }
 }
@@ -41,13 +41,13 @@ public protocol BucketData: Decodable {
 }
 
 extension BucketData {
-    public static func decode(_ e: Extractor) throws -> Self {
+    public static func decode(_ decoder: Decoder) throws -> Self {
         return try self.init(
-            id: e.value("id"),
-            name: e.value("name"),
-            description: e.value("description"),
-            shotsCount: e.value("shots_count"),
-            createdAt: e.value("created_at", Transformer.date),
-            updatedAt: e.value("updated_at", Transformer.date))
+            id: decoder.decode(forKeyPath: "id"),
+            name: decoder.decode(forKeyPath: "name"),
+            description: decoder.decode(forKeyPath: "description"),
+            shotsCount: decoder.decode(forKeyPath: "shots_count"),
+            createdAt: decoder.decode(forKeyPath: "created_at", Transformer.date),
+            updatedAt: decoder.decode(forKeyPath: "updated_at", Transformer.date))
     }
 }

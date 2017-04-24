@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct CreateShot: PostRequest {
     public typealias Response = DribbbleKit.Response<Shot.Identifier>

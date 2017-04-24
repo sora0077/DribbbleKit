@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 // MARK: - GetUser
 public struct GetUser<Data: UserData>: GetRequest {
@@ -22,7 +22,7 @@ public struct GetUser<Data: UserData>: GetRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeValue(object))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
     }
 }
 
@@ -35,6 +35,6 @@ public struct GetAuthenticatedUser<Data: UserData>: GetRequest {
     public init() {}
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeValue(object))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
     }
 }

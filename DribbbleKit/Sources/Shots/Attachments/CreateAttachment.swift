@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct CreateAttachment: PostRequest {
     public typealias Response = DribbbleKit.Response<Attachment.Identifier>

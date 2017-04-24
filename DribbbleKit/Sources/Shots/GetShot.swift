@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<(shot: Shot, user: User)>
@@ -22,7 +22,7 @@ public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         return try Response(meta: Meta(urlResponse: urlResponse), data: (
-            shot: decodeValue(object),
-            user: decodeValue(object, rootKeyPath: "user")))
+            shot: decode(object),
+            user: decode(object, rootKeyPath: "user")))
     }
 }
