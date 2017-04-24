@@ -20,10 +20,6 @@ public struct GetUser<Data: UserData>: GetRequest {
     public init(username: String) {
         self.username = username
     }
-
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
-    }
 }
 
 // MARK: - GetAuthenticatedUser
@@ -33,8 +29,4 @@ public struct GetAuthenticatedUser<Data: UserData>: GetRequest {
     public var path: String { return "/user" }
 
     public init() {}
-
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
-    }
 }

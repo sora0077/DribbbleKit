@@ -30,7 +30,7 @@ public final class Meta {
                   reset: self.headers[intValueForKey: "X-RateLimit-Reset"])
     }()
 
-    subscript (_ key: AnyHashable) -> Any? {
+    public subscript (_ key: AnyHashable) -> Any? {
         return urlResponse.allHeaderFields[key]
     }
 
