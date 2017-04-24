@@ -55,11 +55,6 @@ public struct OAuth {
     }
 
     public struct GetToken: APIKit.Request {
-        public struct Response {
-            public let accessToken: String
-            public let tokenType: String
-            public let scopes: [OAuth.Scope]
-        }
         public var method: HTTPMethod { return .post }
         public var baseURL: URL { return URL(string: "https://dribbble.com")! }
         public var path: String { return "/oauth/token" }
@@ -76,29 +71,8 @@ public struct OAuth {
             self.redirectURL = redirectURL
         }
 
-        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> GetToken.Response {
+        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Authorization {
             return try decode(object)
-        }
-    }
-}
-
-extension OAuth.GetToken.Response: Decodable {
-    public static func decode(_ decoder: Decoder) throws -> OAuth.GetToken.Response {
-        do {
-            let scope: String = try decoder.decode(forKeyPath: "scope")
-            return try self.init(
-                accessToken: decoder.decode(forKeyPath: "access_token"),
-                tokenType: decoder.decode(forKeyPath: "token_type"),
-                scopes: scope.components(separatedBy: " ").flatMap(OAuth.Scope.init(rawValue:)))
-        } catch let modelError {
-            do {
-                throw OAuth.Error.invalid(error: try decoder.decode(forKeyPath: "error"),
-                                          description: try decoder.decode(forKeyPath: "error_description"))
-            } catch let error as OAuth.Error {
-                throw error
-            } catch {
-                throw modelError
-            }
         }
     }
 }

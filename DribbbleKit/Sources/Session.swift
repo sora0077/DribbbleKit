@@ -20,7 +20,6 @@ private struct AnyRequest<R>: APIKit.Request {
     let headerFields: [String : String]
     let parameters: Any?
 
-    private let authorization: Authorization?
     private let _response: (Any, HTTPURLResponse) throws -> R
     fileprivate let raw: Any
 
@@ -28,11 +27,15 @@ private struct AnyRequest<R>: APIKit.Request {
         method = request.method
         baseURL = request.baseURL
         path = request.path
-        headerFields = request.headerFields
         parameters = request.parameters
-        self.authorization = authorization
         _response = request.response
         raw = request
+
+        var headers = request.headerFields
+        if let authorization = authorization {
+            headers["Authorization"] = "Bearer \(authorization.accessToken)"
+        }
+        headerFields = headers
     }
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> R {
