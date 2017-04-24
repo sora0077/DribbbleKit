@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct DeleteShot: DeleteRequest {
     public typealias Response = DribbbleKit.Response<Void>

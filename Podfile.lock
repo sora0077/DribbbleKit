@@ -1,21 +1,12 @@
 PODS:
-  - APIKit (3.1.1):
-    - Result (~> 3.0)
-  - Himotoki (3.0.1)
-  - Result (3.2.1)
   - SwiftLint (0.18.1)
 
 DEPENDENCIES:
-  - APIKit
-  - Himotoki
   - SwiftLint
 
 SPEC CHECKSUMS:
-  APIKit: 7460983f490d3bde6aaaaa4164d18c9865a6f91d
-  Himotoki: 85fda41d4d0e14f7228317a3b474175cdfb8f515
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 5567a326c3384e8fa5369204443d8036c5cfe717
+PODFILE CHECKSUM: a2777fba78b85ec58e26f75a35dc3630c677799f
 
 COCOAPODS: 1.2.1

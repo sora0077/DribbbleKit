@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public protocol Request: APIKit.Request {
     associatedtype Data
@@ -42,7 +42,7 @@ extension DeleteRequest {
 extension ListRequest {
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
         guard let list = object as? [Any] else {
-            throw DecodeError.typeMismatch(expected: "Array", actual: "\(object)", keyPath: .empty)
+            throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: [])
         }
         return try response(from: list, urlResponse: urlResponse)
     }

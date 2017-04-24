@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct GetBucket<Bucket: BucketData, User: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<(bucket: Bucket, user: User)>
@@ -21,6 +21,6 @@ public struct GetBucket<Bucket: BucketData, User: UserData>: GetRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: (decodeValue(object), decodeValue(object, rootKeyPath: "user")))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: (decode(object), decode(object, rootKeyPath: "user")))
     }
 }

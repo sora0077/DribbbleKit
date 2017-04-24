@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct OAuth {
     public enum Scope: String {
@@ -77,23 +77,23 @@ public struct OAuth {
         }
 
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> GetToken.Response {
-            return try decodeValue(object)
+            return try decode(object)
         }
     }
 }
 
 extension OAuth.GetToken.Response: Decodable {
-    public static func decode(_ e: Extractor) throws -> OAuth.GetToken.Response {
+    public static func decode(_ decoder: Decoder) throws -> OAuth.GetToken.Response {
         do {
-            let scope: String = try e.value("scope")
+            let scope: String = try decoder.decode(forKeyPath: "scope")
             return try self.init(
-                accessToken: e.value("access_token"),
-                tokenType: e.value("token_type"),
+                accessToken: decoder.decode(forKeyPath: "access_token"),
+                tokenType: decoder.decode(forKeyPath: "token_type"),
                 scopes: scope.components(separatedBy: " ").flatMap(OAuth.Scope.init(rawValue:)))
         } catch let modelError {
             do {
-                throw OAuth.Error.invalid(error: try e.value("error"),
-                                          description: try e.value("error_description"))
+                throw OAuth.Error.invalid(error: try decoder.decode(forKeyPath: "error"),
+                                          description: try decoder.decode(forKeyPath: "error_description"))
             } catch let error as OAuth.Error {
                 throw error
             } catch {

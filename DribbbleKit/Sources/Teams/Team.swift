@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Himotoki
+import Alter
 
 public protocol TeamData: Decodable {
     init(
@@ -44,36 +44,36 @@ public protocol TeamData: Decodable {
 }
 
 extension TeamData {
-    public static func decode(_ e: Extractor) throws -> Self {
+    public static func decode(_ decoder: Decoder) throws -> Self {
         return try self.init(
-            id: e.value("id"),
-            name: e.value("name"),
-            username: e.value("username"),
-            htmlURL: e.value("html_url", Transformer.url),
-            avatarURL: e.value("avatar_url", Transformer.url),
-            bio: e.value("bio"),
-            location: e.value("location"),
-            links: e.dictionary("links", Transformer.url),
-            bucketsCount: e.value("buckets_count"),
-            commentsRecievedCount: e.value("comments_received_count"),
-            followersCount: e.value("followers_count"),
-            followingsCount: e.value("followings_count"),
-            likesCount: e.value("likes_count"),
-            likesReceivedCount: e.value("likes_received_count"),
-            projectsCount: e.value("projects_count"),
-            reboundsReceivedCount: e.value("rebounds_received_count"),
-            shotsCount: e.value("shots_count"),
-            teamsCount: e.value("teams_count"),
-            canUploadShot: e.value("can_upload_shot"),
-            type: e.value("type"),
-            pro: e.value("pro"),
-            bucketsURL: e.value("buckets_url", Transformer.url),
-            followersURL: e.value("followers_url", Transformer.url),
-            followingURL: e.value("following_url", Transformer.url),
-            likeURL: e.value("likes_url", Transformer.url),
-            shotsURL: e.value("shots_url", Transformer.url),
-            teamsURL: e.value("teams_url", Transformer.url),
-            createdAt: e.value("created_at", Transformer.date),
-            updatedAt: e.value("updated_at", Transformer.date))
+            id: decoder.decode(forKeyPath: "id"),
+            name: decoder.decode(forKeyPath: "name"),
+            username: decoder.decode(forKeyPath: "username"),
+            htmlURL: decoder.decode(forKeyPath: "html_url", Transformer.url),
+            avatarURL: decoder.decode(forKeyPath: "avatar_url", Transformer.url),
+            bio: decoder.decode(forKeyPath: "bio"),
+            location: decoder.decode(forKeyPath: "location"),
+            links: decoder.decode(forKeyPath: "links", Transformer.url),
+            bucketsCount: decoder.decode(forKeyPath: "buckets_count"),
+            commentsRecievedCount: decoder.decode(forKeyPath: "comments_received_count"),
+            followersCount: decoder.decode(forKeyPath: "followers_count"),
+            followingsCount: decoder.decode(forKeyPath: "followings_count"),
+            likesCount: decoder.decode(forKeyPath: "likes_count"),
+            likesReceivedCount: decoder.decode(forKeyPath: "likes_received_count"),
+            projectsCount: decoder.decode(forKeyPath: "projects_count"),
+            reboundsReceivedCount: decoder.decode(forKeyPath: "rebounds_received_count"),
+            shotsCount: decoder.decode(forKeyPath: "shots_count"),
+            teamsCount: decoder.decode(forKeyPath: "teams_count"),
+            canUploadShot: decoder.decode(forKeyPath: "can_upload_shot"),
+            type: decoder.decode(forKeyPath: "type"),
+            pro: decoder.decode(forKeyPath: "pro"),
+            bucketsURL: decoder.decode(forKeyPath: "buckets_url", Transformer.url),
+            followersURL: decoder.decode(forKeyPath: "followers_url", Transformer.url),
+            followingURL: decoder.decode(forKeyPath: "following_url", Transformer.url),
+            likeURL: decoder.decode(forKeyPath: "likes_url", Transformer.url),
+            shotsURL: decoder.decode(forKeyPath: "shots_url", Transformer.url),
+            teamsURL: decoder.decode(forKeyPath: "teams_url", Transformer.url),
+            createdAt: decoder.decode(forKeyPath: "created_at", Transformer.date),
+            updatedAt: decoder.decode(forKeyPath: "updated_at", Transformer.date))
     }
 }

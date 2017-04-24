@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct CreateBucket<Data: BucketData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
@@ -28,6 +28,6 @@ public struct CreateBucket<Data: BucketData>: PostRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decodeValue(object))
+        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
     }
 }

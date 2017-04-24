@@ -8,7 +8,7 @@
 
 import Foundation
 import APIKit
-import Himotoki
+import Alter
 
 public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: ListRequest {
     public typealias Response = DribbbleKit.Response<[(shot: Shot, user: User, team: Team?)]>
@@ -19,9 +19,9 @@ public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: ListReq
 
     public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
         return try Response(meta: Meta(urlResponse: urlResponse), data: objects.map {
-            try (shot: decodeValue($0),
-                 user: decodeValue($0, rootKeyPath: "user"),
-                 team: try optional(decodeValue($0, rootKeyPath: "team"), if: { $0 == "team" }))
+            try (shot: decode($0),
+                 user: decode($0, rootKeyPath: "user"),
+                 team: try optional(decode($0, rootKeyPath: "team"), if: { $0 == "team" }))
         })
     }
 }

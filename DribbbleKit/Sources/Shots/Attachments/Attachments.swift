@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Himotoki
+import Alter
 
 public struct Attachment {
     public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
@@ -16,8 +16,8 @@ public struct Attachment {
             self.value = value
         }
 
-        public static func decode(_ e: Extractor) throws -> Attachment.Identifier {
-            return try self.init(integerLiteral: Int.decode(e))
+        public static func decode(_ decoder: Decoder) throws -> Attachment.Identifier {
+            return try self.init(integerLiteral: Int.decode(decoder))
         }
     }
 }
@@ -41,14 +41,14 @@ public protocol AttachmentData: Decodable {
 }
 
 extension AttachmentData {
-    public static func decode(_ e: Extractor) throws -> Self {
+    public static func decode(_ decoder: Decoder) throws -> Self {
         return try self.init(
-            id: e.value("id"),
-            url: e.value("url", Transformer.url),
-            thumbnailURL: e.value("thumbnail_url", Transformer.url),
-            size: e.value("size"),
-            contentType: e.value("content_type"),
-            viewsCount: e.value("views_count"),
-            createdAt: e.value("created_at", Transformer.date))
+            id: decoder.decode(forKeyPath: "id"),
+            url: decoder.decode(forKeyPath: "url", Transformer.url),
+            thumbnailURL: decoder.decode(forKeyPath: "thumbnail_url", Transformer.url),
+            size: decoder.decode(forKeyPath: "size"),
+            contentType: decoder.decode(forKeyPath: "content_type"),
+            viewsCount: decoder.decode(forKeyPath: "views_count"),
+            createdAt: decoder.decode(forKeyPath: "created_at", Transformer.date))
     }
 }
