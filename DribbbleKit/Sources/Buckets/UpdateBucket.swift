@@ -30,6 +30,6 @@ public struct UpdateBucket<Data: BucketData>: PutRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
+        return try Response(meta: Meta(urlResponse), data: decode(object))
     }
 }

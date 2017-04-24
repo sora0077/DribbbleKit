@@ -21,7 +21,7 @@ public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: (
+        return try Response(meta: Meta(urlResponse), data: (
             shot: decode(object),
             user: decode(object, rootKeyPath: "user")))
     }

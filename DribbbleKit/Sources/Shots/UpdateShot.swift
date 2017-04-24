@@ -27,6 +27,6 @@ public struct UpdateShot<Data: ShotData>: PostRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(object))
+        return try Response(meta: Meta(urlResponse), data: decode(object))
     }
 }

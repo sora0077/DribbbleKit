@@ -34,7 +34,7 @@ public final class Meta {
         return urlResponse.allHeaderFields[key]
     }
 
-    init(urlResponse: HTTPURLResponse) {
+    init(_ urlResponse: HTTPURLResponse) {
         self.urlResponse = urlResponse
     }
 }
