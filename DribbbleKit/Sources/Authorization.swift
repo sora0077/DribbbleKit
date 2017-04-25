@@ -13,6 +13,13 @@ public struct Authorization {
     public let accessToken: String
     public let tokenType: String
     public let scopes: [OAuth.Scope]
+
+    public func encode() -> [String: Any] {
+        return [
+            "access_token": accessToken,
+            "token_type": tokenType,
+            "scope": scopes.map { $0.rawValue }.joined(separator: " ")]
+    }
 }
 
 extension Authorization: Decodable {
