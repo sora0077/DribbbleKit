@@ -46,6 +46,7 @@
 		D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A22CFA1EAF33FC00729B14 /* ShotData.json */; };
 		D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A22CFD1EAF3B7900729B14 /* Projects.swift */; };
 		D9A22D011EAF3D2900729B14 /* ListProjectShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A22D001EAF3D2900729B14 /* ListProjectShots.swift */; };
+		D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A22D031EAF429A00729B14 /* ListShotBuckets.swift */; };
 		D9FB68991EA8850D006B2D40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68981EA8850D006B2D40 /* Team.swift */; };
 		D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */; };
 		D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */; };
@@ -121,6 +122,7 @@
 		D9A22CFA1EAF33FC00729B14 /* ShotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShotData.json; sourceTree = "<group>"; };
 		D9A22CFD1EAF3B7900729B14 /* Projects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Projects.swift; sourceTree = "<group>"; };
 		D9A22D001EAF3D2900729B14 /* ListProjectShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProjectShots.swift; sourceTree = "<group>"; };
+		D9A22D031EAF429A00729B14 /* ListShotBuckets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShotBuckets.swift; sourceTree = "<group>"; };
 		D9FB68981EA8850D006B2D40 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
 		D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				D99D327A1EA75643009561E3 /* UpdateShot.swift */,
 				D99D327C1EA75757009561E3 /* DeleteShot.swift */,
 				D9FB689E1EA88D6E006B2D40 /* Attachments */,
+				D9A22D021EAF426900729B14 /* Buckets */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -327,6 +330,14 @@
 				D9A22D001EAF3D2900729B14 /* ListProjectShots.swift */,
 			);
 			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9A22D021EAF426900729B14 /* Buckets */ = {
+			isa = PBXGroup;
+			children = (
+				D9A22D031EAF429A00729B14 /* ListShotBuckets.swift */,
+			);
+			path = Buckets;
 			sourceTree = "<group>";
 		};
 		D9FB68971EA884F5006B2D40 /* Teams */ = {
@@ -589,6 +600,7 @@
 				D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D98F55CE1EAE2479008C1861 /* Request.swift in Sources */,
+				D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */,
 				D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */,
 				D9A22D011EAF3D2900729B14 /* ListProjectShots.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
