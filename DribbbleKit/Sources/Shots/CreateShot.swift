@@ -29,7 +29,7 @@ public struct CreateShot: PostRequest {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        let meta = Meta(urlResponse: urlResponse)
+        let meta = Meta(urlResponse)
         guard let location = meta["Location"] as? String,
             let id = location.components(separatedBy: "/").last.flatMap({ Int($0) }) else {
             throw DribbbleError.unexpected

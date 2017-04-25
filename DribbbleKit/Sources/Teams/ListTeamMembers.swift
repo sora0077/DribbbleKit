@@ -21,6 +21,6 @@ public struct ListTeamMembers<Data: UserData>: ListRequest {
     }
 
     public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: decode(objects))
+        return try Response(meta: Meta(urlResponse), data: decode(objects))
     }
 }

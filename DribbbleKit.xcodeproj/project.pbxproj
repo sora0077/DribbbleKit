@@ -36,6 +36,14 @@
 		D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32781EA7532C009561E3 /* CreateShot.swift */; };
 		D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327A1EA75643009561E3 /* UpdateShot.swift */; };
 		D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D327C1EA75757009561E3 /* DeleteShot.swift */; };
+		D9A22CEC1EAF312300729B14 /* ShotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A22CEB1EAF312300729B14 /* ShotsTests.swift */; };
+		D9A22CF11EAF330300729B14 /* Alter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98F55C71EAE0DDF008C1861 /* Alter.framework */; };
+		D9A22CF21EAF330600729B14 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98F55C81EAE0DDF008C1861 /* APIKit.framework */; };
+		D9A22CF31EAF330A00729B14 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98F55C91EAE0DDF008C1861 /* Result.framework */; };
+		D9A22CF51EAF339300729B14 /* Alter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D98F55C71EAE0DDF008C1861 /* Alter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9A22CF61EAF339300729B14 /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D98F55C81EAE0DDF008C1861 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9A22CF71EAF339300729B14 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D98F55C91EAE0DDF008C1861 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9A22CFA1EAF33FC00729B14 /* ShotData.json */; };
 		D9FB68991EA8850D006B2D40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68981EA8850D006B2D40 /* Team.swift */; };
 		D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */; };
 		D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */; };
@@ -55,6 +63,21 @@
 			remoteInfo = DribbbleKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D9A22CF41EAF338A00729B14 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9A22CF51EAF339300729B14 /* Alter.framework in CopyFiles */,
+				D9A22CF61EAF339300729B14 /* APIKit.framework in CopyFiles */,
+				D9A22CF71EAF339300729B14 /* Result.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3140A9FEF4B12652C3104FD6 /* Pods-DribbbleKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DribbbleKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DribbbleKitTests/Pods-DribbbleKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +115,8 @@
 		D99D32781EA7532C009561E3 /* CreateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShot.swift; sourceTree = "<group>"; };
 		D99D327A1EA75643009561E3 /* UpdateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateShot.swift; sourceTree = "<group>"; };
 		D99D327C1EA75757009561E3 /* DeleteShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteShot.swift; sourceTree = "<group>"; };
+		D9A22CEB1EAF312300729B14 /* ShotsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotsTests.swift; sourceTree = "<group>"; };
+		D9A22CFA1EAF33FC00729B14 /* ShotData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShotData.json; sourceTree = "<group>"; };
 		D9FB68981EA8850D006B2D40 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
 		D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
@@ -121,6 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */,
+				D9A22CF11EAF330300729B14 /* Alter.framework in Frameworks */,
+				D9A22CF21EAF330600729B14 /* APIKit.framework in Frameworks */,
+				D9A22CF31EAF330A00729B14 /* Result.framework in Frameworks */,
 				7A883D84BF88015490A1B2AF /* Pods_DribbbleKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +249,8 @@
 		D974C42A1E9FD7DE00C46607 /* DribbbleKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				D9A22CF81EAF33C300729B14 /* Fixtures */,
+				D9A22CEA1EAF310000729B14 /* Shots */,
 				D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */,
 				D974C42D1E9FD7DE00C46607 /* Info.plist */,
 			);
@@ -251,6 +281,30 @@
 				D974C4491EA1F7AC00C46607 /* OAuth.swift */,
 			);
 			path = OAuth;
+			sourceTree = "<group>";
+		};
+		D9A22CEA1EAF310000729B14 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9A22CEB1EAF312300729B14 /* ShotsTests.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9A22CF81EAF33C300729B14 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				D9A22CF91EAF33E800729B14 /* Shots */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		D9A22CF91EAF33E800729B14 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9A22CFA1EAF33FC00729B14 /* ShotData.json */,
+			);
+			path = Shots;
 			sourceTree = "<group>";
 		};
 		D9FB68971EA884F5006B2D40 /* Teams */ = {
@@ -320,6 +374,7 @@
 				D974C4241E9FD7DE00C46607 /* Resources */,
 				39FB994EEC5B5672B2922E03 /* [CP] Embed Pods Frameworks */,
 				96282B9FFFECCEB51B4C8A0F /* [CP] Copy Pods Resources */,
+				D9A22CF41EAF338A00729B14 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -382,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */,
+				D9A22CEC1EAF312300729B14 /* ShotsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +747,10 @@
 			baseConfigurationReference = 3140A9FEF4B12652C3104FD6 /* Pods-DribbbleKitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DribbbleKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.DribbbleKitTests;
@@ -703,6 +764,10 @@
 			baseConfigurationReference = E2D6BB0F9B3781BB5E01A7DE /* Pods-DribbbleKitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DribbbleKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.sora0077.DribbbleKitTests;

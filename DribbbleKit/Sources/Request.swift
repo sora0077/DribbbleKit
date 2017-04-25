@@ -30,6 +30,11 @@ public protocol ListRequest: GetRequest {
 extension GetRequest {
     public var method: HTTPMethod { return .get }
 }
+extension GetRequest where Data: Decodable {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
+        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
+    }
+}
 extension PostRequest {
     public var method: HTTPMethod { return .post }
 }
@@ -40,7 +45,7 @@ extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Void> {
-        return DribbbleKit.Response(meta: Meta(urlResponse: urlResponse), data: ())
+        return DribbbleKit.Response(meta: Meta(urlResponse), data: ())
     }
 }
 extension ListRequest {

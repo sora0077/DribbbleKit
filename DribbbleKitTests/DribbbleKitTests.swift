@@ -9,6 +9,21 @@
 import XCTest
 @testable import DribbbleKit
 
+protocol JSONTestable {
+    func load(_ filename: String) throws -> Data
+}
+
+extension JSONTestable {
+    func load(_ filename: String) throws -> Data {
+        let bundle = Bundle(for: DribbbleKitTests.self)
+        guard let path = bundle.path(forResource: filename, ofType: "json") else {
+            return Data()
+        }
+        let string = try String(contentsOfFile: path)
+        return string.data(using: .utf8) ?? Data()
+    }
+}
+
 class DribbbleKitTests: XCTestCase {
 
     override func setUp() {

@@ -21,7 +21,7 @@ public struct ListTeamShots<Shot: ShotData, User: UserData>: ListRequest {
     }
 
     public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse: urlResponse), data: objects.map {
+        return try Response(meta: Meta(urlResponse), data: objects.map {
             try (shot: decode($0),
                  user: decode($0, rootKeyPath: "user"))
         })
