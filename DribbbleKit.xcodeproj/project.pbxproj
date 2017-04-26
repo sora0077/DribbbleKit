@@ -25,6 +25,14 @@
 		D963DD371EB074E100D9F67B /* GetComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD361EB074E100D9F67B /* GetComment.swift */; };
 		D963DD391EB0758600D9F67B /* UpdateComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD381EB0758600D9F67B /* UpdateComment.swift */; };
 		D963DD3B1EB075F500D9F67B /* DeleteComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD3A1EB075F500D9F67B /* DeleteComment.swift */; };
+		D963DD3E1EB077A300D9F67B /* ListShotLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */; };
+		D963DD401EB077C100D9F67B /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD3F1EB077C100D9F67B /* Likes.swift */; };
+		D963DD421EB078E000D9F67B /* GetLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD411EB078E000D9F67B /* GetLike.swift */; };
+		D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD431EB0795600D9F67B /* CreateLike.swift */; };
+		D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD451EB079B500D9F67B /* DeleteLike.swift */; };
+		D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */; };
+		D963DD4A1EB07B9600D9F67B /* GetCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD491EB07B9600D9F67B /* GetCommentLike.swift */; };
+		D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,6 +118,14 @@
 		D963DD361EB074E100D9F67B /* GetComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetComment.swift; sourceTree = "<group>"; };
 		D963DD381EB0758600D9F67B /* UpdateComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateComment.swift; sourceTree = "<group>"; };
 		D963DD3A1EB075F500D9F67B /* DeleteComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteComment.swift; sourceTree = "<group>"; };
+		D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShotLikes.swift; sourceTree = "<group>"; };
+		D963DD3F1EB077C100D9F67B /* Likes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
+		D963DD411EB078E000D9F67B /* GetLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLike.swift; sourceTree = "<group>"; };
+		D963DD431EB0795600D9F67B /* CreateLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLike.swift; sourceTree = "<group>"; };
+		D963DD451EB079B500D9F67B /* DeleteLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteLike.swift; sourceTree = "<group>"; };
+		D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCommentLike.swift; sourceTree = "<group>"; };
+		D963DD491EB07B9600D9F67B /* GetCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommentLike.swift; sourceTree = "<group>"; };
+		D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentLike.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +249,7 @@
 				D9FB689E1EA88D6E006B2D40 /* Attachments */,
 				D9A22D021EAF426900729B14 /* Buckets */,
 				D963DD2B1EB06FF200D9F67B /* Comments */,
+				D963DD3C1EB0776D00D9F67B /* Likes */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -247,8 +264,23 @@
 				D963DD341EB073CD00D9F67B /* CreateComment.swift */,
 				D963DD381EB0758600D9F67B /* UpdateComment.swift */,
 				D963DD3A1EB075F500D9F67B /* DeleteComment.swift */,
+				D963DD491EB07B9600D9F67B /* GetCommentLike.swift */,
+				D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */,
+				D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */,
 			);
 			path = Comments;
+			sourceTree = "<group>";
+		};
+		D963DD3C1EB0776D00D9F67B /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				D963DD3F1EB077C100D9F67B /* Likes.swift */,
+				D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */,
+				D963DD411EB078E000D9F67B /* GetLike.swift */,
+				D963DD431EB0795600D9F67B /* CreateLike.swift */,
+				D963DD451EB079B500D9F67B /* DeleteLike.swift */,
+			);
+			path = Likes;
 			sourceTree = "<group>";
 		};
 		D974C4131E9FD7DE00C46607 = {
@@ -602,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D963DD3E1EB077A300D9F67B /* ListShotLikes.swift in Sources */,
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
 				D963DD351EB073CD00D9F67B /* CreateComment.swift in Sources */,
 				D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */,
@@ -609,8 +642,10 @@
 				D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */,
 				D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */,
 				D963DD371EB074E100D9F67B /* GetComment.swift in Sources */,
+				D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
+				D963DD401EB077C100D9F67B /* Likes.swift in Sources */,
 				D99D327D1EA75757009561E3 /* DeleteShot.swift in Sources */,
 				D945F8411EA732730059640E /* GetUser.swift in Sources */,
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
@@ -620,14 +655,18 @@
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
 				D9FB68A81EA89105006B2D40 /* DeleteAttachment.swift in Sources */,
+				D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
+				D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */,
 				D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */,
 				D98F55D01EAE28AC008C1861 /* Response.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,
+				D963DD421EB078E000D9F67B /* GetLike.swift in Sources */,
 				D9FB68A61EA8908E006B2D40 /* GetAttachment.swift in Sources */,
 				D974C4431EA1EC9A00C46607 /* Transformer.swift in Sources */,
 				D945F84A1EA73B770059640E /* Bucket.swift in Sources */,
+				D963DD4A1EB07B9600D9F67B /* GetCommentLike.swift in Sources */,
 				D99D327B1EA75643009561E3 /* UpdateShot.swift in Sources */,
 				D963DD3B1EB075F500D9F67B /* DeleteComment.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
@@ -637,6 +676,7 @@
 				D963DD2D1EB0706300D9F67B /* ListShotComments.swift in Sources */,
 				D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */,
 				D963DD331EB0720000D9F67B /* Comments.swift in Sources */,
+				D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */,
 				D963DD391EB0758600D9F67B /* UpdateComment.swift in Sources */,
 				D9A22D011EAF3D2900729B14 /* ListProjectShots.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
