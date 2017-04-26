@@ -74,22 +74,35 @@ struct DataSet {
             ) throws {
         }
     }
+
+    struct LikeEntity: LikeData {
+        let id: Int
+        init(id: Int, createdAt: Date) throws {
+            self.id = id
+        }
+    }
 }
 
 extension DataSet {
     static let emptyURLResponse = HTTPURLResponse()
 
-    static let badRequestURLResponse = HTTPURLResponse(
-        url: URL(string: "http://dummy.com")!,
-        statusCode: 400,
-        httpVersion: "HTTP/1.1",
-        headerFields: nil)!
-
-    static func rateLimitURLResponse(headerFields: [String: String]? = nil) -> HTTPURLResponse {
+    private static func build(statusCode: Int, headerFields: [String: String]? = nil) -> HTTPURLResponse {
         return HTTPURLResponse(
             url: URL(string: "http://dummy.com")!,
-            statusCode: 429,
+            statusCode: statusCode,
             httpVersion: "HTTP/1.1",
             headerFields: headerFields)!
+    }
+
+    static func validURLResponse(statusCode: Int = 200, headerFields: [String: String]? = nil) -> HTTPURLResponse {
+        return build(statusCode: statusCode, headerFields: headerFields)
+    }
+
+    static let badRequestURLResponse = build(statusCode: 400)
+
+    static let notFoundURLResponse = build(statusCode: 404)
+
+    static func rateLimitURLResponse(headerFields: [String: String]? = nil) -> HTTPURLResponse {
+        return build(statusCode: 429, headerFields: headerFields)
     }
 }

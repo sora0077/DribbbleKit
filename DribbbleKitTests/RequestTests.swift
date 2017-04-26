@@ -67,4 +67,33 @@ class RequestTests: XCTestCase {
             XCTFail("\(error)")
         }
     }
+
+    func testNoErrorResponse() {
+        let json: [String: Any] = [
+            "id": 24400091,
+            "created_at": "2014-01-06T17:19:59Z"
+        ]
+        let request = GetLike<DataSet.LikeEntity>(id: 1)
+        do {
+            let urlResponse = DataSet.validURLResponse()
+            _ = try request.intercept(object: json, urlResponse: urlResponse)
+            let like = try request.response(from: json, urlResponse: urlResponse)
+            XCTAssertEqual(like.data?.id, 24400091)
+        } catch {
+            XCTFail("\(error)")
+        }
+    }
+
+    func testNotFoundResponse() {
+        let json: [String: Any] = [:]
+        let request = GetLike<DataSet.LikeEntity>(id: 1)
+        do {
+            let urlResponse = DataSet.notFoundURLResponse
+            _ = try request.intercept(object: json, urlResponse: urlResponse)
+            let like = try request.response(from: json, urlResponse: urlResponse)
+            XCTAssertNil(like.data)
+        } catch {
+            XCTFail("\(error)")
+        }
+    }
 }
