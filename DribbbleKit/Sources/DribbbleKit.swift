@@ -19,3 +19,11 @@ public enum DribbbleError: Swift.Error {
     case invalidFields(message: String, errors: [Error])
     case unexpected
 }
+
+extension DribbbleError.Error: Decodable {
+    public static func decode(_ decoder: Decoder) throws -> DribbbleError.Error {
+        return try self.init(
+            attribute: decoder.decode(forKeyPath: "attribute"),
+            message: decoder.decode(forKeyPath: "message"))
+    }
+}

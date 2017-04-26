@@ -17,6 +17,21 @@ public protocol Request: APIKit.Request {
 
 extension Request {
     public var baseURL: URL { return URL(string: "https://api.dribbble.com")! }
+
+    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+        switch urlResponse.statusCode {
+        case 400..<500 where urlResponse.statusCode != 404:
+            let message: String = try decode(object)
+            let errors: [DribbbleError.Error]? = try decode(object, rootKeyPath: "errors", optional: true)
+            if let errors = errors {
+                throw DribbbleError.invalidFields(message: message, errors: errors)
+            } else {
+                throw DribbbleError.invalidJSON(message: message)
+            }
+        default:
+            return object
+        }
+    }
 }
 extension Request where Data: Decodable {
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
