@@ -25,7 +25,14 @@ public final class Meta {
         public let url: URL
 
         var queries: [String: String] {
-            return [:]
+            let comps = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            var result: [String: String] = [:]
+            comps?.queryItems?.forEach {
+                if let value = $0.value {
+                    result[$0.name] = value
+                }
+            }
+            return result
         }
     }
     private(set) lazy var link: (prev: Link?, next: Link?) = self.parseLinks()

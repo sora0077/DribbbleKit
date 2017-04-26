@@ -17,16 +17,16 @@ public struct ListTeamMembers<Data: UserData>: PaginatorRequest {
     public let parameters: Any?
 
     public init(username: String) {
-        self.path = "/teams/\(username)/members"
-        self.parameters = nil
+        path = "/teams/\(username)/members"
+        parameters = nil
     }
 
     public init(link: Meta.Link) throws {
-        self.path = link.url.path
-        self.parameters = link.queries
+        path = link.url.path
+        parameters = link.queries
     }
 
-    public func responseElement(from objects: [Any], meta: Meta) throws -> [Data] {
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
         return try decode(objects)
     }
 }

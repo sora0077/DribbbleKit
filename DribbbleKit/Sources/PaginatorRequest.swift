@@ -18,7 +18,7 @@ public protocol PaginatorRequest: Request {
 
     func pagingRequest(from object: Any, meta: Meta) throws -> (prev: Self?, next: Self?)
 
-    func responseElement(from objects: [Any], meta: Meta) throws -> [Element]
+    func responseElements(from objects: [Any], meta: Meta) throws -> [Element]
 }
 
 public struct Paginator<P: PaginatorRequest> {
@@ -45,7 +45,7 @@ extension PaginatorRequest {
             throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: .empty)
         }
         let meta = Meta(urlResponse)
-        let elements = try responseElement(from: list, meta: meta)
+        let elements = try responseElements(from: list, meta: meta)
         let (prev, next) = try pagingRequest(from: object, meta: meta)
         return Paginator(elements, prev: prev, next: next)
     }
