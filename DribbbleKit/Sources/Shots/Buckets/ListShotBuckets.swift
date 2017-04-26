@@ -27,4 +27,3 @@ public struct ListShotBuckets<Shot: ShotData, User: UserData>: ListRequest {
         })
     }
 }
- 
