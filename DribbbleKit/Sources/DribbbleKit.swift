@@ -17,5 +17,14 @@ public enum DribbbleError: Swift.Error {
     }
     case invalidJSON(message: String)
     case invalidFields(message: String, errors: [Error])
+    case rateLimit(message: String, meta: Meta)
     case unexpected
+}
+
+extension DribbbleError.Error: Decodable {
+    public static func decode(_ decoder: Decoder) throws -> DribbbleError.Error {
+        return try self.init(
+            attribute: decoder.decode(forKeyPath: "attribute"),
+            message: decoder.decode(forKeyPath: "message"))
+    }
 }

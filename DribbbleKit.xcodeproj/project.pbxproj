@@ -40,6 +40,8 @@
 		D963DD5A1EB0836700D9F67B /* GetUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD591EB0836700D9F67B /* GetUserFollowing.swift */; };
 		D963DD5C1EB0853100D9F67B /* FollowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5B1EB0853100D9F67B /* FollowUser.swift */; };
 		D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */; };
+		D963DD601EB0900800D9F67B /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5F1EB0900800D9F67B /* DataSet.swift */; };
+		D963DD621EB0918100D9F67B /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD611EB0918100D9F67B /* RequestTests.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -140,6 +142,8 @@
 		D963DD591EB0836700D9F67B /* GetUserFollowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFollowing.swift; sourceTree = "<group>"; };
 		D963DD5B1EB0853100D9F67B /* FollowUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUser.swift; sourceTree = "<group>"; };
 		D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowUser.swift; sourceTree = "<group>"; };
+		D963DD5F1EB0900800D9F67B /* DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		D963DD611EB0918100D9F67B /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -357,7 +361,9 @@
 				D9A22CF81EAF33C300729B14 /* Fixtures */,
 				D9A22CEA1EAF310000729B14 /* Shots */,
 				D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */,
+				D963DD611EB0918100D9F67B /* RequestTests.swift */,
 				D974C42D1E9FD7DE00C46607 /* Info.plist */,
+				D963DD5F1EB0900800D9F67B /* DataSet.swift */,
 			);
 			path = DribbbleKitTests;
 			sourceTree = "<group>";
@@ -732,6 +738,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D963DD601EB0900800D9F67B /* DataSet.swift in Sources */,
+				D963DD621EB0918100D9F67B /* RequestTests.swift in Sources */,
 				D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */,
 				D9A22CEC1EAF312300729B14 /* ShotsTests.swift in Sources */,
 			);
