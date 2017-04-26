@@ -20,8 +20,4 @@ public struct CreateLike<Data: LikeData>: PostRequest {
     public init(id: Shot.Identifier) {
         self.id = id
     }
-
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
-    }
 }

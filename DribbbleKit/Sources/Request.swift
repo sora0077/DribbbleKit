@@ -18,6 +18,11 @@ public protocol Request: APIKit.Request {
 extension Request {
     public var baseURL: URL { return URL(string: "https://api.dribbble.com")! }
 }
+extension Request where Data: Decodable {
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
+        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
+    }
+}
 
 public protocol GetRequest: Request {}
 public protocol PostRequest: Request {}
@@ -29,11 +34,6 @@ public protocol ListRequest: GetRequest {
 
 extension GetRequest {
     public var method: HTTPMethod { return .get }
-}
-extension GetRequest where Data: Decodable {
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
-    }
 }
 extension PostRequest {
     public var method: HTTPMethod { return .post }

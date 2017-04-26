@@ -10,8 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListShotCommentLikes<Comment: CommentData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(comment: Comment, user: User)]>
+public struct ListShotCommentLikes<Like: LikeData, User: UserData>: ListRequest {
+    public typealias Response = DribbbleKit.Response<[(like: Like, user: User)]>
 
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)/likes" }
     private let id: DribbbleKit.Shot.Identifier
