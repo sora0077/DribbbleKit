@@ -1,8 +1,8 @@
 //
-//  ListShotBuckets.swift
+//  ListShotComments.swift
 //  DribbbleKit
 //
-//  Created by 林 達也 on 2017/04/25.
+//  Created by 林 達也 on 2017/04/26.
 //  Copyright © 2017年 jp.sora0077. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListShotBuckets<Shot: ShotData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(shot: Shot, user: User)]>
+public struct ListShotComments<Comment: CommentData, User: UserData>: ListRequest {
+    public typealias Response = DribbbleKit.Response<[(comment: Comment, user: User)]>
 
-    public var path: String { return "/shots/\(id.value)/buckets" }
+    public var path: String { return "/shots/\(id.value)/comments" }
     private let id: DribbbleKit.Shot.Identifier
 
-    public init(shotId: DribbbleKit.Shot.Identifier) {
-        id = shotId
+    public init(id: DribbbleKit.Shot.Identifier) {
+        self.id = id
     }
 
     public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {

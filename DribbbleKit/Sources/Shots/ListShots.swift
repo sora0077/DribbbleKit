@@ -21,7 +21,7 @@ public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: ListReq
         return try Response(meta: Meta(urlResponse), data: objects.map {
             try (shot: decode($0),
                  user: decode($0, rootKeyPath: "user"),
-                 team: optional(decode($0, rootKeyPath: "team"), keyPath: "team"))
+                 team: decode($0, rootKeyPath: "team", optional: true))
         })
     }
 }
