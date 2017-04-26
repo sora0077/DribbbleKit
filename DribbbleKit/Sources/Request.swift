@@ -15,21 +15,34 @@ public protocol Request: APIKit.Request {
     typealias Response = DribbbleKit.Response<Data>
 }
 
+private struct BaseError: Decodable {
+    let message: String
+    let errors: [DribbbleError.Error]?
+
+    func actualError(_ urlResponse: HTTPURLResponse) -> Error {
+        if let errors = errors {
+            return DribbbleError.invalidFields(message: message, errors: errors)
+        } else if urlResponse.statusCode == 429 {
+            return DribbbleError.rateLimit(message: message, meta: Meta(urlResponse))
+        } else {
+            return DribbbleError.invalidJSON(message: message)
+        }
+    }
+
+    static func decode(_ decoder: Decoder) throws -> BaseError {
+        return try self.init(
+            message: decoder.decode(forKeyPath: "message"),
+            errors: decoder.decode(forKeyPath: "errors", optional: true))
+    }
+}
+
 extension Request {
     public var baseURL: URL { return URL(string: "https://api.dribbble.com")! }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         switch urlResponse.statusCode {
         case 400..<500 where urlResponse.statusCode != 404:
-            let message: String = try decode(object)
-            let errors: [DribbbleError.Error]? = try decode(object, rootKeyPath: "errors", optional: true)
-            if let errors = errors {
-                throw DribbbleError.invalidFields(message: message, errors: errors)
-            } else if urlResponse.statusCode == 429 {
-                throw DribbbleError.rateLimit(message: message, meta: Meta(urlResponse))
-            } else {
-                throw DribbbleError.invalidJSON(message: message)
-            }
+            throw (try decode(object) as BaseError).actualError(urlResponse)
         default:
             return object
         }
