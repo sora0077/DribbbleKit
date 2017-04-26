@@ -10,8 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListTeamMembers<Data: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[Data]>
+public struct ListTeamMembers<Data: UserData>: PaginatorRequest {
+    public typealias Element = Data
 
     public var path: String { return "/teams/\(username)/members" }
     private let username: String
@@ -20,7 +20,8 @@ public struct ListTeamMembers<Data: UserData>: ListRequest {
         self.username = username
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [Data] {
+    public func responseElement(from objects: [Any], urlRequest: HTTPURLResponse) throws -> [Element] {
         return try decode(objects)
+
     }
 }

@@ -43,6 +43,7 @@
 		D963DD601EB0900800D9F67B /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5F1EB0900800D9F67B /* DataSet.swift */; };
 		D963DD621EB0918100D9F67B /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD611EB0918100D9F67B /* RequestTests.swift */; };
 		D963DD891EB0B2F200D9F67B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD881EB0B2F200D9F67B /* Error.swift */; };
+		D963DDA91EB0C8D100D9F67B /* PaginatorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DDA81EB0C8D100D9F67B /* PaginatorRequest.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -146,6 +147,7 @@
 		D963DD5F1EB0900800D9F67B /* DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		D963DD611EB0918100D9F67B /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		D963DD881EB0B2F200D9F67B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D963DDA81EB0C8D100D9F67B /* PaginatorRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaginatorRequest.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 				D9FB68971EA884F5006B2D40 /* Teams */,
 				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
 				D98F55CD1EAE2479008C1861 /* Request.swift */,
+				D963DDA81EB0C8D100D9F67B /* PaginatorRequest.swift */,
 				D98F55CF1EAE28AC008C1861 /* Response.swift */,
 				D963DD881EB0B2F200D9F67B /* Error.swift */,
 				D974C43B1E9FE66800C46607 /* Session.swift */,
@@ -727,6 +730,7 @@
 				D98F55CE1EAE2479008C1861 /* Request.swift in Sources */,
 				D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */,
 				D963DD2F1EB0719F00D9F67B /* ListShotCommentLikes.swift in Sources */,
+				D963DDA91EB0C8D100D9F67B /* PaginatorRequest.swift in Sources */,
 				D963DD2D1EB0706300D9F67B /* ListShotComments.swift in Sources */,
 				D963DD5A1EB0836700D9F67B /* GetUserFollowing.swift in Sources */,
 				D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */,
