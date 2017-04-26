@@ -25,6 +25,8 @@ extension Request {
             let errors: [DribbbleError.Error]? = try decode(object, rootKeyPath: "errors", optional: true)
             if let errors = errors {
                 throw DribbbleError.invalidFields(message: message, errors: errors)
+            } else if urlResponse.statusCode == 429 {
+                throw DribbbleError.rateLimit(message: message, meta: Meta(urlResponse))
             } else {
                 throw DribbbleError.invalidJSON(message: message)
             }

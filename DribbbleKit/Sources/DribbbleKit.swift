@@ -17,6 +17,7 @@ public enum DribbbleError: Swift.Error {
     }
     case invalidJSON(message: String)
     case invalidFields(message: String, errors: [Error])
+    case rateLimit(message: String, meta: Meta)
     case unexpected
 }
 
