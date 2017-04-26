@@ -42,6 +42,7 @@
 		D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */; };
 		D963DD601EB0900800D9F67B /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5F1EB0900800D9F67B /* DataSet.swift */; };
 		D963DD621EB0918100D9F67B /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD611EB0918100D9F67B /* RequestTests.swift */; };
+		D963DD891EB0B2F200D9F67B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD881EB0B2F200D9F67B /* Error.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -144,6 +145,7 @@
 		D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowUser.swift; sourceTree = "<group>"; };
 		D963DD5F1EB0900800D9F67B /* DataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		D963DD611EB0918100D9F67B /* RequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
+		D963DD881EB0B2F200D9F67B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				D974C4391E9FDD8700C46607 /* DribbbleKit.swift */,
 				D98F55CD1EAE2479008C1861 /* Request.swift */,
 				D98F55CF1EAE28AC008C1861 /* Response.swift */,
+				D963DD881EB0B2F200D9F67B /* Error.swift */,
 				D974C43B1E9FE66800C46607 /* Session.swift */,
 				D974C4421EA1EC9A00C46607 /* Transformer.swift */,
 				D974C4441EA1F0A600C46607 /* Authorization.swift */,
@@ -680,6 +683,7 @@
 				D963DD3E1EB077A300D9F67B /* ListShotLikes.swift in Sources */,
 				D963DD541EB0800300D9F67B /* Followers.swift in Sources */,
 				D974C43C1E9FE66800C46607 /* Session.swift in Sources */,
+				D963DD891EB0B2F200D9F67B /* Error.swift in Sources */,
 				D963DD351EB073CD00D9F67B /* CreateComment.swift in Sources */,
 				D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */,
 				D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */,
