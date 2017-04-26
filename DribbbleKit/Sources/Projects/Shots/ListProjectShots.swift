@@ -20,9 +20,10 @@ public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamD
         self.id = projectId
     }
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: objects.map {
+    // swiftlint:disable:next large_tuple
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(project: Project, user: User, team: Team)] {
+        return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "user"), decode($0, rootKeyPath: "team"))
-        })
+        }
     }
 }

@@ -20,8 +20,7 @@ public struct GetBucket<Bucket: BucketData, User: UserData>: GetRequest {
         self.id = id
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse),
-                            data: (decode(object), decode(object, rootKeyPath: "user")))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> (bucket: Bucket, user: User) {
+        return try (decode(object), decode(object, rootKeyPath: "user"))
     }
 }

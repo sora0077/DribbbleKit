@@ -21,11 +21,10 @@ public struct ListUserFollowers<Data: FollowerData, User: UserData>: ListRequest
         self.username = username
     }
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: objects.map {
-            try (data: decode($0),
-                 follower: decode($0, rootKeyPath: "follower"))
-        })
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, follower: User)] {
+        return try objects.map {
+            try (decode($0), decode($0, rootKeyPath: "follower"))
+        }
     }
 }
 
@@ -37,10 +36,9 @@ public struct ListAuthenticatedUserFollowers<Data: FollowerData, User: UserData>
 
     public init() {}
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: objects.map {
-            try (data: decode($0),
-                 follower: decode($0, rootKeyPath: "follower"))
-        })
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, follower: User)] {
+        return try objects.map {
+            try (decode($0), decode($0, rootKeyPath: "follower"))
+        }
     }
 }

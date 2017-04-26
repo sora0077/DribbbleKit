@@ -22,10 +22,9 @@ public struct ListShotCommentLikes<Like: LikeData, User: UserData>: ListRequest 
         self.commentId = commentId
     }
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: objects.map {
-            try (shot: decode($0),
-                 user: decode($0, rootKeyPath: "user"))
-        })
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(like: Like, user: User)] {
+        return try objects.map {
+            try (decode($0), decode($0, rootKeyPath: "user"))
+        }
     }
 }

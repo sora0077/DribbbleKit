@@ -13,6 +13,8 @@ import Alter
 public protocol Request: APIKit.Request {
     associatedtype Data
     typealias Response = DribbbleKit.Response<Data>
+
+    func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data
 }
 
 private struct BaseError: Decodable {
@@ -47,10 +49,14 @@ extension Request {
             return object
         }
     }
+
+    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
+        return try DribbbleKit.Response(meta: Meta(urlResponse), data: responseData(from: object, urlResponse: urlResponse))
+    }
 }
 extension Request where Data: Decodable {
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
+        return try decode(object)
     }
 }
 
@@ -59,7 +65,7 @@ public protocol PostRequest: Request {}
 public protocol PutRequest: Request {}
 public protocol DeleteRequest: Request {}
 public protocol ListRequest: GetRequest {
-    func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Self.Response
+    func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Data
 }
 
 extension GetRequest {
@@ -74,15 +80,15 @@ extension PutRequest {
 extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Void> {
-        return DribbbleKit.Response(meta: Meta(urlResponse), data: ())
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws {
+        return
     }
 }
 extension ListRequest {
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Self.Response {
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
         guard let list = object as? [Any] else {
             throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: [])
         }
-        return try response(from: list, urlResponse: urlResponse)
+        return try responseData(from: list, urlResponse: urlResponse)
     }
 }

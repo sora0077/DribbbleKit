@@ -22,9 +22,7 @@ public struct GetComment<Comment: CommentData, User: UserData>: GetRequest {
         self.commentId = commentId
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: (
-            comment: decode(object),
-            user: decode(object, rootKeyPath: "user")))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> (comment: Comment, user: User) {
+        return try (decode(object), decode(object, rootKeyPath: "user"))
     }
 }

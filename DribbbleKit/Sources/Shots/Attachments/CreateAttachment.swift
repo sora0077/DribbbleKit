@@ -22,12 +22,11 @@ public struct CreateAttachment: PostRequest {
         self.data = data
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        let meta = Meta(urlResponse)
-        guard let location = meta["Location"] as? String,
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Attachment.Identifier {
+        guard let location = urlResponse.allHeaderFields["Location"] as? String,
             let id = location.components(separatedBy: "/").last.flatMap({ Int($0) }) else {
                 throw DribbbleError.unexpected
         }
-        return Response(meta: meta, data: Attachment.Identifier(integerLiteral: id))
+        return Attachment.Identifier(integerLiteral: id)
     }
 }

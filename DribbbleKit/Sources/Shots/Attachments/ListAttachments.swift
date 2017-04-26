@@ -20,7 +20,7 @@ public struct ListAttachments<Data: AttachmentData>: ListRequest {
         self.id = shotId
     }
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: decode(objects))
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [Data] {
+        return try decode(objects)
     }
 }

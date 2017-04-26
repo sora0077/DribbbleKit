@@ -20,7 +20,7 @@ public struct FollowUser: PutRequest {
         self.target = target
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return Response(meta: Meta(urlResponse), data: ())
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws {
+        return
     }
 }

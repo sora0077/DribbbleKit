@@ -20,10 +20,7 @@ public struct GetLike<Data: LikeData>: GetRequest {
         self.id = id
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        if urlResponse.statusCode == 404 {
-            return Response(meta: Meta(urlResponse), data: nil)
-        }
-        return try Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data? {
+        return urlResponse.statusCode == 404  ? nil : try decode(object)
     }
 }
