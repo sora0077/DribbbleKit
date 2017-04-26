@@ -17,11 +17,12 @@ public struct ListUserFollowingShots<Shot: ShotData, User: UserData, Team: TeamD
 
     public init() {}
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: objects.map {
-            try (shot: decode($0),
-                 user: decode($0, rootKeyPath: "user"),
-                 team: decode($0, rootKeyPath: "team", optional: true))
-        })
+    // swiftlint:disable:next large_tuple
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(shot: Shot, user: User, team: Team?)] {
+        return try objects.map {
+            try (decode($0),
+                 decode($0, rootKeyPath: "user"),
+                 decode($0, rootKeyPath: "team", optional: true))
+        }
     }
 }

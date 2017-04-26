@@ -27,7 +27,7 @@ public struct CreateBucket<Data: BucketData>: PostRequest {
         self.description = description
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
+        return try decode(object)
     }
 }

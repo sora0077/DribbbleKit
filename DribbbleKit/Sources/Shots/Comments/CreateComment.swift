@@ -23,7 +23,7 @@ public struct CreateComment<Data: CommentData>: PostRequest {
         self.body = body
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
+        return try decode(object)
     }
 }

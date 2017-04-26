@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct GetAttachments<Data: AttachmentData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias Response = DribbbleKit.Response<[Data]>
 
     public var path: String { return "/shots/\(shotId)/attachments/\(id.value)" }
     private let shotId: Shot.Identifier
@@ -22,7 +22,7 @@ public struct GetAttachments<Data: AttachmentData>: ListRequest {
         self.id = id
     }
 
-    public func response(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: decode(objects))
+    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [Data] {
+        return try decode(objects)
     }
 }

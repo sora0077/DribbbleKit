@@ -21,8 +21,8 @@ public struct ListUserBucket<Data: BucketData>: GetRequest {
         self.username = username
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> [Data] {
+        return try decode(object)
     }
 }
 
@@ -34,7 +34,7 @@ public struct ListAuthenticatedUserBucket<Data: BucketData>: GetRequest {
 
     public init() {}
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> [Data] {
+        return try decode(object)
     }
 }
