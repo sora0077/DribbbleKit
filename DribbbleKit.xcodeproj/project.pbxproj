@@ -37,6 +37,9 @@
 		D963DD541EB0800300D9F67B /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD531EB0800300D9F67B /* Followers.swift */; };
 		D963DD561EB081AD00D9F67B /* ListUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD551EB081AD00D9F67B /* ListUserFollowing.swift */; };
 		D963DD581EB082BF00D9F67B /* ListUserFollowingShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD571EB082BF00D9F67B /* ListUserFollowingShots.swift */; };
+		D963DD5A1EB0836700D9F67B /* GetUserFollowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD591EB0836700D9F67B /* GetUserFollowing.swift */; };
+		D963DD5C1EB0853100D9F67B /* FollowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5B1EB0853100D9F67B /* FollowUser.swift */; };
+		D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */; };
 		D974C4271E9FD7DE00C46607 /* DribbbleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */; };
 		D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */; };
 		D974C42E1E9FD7DE00C46607 /* DribbbleKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D974C4201E9FD7DE00C46607 /* DribbbleKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -134,6 +137,9 @@
 		D963DD531EB0800300D9F67B /* Followers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		D963DD551EB081AD00D9F67B /* ListUserFollowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserFollowing.swift; sourceTree = "<group>"; };
 		D963DD571EB082BF00D9F67B /* ListUserFollowingShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserFollowingShots.swift; sourceTree = "<group>"; };
+		D963DD591EB0836700D9F67B /* GetUserFollowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFollowing.swift; sourceTree = "<group>"; };
+		D963DD5B1EB0853100D9F67B /* FollowUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUser.swift; sourceTree = "<group>"; };
+		D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowUser.swift; sourceTree = "<group>"; };
 		D974C41D1E9FD7DE00C46607 /* DribbbleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DribbbleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D974C4201E9FD7DE00C46607 /* DribbbleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DribbbleKit.h; sourceTree = "<group>"; };
 		D974C4211E9FD7DE00C46607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -299,6 +305,9 @@
 				D963DD511EB07FC000D9F67B /* ListUserFollowers.swift */,
 				D963DD551EB081AD00D9F67B /* ListUserFollowing.swift */,
 				D963DD571EB082BF00D9F67B /* ListUserFollowingShots.swift */,
+				D963DD591EB0836700D9F67B /* GetUserFollowing.swift */,
+				D963DD5B1EB0853100D9F67B /* FollowUser.swift */,
+				D963DD5D1EB0874C00D9F67B /* UnfollowUser.swift */,
 			);
 			path = Followers;
 			sourceTree = "<group>";
@@ -670,6 +679,7 @@
 				D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */,
 				D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */,
 				D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */,
+				D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */,
 				D963DD521EB07FC000D9F67B /* ListUserFollowers.swift in Sources */,
 				D963DD371EB074E100D9F67B /* GetComment.swift in Sources */,
 				D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */,
@@ -689,6 +699,7 @@
 				D963DD561EB081AD00D9F67B /* ListUserFollowing.swift in Sources */,
 				D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */,
 				D963DD581EB082BF00D9F67B /* ListUserFollowingShots.swift in Sources */,
+				D963DD5C1EB0853100D9F67B /* FollowUser.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
 				D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */,
@@ -707,6 +718,7 @@
 				D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */,
 				D963DD2F1EB0719F00D9F67B /* ListShotCommentLikes.swift in Sources */,
 				D963DD2D1EB0706300D9F67B /* ListShotComments.swift in Sources */,
+				D963DD5A1EB0836700D9F67B /* GetUserFollowing.swift in Sources */,
 				D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */,
 				D963DD331EB0720000D9F67B /* Comments.swift in Sources */,
 				D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */,
