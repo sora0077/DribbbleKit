@@ -13,15 +13,20 @@ import Alter
 public struct ListTeamMembers<Data: UserData>: PaginatorRequest {
     public typealias Element = Data
 
-    public var path: String { return "/teams/\(username)/members" }
-    private let username: String
+    public let path: String
+    public let parameters: Any?
 
     public init(username: String) {
-        self.username = username
+        self.path = "/teams/\(username)/members"
+        self.parameters = nil
     }
 
-    public func responseElement(from objects: [Any], urlRequest: HTTPURLResponse) throws -> [Element] {
-        return try decode(objects)
+    public init(link: Meta.Link) throws {
+        self.path = link.url.path
+        self.parameters = link.queries
+    }
 
+    public func responseElement(from objects: [Any], meta: Meta) throws -> [Data] {
+        return try decode(objects)
     }
 }

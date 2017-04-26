@@ -21,6 +21,14 @@ public final class Meta {
         var remaining: Int
         var reset: Int
     }
+    public struct Link {
+        public let url: URL
+
+        var queries: [String: String] {
+            return [:]
+        }
+    }
+    private(set) lazy var link: (prev: Link?, next: Link?) = self.parseLinks()
     private let urlResponse: HTTPURLResponse
     private var headers: [AnyHashable: Any] { return urlResponse.allHeaderFields }
 
@@ -36,6 +44,29 @@ public final class Meta {
 
     init(_ urlResponse: HTTPURLResponse) {
         self.urlResponse = urlResponse
+    }
+
+    private func parseLinks() -> (prev: Link?, next: Link?) {
+        func parse(_ urlAndRel: [String]) -> (rel: String, link: Link)? {
+            var urlString = urlAndRel[0]
+            let relString = urlAndRel[1]
+            urlString = urlString
+                .substring(to: urlString.index(urlString.endIndex, offsetBy: -1))
+                .substring(from: urlString.index(urlString.startIndex, offsetBy: 1))
+            let keyValue = relString.replacingOccurrences(of: "\"", with: "").components(separatedBy: "=")
+            guard let url = URL(string: urlString), let rel = keyValue.last, keyValue.first == "rel" else {
+                return nil
+            }
+            return (rel, Link(url: url))
+        }
+
+        guard let string = self["Link"] as? String else { return (nil, nil) }
+        let pairs = string.components(separatedBy: ",")
+        let links = pairs.flatMap { parse($0.components(separatedBy: ";")) }
+        let map = [
+            "prev": links.first(where: { $0.rel == "prev" })?.link,
+            "next": links.first(where: { $0.rel == "next" })?.link]
+        return (map["prev"] ?? nil, map["next"] ?? nil)
     }
 }
 
