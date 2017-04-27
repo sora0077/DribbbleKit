@@ -10,11 +10,19 @@ import Foundation
 
 public struct Configuration {
     public var perPage: Int?
+    public var baseURL: URL?
+
+    public init(perPage: Int? = nil, baseURL: URL? = nil) {
+        self.perPage = perPage
+        self.baseURL = baseURL
+    }
 }
-private(set) var configuration: Configuration?
+
+var configuration: Configuration { return _configuration ?? Configuration() }
+private(set) var _configuration: Configuration?
 
 public func setup(_ config: Configuration) {
-    configuration = config
+    _configuration = config
 }
 
 // MARK: - helper

@@ -14,11 +14,11 @@ public protocol Request: APIKit.Request {
     associatedtype Data
     typealias Response = DribbbleKit.Response<Data>
 
-    func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data
+    func responseData(from object: Any, meta: Meta) throws -> Data
 }
 
 extension Request {
-    public var baseURL: URL { return URL(string: "https://api.dribbble.com")! }
+    public var baseURL: URL { return configuration.baseURL ?? URL(string: "https://api.dribbble.com")! }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         try throwIfErrorOccurred(from: object, urlResponse: urlResponse)
@@ -26,11 +26,12 @@ extension Request {
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: responseData(from: object, urlResponse: urlResponse))
+        let meta = Meta(urlResponse)
+        return try DribbbleKit.Response(meta: meta, data: responseData(from: object, meta: meta))
     }
 }
 extension Request where Data: Decodable {
-    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
+    public func responseData(from object: Any, meta: Meta) throws -> Data {
         return try decode(object)
     }
 }
@@ -52,7 +53,7 @@ extension PutRequest {
 extension DeleteRequest {
     public var method: HTTPMethod { return .delete }
 
-    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws {
+    public func responseData(from object: Any, meta: Meta) throws {
         return
     }
 }

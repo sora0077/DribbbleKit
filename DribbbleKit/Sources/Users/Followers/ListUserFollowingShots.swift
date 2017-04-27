@@ -16,7 +16,7 @@ public struct ListUserFollowingShots<Shot: ShotData, User: UserData, Team: TeamD
     public let path: String
     public let parameters: Any?
 
-    public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
+    public init(page: Int? = nil, perPage: Int? = configuration.perPage) {
         path = "/user/following/shots"
         parameters = [
             "page": page,
