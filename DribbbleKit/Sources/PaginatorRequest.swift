@@ -16,7 +16,7 @@ public protocol PaginatorRequest: Request {
 
     init(link: Meta.Link) throws
 
-    func pagingRequest(from object: Any, meta: Meta) throws -> (prev: Self?, next: Self?)
+    func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?)
 
     func responseElements(from objects: [Any], meta: Meta) throws -> [Element]
 }
@@ -36,7 +36,7 @@ public struct Paginator<P: PaginatorRequest> {
 extension PaginatorRequest {
     public var method: HTTPMethod { return .get }
 
-    public func pagingRequest(from object: Any, meta: Meta) throws -> (prev: Self?, next: Self?) {
+    public func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?) {
         return try (meta.link.prev.map(type(of: self).init), meta.link.next.map(type(of: self).init))
     }
 
@@ -46,7 +46,7 @@ extension PaginatorRequest {
         }
         let meta = Meta(urlResponse)
         let elements = try responseElements(from: list, meta: meta)
-        let (prev, next) = try pagingRequest(from: object, meta: meta)
+        let (prev, next) = try pagingRequests(from: list, meta: meta)
         return Paginator(elements, prev: prev, next: next)
     }
 }
