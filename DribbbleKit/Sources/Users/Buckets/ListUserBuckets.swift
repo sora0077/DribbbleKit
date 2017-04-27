@@ -11,30 +11,49 @@ import APIKit
 import Alter
 
 // MARK: - ListUserBucket
-public struct ListUserBucket<Data: BucketData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<[Data]>
+public struct ListUserBucket<Data: BucketData>: PaginatorRequest {
+    public typealias Element = Data
 
-    public var path: String { return "/users/\(username)/buckets" }
-    private let username: String
+    public let path: String
+    public let parameters: Any?
 
-    public init(username: String) {
-        self.username = username
+    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+        path = "/users/\(username)/buckets"
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
-    public func responseData(from object: Any, meta: Meta) throws -> [Data] {
-        return try decode(object)
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
+        return try decode(objects)
     }
 }
 
 // MARK: - ListAuthenticatedUserBucket
-public struct ListAuthenticatedUserBucket<Data: BucketData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<[Data]>
+public struct ListAuthenticatedUserBucket<Data: BucketData>: PaginatorRequest {
+    public typealias Element = Data
 
-    public var path: String { return "/user/buckets" }
+    public let path: String
+    public let parameters: Any?
 
-    public init() {}
+    public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
+        path = "/user/buckets"
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
+    }
 
-    public func responseData(from object: Any, meta: Meta) throws -> [Data] {
-        return try decode(object)
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
+        return try decode(objects)
     }
 }
