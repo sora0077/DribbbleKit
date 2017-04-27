@@ -39,9 +39,6 @@ public protocol GetRequest: Request {}
 public protocol PostRequest: Request {}
 public protocol PutRequest: Request {}
 public protocol DeleteRequest: Request {}
-public protocol ListRequest: GetRequest {
-    func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> Data
-}
 
 extension GetRequest {
     public var method: HTTPMethod { return .get }
@@ -57,13 +54,5 @@ extension DeleteRequest {
 
     public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws {
         return
-    }
-}
-extension ListRequest {
-    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
-        guard let list = object as? [Any] else {
-            throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: [])
-        }
-        return try responseData(from: list, urlResponse: urlResponse)
     }
 }

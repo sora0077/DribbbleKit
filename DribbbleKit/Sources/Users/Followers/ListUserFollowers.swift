@@ -11,17 +11,23 @@ import APIKit
 import Alter
 
 // MARK: - ListUserFollowers
-public struct ListUserFollowers<Data: FollowerData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(data: Data, follower: User)]>
+public struct ListUserFollowers<Data: FollowerData, User: UserData>: PaginatorRequest {
+    public typealias Element = (data: Data, follower: User)
 
-    public var path: String { return "/users/\(username)/followers" }
-    private let username: String
+    public let path: String
+    public let parameters: Any?
 
     public init(username: String) {
-        self.username = username
+        path = "/users/\(username)/followers"
+        parameters = nil
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, follower: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(data: Data, follower: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "follower"))
         }
@@ -29,14 +35,23 @@ public struct ListUserFollowers<Data: FollowerData, User: UserData>: ListRequest
 }
 
 // MARK: - ListAuthenticatedUserFollowers
-public struct ListAuthenticatedUserFollowers<Data: FollowerData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(data: Data, follower: User)]>
+public struct ListAuthenticatedUserFollowers<Data: FollowerData, User: UserData>: PaginatorRequest {
+    public typealias Element = (data: Data, follower: User)
 
-    public var path: String { return "/user/followers" }
+    public let path: String
+    public let parameters: Any?
 
-    public init() {}
+    public init() {
+        path = "/user/followers"
+        parameters = nil
+    }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, follower: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(data: Data, follower: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "follower"))
         }
