@@ -26,10 +26,9 @@ public struct Paginator<P: PaginatorRequest> {
     public let prev: P?
     public let next: P?
 
-    init(_ elements: [P.Element], prev: P?, next: P?) {
+    init(elements: [P.Element], requests: (prev: P?, next: P?)) {
         self.elements = elements
-        self.prev = prev
-        self.next = next
+        (self.prev, self.next) = requests
     }
 }
 
@@ -40,13 +39,11 @@ extension PaginatorRequest {
         return try (meta.link.prev.map(type(of: self).init), meta.link.next.map(type(of: self).init))
     }
 
-    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Paginator<Self> {
+    public func responseData(from object: Any, meta: Meta) throws -> Paginator<Self> {
         guard let list = object as? [Any] else {
             throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: .empty)
         }
-        let meta = Meta(urlResponse)
-        let elements = try responseElements(from: list, meta: meta)
-        let (prev, next) = try pagingRequests(from: list, meta: meta)
-        return Paginator(elements, prev: prev, next: next)
+        return try Paginator(elements: responseElements(from: list, meta: meta),
+                             requests: pagingRequests(from: list, meta: meta))
     }
 }

@@ -36,6 +36,9 @@ public final class Meta {
         }
     }
     private(set) lazy var link: (prev: Link?, next: Link?) = self.parseLinks()
+    public var status: Int {
+        return urlResponse.statusCode
+    }
     private let urlResponse: HTTPURLResponse
     private var headers: [AnyHashable: Any] { return urlResponse.allHeaderFields }
 
