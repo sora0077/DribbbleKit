@@ -30,4 +30,16 @@ struct Transformer {
     private static func typeMismatch(expected: Any.Type, actual: Any) -> Error {
         return DecodeError.typeMismatch(expected: expected, actual: actual, keyPath: [])
     }
+
+    private init() {}
+}
+
+struct ParameterTransformer {
+    static let date: (Date) -> String = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string
+    }()
+
+    private init() {}
 }
