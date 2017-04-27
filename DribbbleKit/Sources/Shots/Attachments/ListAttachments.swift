@@ -10,17 +10,23 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListAttachments<Data: AttachmentData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[Data]>
+public struct ListAttachments<Data: AttachmentData>: PaginatorRequest {
+    public typealias Element = Data
 
-    public var path: String { return "/shots/\(id.value)/attachments" }
-    private let id: Shot.Identifier
+    public let path: String
+    public let parameters: Any?
 
-    public init(shotId: Shot.Identifier) {
-        self.id = shotId
+    public init(id: Shot.Identifier) {
+        path = "/shots/\(id.value)/attachments"
+        parameters = nil
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [Data] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
         return try decode(objects)
     }
 }

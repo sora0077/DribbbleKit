@@ -10,17 +10,23 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListShotComments<Comment: CommentData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(comment: Comment, user: User)]>
+public struct ListShotComments<Comment: CommentData, User: UserData>: PaginatorRequest {
+    public typealias Element = (comment: Comment, user: User)
 
-    public var path: String { return "/shots/\(id.value)/comments" }
-    private let id: DribbbleKit.Shot.Identifier
+    public let path: String
+    public let parameters: Any?
 
     public init(id: DribbbleKit.Shot.Identifier) {
-        self.id = id
+        path = "/shots/\(id.value)/comments"
+        parameters = nil
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(comment: Comment, user: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(comment: Comment, user: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "user"))
         }

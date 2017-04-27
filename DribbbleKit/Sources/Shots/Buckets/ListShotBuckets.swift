@@ -10,17 +10,23 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListShotBuckets<Shot: ShotData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(shot: Shot, user: User)]>
+public struct ListShotBuckets<Shot: ShotData, User: UserData>: PaginatorRequest {
+    public typealias Element = (shot: Shot, user: User)
 
-    public var path: String { return "/shots/\(id.value)/buckets" }
-    private let id: DribbbleKit.Shot.Identifier
+    public let path: String
+    public let parameters: Any?
 
-    public init(shotId: DribbbleKit.Shot.Identifier) {
-        id = shotId
+    public init(id: DribbbleKit.Shot.Identifier) {
+        path = "/shots/\(id.value)/buckets"
+        parameters = nil
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(shot: Shot, user: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(shot: Shot, user: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "user"))
         }

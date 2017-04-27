@@ -11,17 +11,23 @@ import APIKit
 import Alter
 
 // MARK: - ListUserFollowings
-public struct ListUserFollowing<Data: FollowerData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(data: Data, followee: User)]>
+public struct ListUserFollowing<Data: FollowerData, User: UserData>: PaginatorRequest {
+    public typealias Element = (data: Data, followee: User)
 
-    public var path: String { return "/users/\(username)/following" }
-    private let username: String
+    public let path: String
+    public let parameters: Any?
 
     public init(username: String) {
-        self.username = username
+        path = "/users/\(username)/following"
+        parameters = nil
     }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, followee: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(data: Data, followee: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "followee"))
         }
@@ -29,14 +35,23 @@ public struct ListUserFollowing<Data: FollowerData, User: UserData>: ListRequest
 }
 
 // MARK: - ListAuthenticatedUserFollowing
-public struct ListAuthenticatedUserFollowing<Data: FollowerData, User: UserData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(data: Data, followee: User)]>
+public struct ListAuthenticatedUserFollowing<Data: FollowerData, User: UserData>: PaginatorRequest {
+    public typealias Element = (data: Data, followee: User)
 
-    public var path: String { return "/user/following" }
+    public let path: String
+    public let parameters: Any?
 
-    public init() {}
+    public init(username: String) {
+        path = "/users/following"
+        parameters = nil
+    }
 
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(data: Data, followee: User)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(data: Data, followee: User)] {
         return try objects.map {
             try (decode($0), decode($0, rootKeyPath: "followee"))
         }
