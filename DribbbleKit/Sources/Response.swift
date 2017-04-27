@@ -69,7 +69,7 @@ public final class Meta {
 
         guard let string = self["Link"] as? String else { return (nil, nil) }
         let pairs = string.components(separatedBy: ",")
-        let links = pairs.flatMap { parse($0.components(separatedBy: ";")) }
+        let links = pairs.flatMap { parse($0.replacingOccurrences(of: " ", with: "").components(separatedBy: ";")) }
         let map = [
             "prev": links.first(where: { $0.rel == "prev" })?.link,
             "next": links.first(where: { $0.rel == "next" })?.link]
