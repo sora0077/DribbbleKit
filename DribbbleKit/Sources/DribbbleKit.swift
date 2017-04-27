@@ -8,29 +8,22 @@
 
 import Foundation
 
-protocol OptionalType {
-    associatedtype WrappedType
+public struct Configuration {
+    public var perPage: Int?
+}
+private(set) var configuration: Configuration?
 
-    var value: WrappedType? { get }
+public func setup(_ config: Configuration) {
+    configuration = config
 }
 
-extension Optional: OptionalType {
-    typealias WrappedType = Wrapped
-
-    var value: Wrapped? {
-        switch self {
-        case .some(let value): return value
-        case .none: return nil
-        }
-    }
-}
-
-extension Dictionary where Value: OptionalType {
-    var cleaned: [Key: Value.WrappedType] {
+// MARK: - helper
+extension Dictionary where Value == Any? {
+    var cleaned: [Key: Any] {
         // swiftlint:disable:next syntactic_sugar
-        var dict = Dictionary<Key, Value.WrappedType>(minimumCapacity: count)
+        var dict = Dictionary<Key, Any>(minimumCapacity: count)
         for (k, v) in self {
-            if let value = v.value {
+            if let value = v {
                 dict[k] = value
             }
         }

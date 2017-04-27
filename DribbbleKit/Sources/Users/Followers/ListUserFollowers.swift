@@ -17,9 +17,11 @@ public struct ListUserFollowers<Data: FollowerData, User: UserData>: PaginatorRe
     public let path: String
     public let parameters: Any?
 
-    public init(username: String) {
+    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/users/\(username)/followers"
-        parameters = nil
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
     public init(link: Meta.Link) throws {
@@ -41,9 +43,11 @@ public struct ListAuthenticatedUserFollowers<Data: FollowerData, User: UserData>
     public let path: String
     public let parameters: Any?
 
-    public init() {
+    public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/user/followers"
-        parameters = nil
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
     public init(link: Meta.Link) throws {

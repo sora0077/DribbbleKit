@@ -16,9 +16,12 @@ public struct ListShotCommentLikes<Like: LikeData, User: UserData>: PaginatorReq
     public let path: String
     public let parameters: Any?
 
-    public init(id: DribbbleKit.Shot.Identifier, commentId: DribbbleKit.Comment.Identifier) {
+    public init(id: DribbbleKit.Shot.Identifier, commentId: DribbbleKit.Comment.Identifier,
+                page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/shots/\(id.value)/comments/\(commentId.value)/likes"
-        parameters = nil
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
     public init(link: Meta.Link) throws {

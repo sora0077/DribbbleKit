@@ -43,13 +43,15 @@ public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: Paginat
     public let path: String
     public let parameters: Any?
 
-    public init(list: List? = nil, date: Date? = nil, sort: Sort? = nil) {
+    public init(list: List? = nil, date: Date? = nil, sort: Sort? = nil, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/shots"
         parameters = [
             "list": list?.rawValue,
             "timeframe": sort?.timeframe?.rawValue,
             "sort": sort?.rawValue,
-            "date": date.map(ParameterTransformer.date)
+            "date": date.map(ParameterTransformer.date),
+            "page": page,
+            "per_page": perPage
         ].cleaned
     }
 

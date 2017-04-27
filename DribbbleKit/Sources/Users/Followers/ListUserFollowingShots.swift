@@ -16,9 +16,11 @@ public struct ListUserFollowingShots<Shot: ShotData, User: UserData, Team: TeamD
     public let path: String
     public let parameters: Any?
 
-    public init() {
+    public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/user/following/shots"
-        parameters = nil
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
     public init(link: Meta.Link) throws {
