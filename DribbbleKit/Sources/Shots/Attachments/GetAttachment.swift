@@ -16,7 +16,7 @@ public struct GetAttachments<Data: AttachmentData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(shotId: Shot.Identifier, id: Attachment.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+    public init(shotId: Shot.Identifier, id: Attachment.Identifier, page: Int? = nil, perPage: Int? = configuration.perPage) {
         path = "/shots/\(shotId)/attachments/\(id.value)"
         parameters = [
             "page": page,

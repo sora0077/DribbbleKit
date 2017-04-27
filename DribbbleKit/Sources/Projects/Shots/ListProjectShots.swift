@@ -16,7 +16,7 @@ public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamD
     public let path: String
     public let parameters: Any?
 
-    public init(projectId: DribbbleKit.Project.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+    public init(projectId: DribbbleKit.Project.Identifier, page: Int? = nil, perPage: Int? = configuration.perPage) {
         path = "/projects/\(projectId.value)/shots"
         parameters = [
             "page": page,
