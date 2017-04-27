@@ -13,12 +13,44 @@ import Alter
 public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
     public typealias Element = (shot: Shot, user: User, team: Team?)
 
+    public enum List: String {
+        case animated, attachments, debuts, playoffs, rebounds, terms
+    }
+    public enum Timeframe: String {
+        case week, month, year, ever
+    }
+    public enum Sort {
+        case comments(Timeframe?)
+        case views(Timeframe?)
+        case recent
+
+        var rawValue: String? {
+            switch self {
+            case .comments: return "comments"
+            case .recent: return "recent"
+            case .views: return "views"
+            }
+        }
+
+        var timeframe: Timeframe? {
+            switch self {
+            case .comments(let timeframe), .views(let timeframe): return timeframe
+            default: return nil
+            }
+        }
+    }
+
     public let path: String
     public let parameters: Any?
 
-    public init() {
+    public init(list: List? = nil, date: Date? = nil, sort: Sort? = nil) {
         path = "/shots"
-        parameters = nil
+        parameters = [
+            "list": list?.rawValue,
+            "timeframe": sort?.timeframe?.rawValue,
+            "sort": sort?.rawValue,
+            "date": date.map(ParameterTransformer.date)
+        ].cleaned
     }
 
     public init(link: Meta.Link) throws {
