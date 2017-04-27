@@ -10,15 +10,23 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: ListRequest {
-    public typealias Response = DribbbleKit.Response<[(shot: Shot, user: User, team: Team?)]>
+public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
+    public typealias Element = (shot: Shot, user: User, team: Team?)
 
-    public var path: String { return "/shots" }
+    public let path: String
+    public let parameters: Any?
 
-    public init() {}
+    public init() {
+        path = "/shots"
+        parameters = nil
+    }
 
-    // swiftlint:disable:next large_tuple
-    public func responseData(from objects: [Any], urlResponse: HTTPURLResponse) throws -> [(shot: Shot, user: User, team: Team?)] {
+    public init(link: Meta.Link) throws {
+        path = link.url.path
+        parameters = link.queries
+    }
+
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Element] {
         return try objects.map {
             try (decode($0),
                  decode($0, rootKeyPath: "user"),

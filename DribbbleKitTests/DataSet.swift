@@ -98,6 +98,21 @@ extension DataSet {
         return build(statusCode: statusCode, headerFields: headerFields)
     }
 
+    static func linkURLResponse(prev: URL?, next: URL?, headerFields: [String: String]? = nil) -> HTTPURLResponse {
+        var headers = headerFields ?? [:]
+        var prevString: String?
+        var nextString: String?
+        if let prev = prev?.absoluteString {
+            prevString = "<\(prev)>; rel=\"prev\""
+        }
+        if let next = next?.absoluteString {
+            nextString = "<\(next)>; rel=\"next\""
+        }
+        let link = [prevString, nextString].flatMap { $0 }.joined(separator: ", ")
+        headers["Link"] = link
+        return build(statusCode: 200, headerFields: headers)
+    }
+
     static let badRequestURLResponse = build(statusCode: 400)
 
     static let notFoundURLResponse = build(statusCode: 404)

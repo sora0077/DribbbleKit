@@ -10,17 +10,20 @@ import XCTest
 @testable import DribbbleKit
 
 protocol JSONTestable {
-    func load(_ filename: String) throws -> Data
+    func load(_ filename: String) throws -> Any
 }
 
 extension JSONTestable {
-    func load(_ filename: String) throws -> Data {
+    func load(_ filename: String) throws -> Any {
         let bundle = Bundle(for: DribbbleKitTests.self)
         guard let path = bundle.path(forResource: filename, ofType: "json") else {
             return Data()
         }
         let string = try String(contentsOfFile: path)
-        return string.data(using: .utf8) ?? Data()
+
+        let data = string.data(using: .utf8) ?? Data()
+        let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        return json
     }
 }
 
