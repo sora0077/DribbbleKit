@@ -75,6 +75,40 @@ struct DataSet {
         }
     }
 
+    struct BucketEntity: BucketData {
+        init(id: Bucket.Identifier,
+             name: String,
+             description: String,
+             shotsCount: Int,
+             createdAt: Date,
+             updatedAt: Date
+            ) throws {
+        }
+    }
+
+    struct AttachmentEntity: AttachmentData {
+        init(id: Int,
+             url: URL,
+             thumbnailURL: URL,
+             size: Int,
+             contentType: String,
+             viewsCount: Int,
+             createdAt: Date
+            ) throws {
+        }
+    }
+
+    struct CommentEntity: CommentData {
+        init(id: Comment.Identifier,
+             body: String,
+             likesCount: Int,
+             likesURL: URL,
+             createdAt: Date,
+             updatedAt: Date
+            ) throws {
+        }
+    }
+
     struct LikeEntity: LikeData {
         let id: Int
         init(id: Int, createdAt: Date) throws {
