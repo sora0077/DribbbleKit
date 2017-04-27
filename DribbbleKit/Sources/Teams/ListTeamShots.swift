@@ -16,9 +16,11 @@ public struct ListTeamShots<Shot: ShotData, User: UserData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(username: String) {
+    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/teams/\(username)/shots"
-        parameters = nil
+        parameters = [
+            "page": page,
+            "per_page": perPage].cleaned
     }
 
     public init(link: Meta.Link) throws {
