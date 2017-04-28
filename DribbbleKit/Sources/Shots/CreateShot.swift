@@ -29,12 +29,11 @@ public struct CreateShot: PostRequest {
         self.image = image
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        let meta = Meta(urlResponse)
+    public func responseData(from object: Any, meta: Meta) throws -> Shot.Identifier {
         guard let location = meta["Location"] as? String,
             let id = location.components(separatedBy: "/").last.flatMap({ Int($0) }) else {
-            throw DribbbleError.unexpected
+                throw DribbbleError.unexpected
         }
-        return Response(meta: meta, data: Shot.Identifier(integerLiteral: id))
+        return Shot.Identifier(integerLiteral: id)
     }
 }
