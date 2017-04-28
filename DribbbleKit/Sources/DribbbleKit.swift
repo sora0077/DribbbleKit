@@ -18,11 +18,10 @@ public struct Configuration {
     }
 }
 
-var configuration: Configuration { return _configuration ?? Configuration() }
-private(set) var _configuration: Configuration?
+private(set) var configuration: Configuration?
 
 public func setup(_ config: Configuration) {
-    _configuration = config
+    configuration = config
 }
 
 // MARK: - helper

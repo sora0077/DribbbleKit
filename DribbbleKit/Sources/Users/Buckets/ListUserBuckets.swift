@@ -17,7 +17,7 @@ public struct ListUserBucket<Data: BucketData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(username: String, page: Int? = nil, perPage: Int? = configuration.perPage) {
+    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/users/\(username)/buckets"
         parameters = [
             "page": page,
@@ -41,7 +41,7 @@ public struct ListAuthenticatedUserBucket<Data: BucketData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(page: Int? = nil, perPage: Int? = configuration.perPage) {
+    public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/user/buckets"
         parameters = [
             "page": page,

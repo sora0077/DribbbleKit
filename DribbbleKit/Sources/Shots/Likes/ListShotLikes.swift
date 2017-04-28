@@ -16,7 +16,7 @@ public struct ListShotLikes<Like: LikeData, User: UserData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(id: Shot.Identifier, page: Int? = nil, perPage: Int? = configuration.perPage) {
+    public init(id: Shot.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/shots/\(id.value)/likes"
         parameters = [
             "page": page,
