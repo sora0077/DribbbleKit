@@ -18,7 +18,7 @@ public struct CreateBucket<Data: BucketData>: PostRequest {
     public var parameters: Any? {
         return [
             "name": name,
-            "description": description]
+            "description": description].cleaned
     }
     private let name: String
     private let description: String?

@@ -27,6 +27,8 @@
 		D9341A301EB3403E008DA938 /* ListUserTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A2F1EB3403E008DA938 /* ListUserTeams.swift */; };
 		D9341A331EB34167008DA938 /* ListUserTeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A321EB34167008DA938 /* ListUserTeamsTests.swift */; };
 		D9341A361EB341E9008DA938 /* ListUserTeamsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A351EB341E9008DA938 /* ListUserTeamsData.json */; };
+		D9341A3C1EB34F57008DA938 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A391EB34F57008DA938 /* ListTeamMembers.swift */; };
+		D9341A3D1EB34F57008DA938 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */; };
 		D945F83F1EA732690059640E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F83E1EA732690059640E /* User.swift */; };
 		D945F8411EA732730059640E /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8401EA732730059640E /* GetUser.swift */; };
 		D945F84A1EA73B770059640E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8451EA73B770059640E /* Bucket.swift */; };
@@ -93,8 +95,6 @@
 		D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A22D031EAF429A00729B14 /* ListShotBuckets.swift */; };
 		D9D1ADCD1EB24FF800CD4748 /* ListCommentData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9D1ADCC1EB24FF800CD4748 /* ListCommentData.json */; };
 		D9FB68991EA8850D006B2D40 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68981EA8850D006B2D40 /* Team.swift */; };
-		D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */; };
-		D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */; };
 		D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB689F1EA88DB9006B2D40 /* Attachments.swift */; };
 		D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A11EA88EFF006B2D40 /* ListAttachments.swift */; };
 		D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FB68A31EA88FA7006B2D40 /* CreateAttachment.swift */; };
@@ -151,6 +151,8 @@
 		D9341A2F1EB3403E008DA938 /* ListUserTeams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserTeams.swift; sourceTree = "<group>"; };
 		D9341A321EB34167008DA938 /* ListUserTeamsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserTeamsTests.swift; sourceTree = "<group>"; };
 		D9341A351EB341E9008DA938 /* ListUserTeamsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserTeamsData.json; sourceTree = "<group>"; };
+		D9341A391EB34F57008DA938 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
+		D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
 		D945F83E1EA732690059640E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D945F8401EA732730059640E /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		D945F8451EA73B770059640E /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
@@ -215,8 +217,6 @@
 		D9A22D031EAF429A00729B14 /* ListShotBuckets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShotBuckets.swift; sourceTree = "<group>"; };
 		D9D1ADCC1EB24FF800CD4748 /* ListCommentData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListCommentData.json; sourceTree = "<group>"; };
 		D9FB68981EA8850D006B2D40 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
-		D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
 		D9FB689F1EA88DB9006B2D40 /* Attachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
 		D9FB68A11EA88EFF006B2D40 /* ListAttachments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAttachments.swift; sourceTree = "<group>"; };
 		D9FB68A31EA88FA7006B2D40 /* CreateAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAttachment.swift; sourceTree = "<group>"; };
@@ -428,6 +428,22 @@
 				D9341A351EB341E9008DA938 /* ListUserTeamsData.json */,
 			);
 			path = Teams;
+			sourceTree = "<group>";
+		};
+		D9341A381EB34F57008DA938 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A391EB34F57008DA938 /* ListTeamMembers.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		D9341A3A1EB34F57008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */,
+			);
+			path = Shots;
 			sourceTree = "<group>";
 		};
 		D945F83D1EA731F20059640E /* Users */ = {
@@ -704,8 +720,8 @@
 			isa = PBXGroup;
 			children = (
 				D9FB68981EA8850D006B2D40 /* Team.swift */,
-				D9FB689A1EA885C7006B2D40 /* ListTeamMembers.swift */,
-				D9FB689C1EA8863C006B2D40 /* ListTeamShots.swift */,
+				D9341A381EB34F57008DA938 /* Members */,
+				D9341A3A1EB34F57008DA938 /* Shots */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -871,12 +887,12 @@
 				D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */,
 				D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */,
 				D9341A011EB330E1008DA938 /* ListUserProjects.swift in Sources */,
-				D9FB689B1EA885C7006B2D40 /* ListTeamMembers.swift in Sources */,
 				D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */,
 				D963DD521EB07FC000D9F67B /* ListUserFollowers.swift in Sources */,
 				D963DD371EB074E100D9F67B /* GetComment.swift in Sources */,
 				D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
+				D9341A3D1EB34F57008DA938 /* ListTeamShots.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
 				D963DD401EB077C100D9F67B /* Likes.swift in Sources */,
 				D963DD501EB07FA500D9F67B /* ListUserBuckets.swift in Sources */,
@@ -885,7 +901,6 @@
 				D974C4451EA1F0A600C46607 /* Authorization.swift in Sources */,
 				D99D32771EA75252009561E3 /* GetShot.swift in Sources */,
 				D9FB68991EA8850D006B2D40 /* Team.swift in Sources */,
-				D9FB689D1EA8863C006B2D40 /* ListTeamShots.swift in Sources */,
 				D945F84C1EA73B770059640E /* DeleteBucket.swift in Sources */,
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
 				D9FB68A81EA89105006B2D40 /* DeleteAttachment.swift in Sources */,
@@ -897,6 +912,7 @@
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
 				D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */,
+				D9341A3C1EB34F57008DA938 /* ListTeamMembers.swift in Sources */,
 				D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */,
 				D98F55D01EAE28AC008C1861 /* Response.swift in Sources */,
 				D974C44A1EA1F7AC00C46607 /* OAuth.swift in Sources */,

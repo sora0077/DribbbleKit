@@ -18,7 +18,7 @@ public struct UpdateBucket<Data: BucketData>: PutRequest {
     public var parameters: Any? {
         return [
             "name": name,
-            "description": description]
+            "description": description].cleaned
     }
     private let id: Bucket.Identifier
     private let name: String
