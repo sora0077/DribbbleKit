@@ -29,6 +29,11 @@
 		D9341A361EB341E9008DA938 /* ListUserTeamsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A351EB341E9008DA938 /* ListUserTeamsData.json */; };
 		D9341A3C1EB34F57008DA938 /* ListTeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A391EB34F57008DA938 /* ListTeamMembers.swift */; };
 		D9341A3D1EB34F57008DA938 /* ListTeamShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */; };
+		D9341A3F1EB36760008DA938 /* ListBucketShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A3E1EB36760008DA938 /* ListBucketShots.swift */; };
+		D9341A451EB36999008DA938 /* ListBucketShotsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A441EB36999008DA938 /* ListBucketShotsData.json */; };
+		D9341A471EB369B3008DA938 /* ListBucketShotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A461EB369B3008DA938 /* ListBucketShotsTests.swift */; };
+		D9341A491EB36BD2008DA938 /* AddShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A481EB36BD2008DA938 /* AddShot.swift */; };
+		D9341A4B1EB36C77008DA938 /* RemoveShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A4A1EB36C77008DA938 /* RemoveShot.swift */; };
 		D945F83F1EA732690059640E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F83E1EA732690059640E /* User.swift */; };
 		D945F8411EA732730059640E /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8401EA732730059640E /* GetUser.swift */; };
 		D945F84A1EA73B770059640E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8451EA73B770059640E /* Bucket.swift */; };
@@ -153,6 +158,11 @@
 		D9341A351EB341E9008DA938 /* ListUserTeamsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserTeamsData.json; sourceTree = "<group>"; };
 		D9341A391EB34F57008DA938 /* ListTeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamMembers.swift; sourceTree = "<group>"; };
 		D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTeamShots.swift; sourceTree = "<group>"; };
+		D9341A3E1EB36760008DA938 /* ListBucketShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBucketShots.swift; sourceTree = "<group>"; };
+		D9341A441EB36999008DA938 /* ListBucketShotsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListBucketShotsData.json; sourceTree = "<group>"; };
+		D9341A461EB369B3008DA938 /* ListBucketShotsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBucketShotsTests.swift; sourceTree = "<group>"; };
+		D9341A481EB36BD2008DA938 /* AddShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShot.swift; sourceTree = "<group>"; };
+		D9341A4A1EB36C77008DA938 /* RemoveShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveShot.swift; sourceTree = "<group>"; };
 		D945F83E1EA732690059640E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D945F8401EA732730059640E /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		D945F8451EA73B770059640E /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
@@ -316,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				D9341A0A1EB335B5008DA938 /* GetBucketTests.swift */,
+				D9341A401EB36821008DA938 /* Shots */,
 			);
 			path = Buckets;
 			sourceTree = "<group>";
@@ -442,6 +453,22 @@
 			isa = PBXGroup;
 			children = (
 				D9341A3B1EB34F57008DA938 /* ListTeamShots.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9341A401EB36821008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A461EB369B3008DA938 /* ListBucketShotsTests.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9341A431EB36982008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A441EB36999008DA938 /* ListBucketShotsData.json */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -616,6 +643,7 @@
 			isa = PBXGroup;
 			children = (
 				D98F55D21EB24949008C1861 /* BucketData.json */,
+				D9341A431EB36982008DA938 /* Shots */,
 			);
 			path = Buckets;
 			sourceTree = "<group>";
@@ -712,6 +740,9 @@
 		D9F38D291EB3077300E7CE38 /* Shots */ = {
 			isa = PBXGroup;
 			children = (
+				D9341A3E1EB36760008DA938 /* ListBucketShots.swift */,
+				D9341A481EB36BD2008DA938 /* AddShot.swift */,
+				D9341A4A1EB36C77008DA938 /* RemoveShot.swift */,
 			);
 			path = Shots;
 			sourceTree = "<group>";
@@ -844,6 +875,7 @@
 			files = (
 				D9341A041EB33216008DA938 /* ListUserProjectsData.json in Resources */,
 				D98F55D31EB24949008C1861 /* BucketData.json in Resources */,
+				D9341A451EB36999008DA938 /* ListBucketShotsData.json in Resources */,
 				D91C92171EB199AA007E6933 /* ListLikeData.json in Resources */,
 				D98F55D91EB24C5E008C1861 /* ListAttachmentData.json in Resources */,
 				D9341A361EB341E9008DA938 /* ListUserTeamsData.json in Resources */,
@@ -887,9 +919,12 @@
 				D9FB68A41EA88FA7006B2D40 /* CreateAttachment.swift in Sources */,
 				D9FB68A01EA88DB9006B2D40 /* Attachments.swift in Sources */,
 				D9341A011EB330E1008DA938 /* ListUserProjects.swift in Sources */,
+				D9341A4B1EB36C77008DA938 /* RemoveShot.swift in Sources */,
+				D9341A491EB36BD2008DA938 /* AddShot.swift in Sources */,
 				D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */,
 				D963DD521EB07FC000D9F67B /* ListUserFollowers.swift in Sources */,
 				D963DD371EB074E100D9F67B /* GetComment.swift in Sources */,
+				D9341A3F1EB36760008DA938 /* ListBucketShots.swift in Sources */,
 				D963DD4C1EB07BD600D9F67B /* UnlikeComment.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D9341A3D1EB34F57008DA938 /* ListTeamShots.swift in Sources */,
@@ -952,6 +987,7 @@
 				D9341A1E1EB335B5008DA938 /* RequestTests.swift in Sources */,
 				D9341A1B1EB335B5008DA938 /* GetBucketTests.swift in Sources */,
 				D9341A241EB335B5008DA938 /* ListUserProjectsTests.swift in Sources */,
+				D9341A471EB369B3008DA938 /* ListBucketShotsTests.swift in Sources */,
 				D9341A331EB34167008DA938 /* ListUserTeamsTests.swift in Sources */,
 				D9341A1D1EB335B5008DA938 /* DribbbleKitTests.swift in Sources */,
 				D9341A2A1EB33D8B008DA938 /* ListUserShotsTests.swift in Sources */,
