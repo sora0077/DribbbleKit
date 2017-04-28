@@ -22,8 +22,8 @@ public struct GetUserFollowingUser: GetRequest {
         self.target = target
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return Response(meta: Meta(urlResponse), data: urlResponse.statusCode == 204)
+    public func responseData(from object: Any, meta: Meta) throws -> Bool {
+        return meta.status == 204
     }
 }
 
@@ -37,7 +37,7 @@ public struct GetAuthenticatedUserFollowing: GetRequest {
         self.target = target
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return Response(meta: Meta(urlResponse), data: urlResponse.statusCode == 204)
+    public func responseData(from object: Any, meta: Meta) throws -> Bool {
+        return meta.status == 204
     }
 }

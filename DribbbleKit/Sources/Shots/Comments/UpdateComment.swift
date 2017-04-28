@@ -25,7 +25,7 @@ public struct UpdateComment<Data: CommentData>: PutRequest {
         self.body = body
     }
 
-    public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try DribbbleKit.Response(meta: Meta(urlResponse), data: decode(object))
+    public func responseData(from object: Any, meta: Meta) throws -> Data {
+        return try decode(object)
     }
 }

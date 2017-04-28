@@ -73,10 +73,7 @@ public class Session: APIKit.Session {
         passingTest test: @escaping (Request) -> Bool)
         where Request : APIKit.Request {
             super.cancelRequests(with: AnyRequest<Request.Response>.self) { request in
-                guard let raw = request.raw as? Request else {
-                    return false
-                }
-                return test(raw)
+                (request.raw as? Request).map(test) ?? false
             }
     }
 }
