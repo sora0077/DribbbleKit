@@ -13,6 +13,7 @@ import Alter
 public struct CreateLike<Data: LikeData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
+    public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/shots/\(id.value)/like" }
 
     private let id: Shot.Identifier

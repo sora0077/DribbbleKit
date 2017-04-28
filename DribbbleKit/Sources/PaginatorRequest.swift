@@ -33,6 +33,7 @@ public struct Paginator<P: PaginatorRequest> {
 }
 
 extension PaginatorRequest {
+    public var scope: OAuth.Scope? { return nil }
     public var method: HTTPMethod { return .get }
 
     public func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?) {

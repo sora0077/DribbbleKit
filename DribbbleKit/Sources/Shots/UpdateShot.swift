@@ -13,6 +13,7 @@ import Alter
 public struct UpdateShot<Data: ShotData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
+    public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots/\(id.value)" }
 
     private let id: Shot.Identifier
