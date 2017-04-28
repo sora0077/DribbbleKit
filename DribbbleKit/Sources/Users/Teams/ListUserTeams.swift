@@ -1,5 +1,5 @@
 //
-//  ListUserProjects.swift
+//  ListUserTeams.swift
 //  DribbbleKit
 //
 //  Created by 林 達也 on 2017/04/28.
@@ -10,15 +10,15 @@ import Foundation
 import APIKit
 import Alter
 
-// MARK: - ListUserProjects
-public struct ListUserProjects<Data: ProjectData>: PaginatorRequest {
-    public typealias Element = Data
+// MARK: - ListUserTeams
+public struct ListUserTeams<Team: TeamData>: PaginatorRequest {
+    public typealias Element = Team
 
     public let path: String
     public let parameters: Any?
 
     public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/users/\(username)/projects"
+        path = "/users/\(username)/teams"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned
@@ -30,15 +30,15 @@ public struct ListUserProjects<Data: ProjectData>: PaginatorRequest {
     }
 }
 
-// MARK: - ListAuthenticatedUserProjects
-public struct ListAuthenticatedUserProjects<Data: ProjectData>: PaginatorRequest {
-    public typealias Element = Data
+// MARK: - ListAuthenticatedUserTeams
+public struct ListAuthenticatedUserTeams<Team: TeamData>: PaginatorRequest {
+    public typealias Element = Team
 
     public let path: String
     public let parameters: Any?
 
     public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/user/projects"
+        path = "/user/teams"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned
