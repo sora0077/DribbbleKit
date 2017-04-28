@@ -1,5 +1,5 @@
 //
-//  DeleteCommentLike.swift
+//  UnlikeComment.swift
 //  DribbbleKit
 //
 //  Created by 林 達也 on 2017/04/26.
@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 import Alter
 
-public struct DeleteCommentLike: DeleteRequest {
+public struct UnlikeComment: DeleteRequest {
     public typealias Response = DribbbleKit.Response<Void>
 
     public var scope: OAuth.Scope? { return .write }

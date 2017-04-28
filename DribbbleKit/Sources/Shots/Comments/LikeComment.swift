@@ -1,5 +1,5 @@
 //
-//  CreateCommentLike.swift
+//  LikeComment.swift
 //  DribbbleKit
 //
 //  Created by 林 達也 on 2017/04/26.
@@ -10,7 +10,7 @@ import Foundation
 import APIKit
 import Alter
 
-public struct CreateCommentLike<Data: LikeData>: PostRequest {
+public struct LikeComment<Data: LikeData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .write }
