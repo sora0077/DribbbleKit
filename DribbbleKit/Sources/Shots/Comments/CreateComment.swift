@@ -26,8 +26,4 @@ public struct CreateComment<Data: CommentData>: PostRequest {
         self.id = id
         self.body = body
     }
-
-    public func responseData(from object: Any, urlResponse: HTTPURLResponse) throws -> Data {
-        return try decode(object)
-    }
 }

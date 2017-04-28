@@ -29,8 +29,4 @@ public struct UpdateBucket<Data: BucketData>: PutRequest {
         self.name = name
         self.description = description
     }
-
-    public func responseData(from object: Any, meta: Meta) throws -> Data {
-        return try decode(object)
-    }
 }

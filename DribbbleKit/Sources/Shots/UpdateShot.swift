@@ -34,8 +34,4 @@ public struct UpdateShot<Data: ShotData>: PostRequest {
     public init(id: Shot.Identifier) {
         self.id = id
     }
-
-    public func responseData(from object: Any, meta: Meta) throws -> Data {
-        return try decode(object)
-    }
 }
