@@ -286,6 +286,7 @@
 				D945F8461EA73B770059640E /* CreateBucket.swift */,
 				D945F8491EA73B770059640E /* UpdateBucket.swift */,
 				D945F8471EA73B770059640E /* DeleteBucket.swift */,
+				D9F38D291EB3077300E7CE38 /* Shots */,
 			);
 			path = Buckets;
 			sourceTree = "<group>";
@@ -534,6 +535,13 @@
 				D9D1ADCC1EB24FF800CD4748 /* ListCommentData.json */,
 			);
 			path = Comments;
+			sourceTree = "<group>";
+		};
+		D9F38D291EB3077300E7CE38 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shots;
 			sourceTree = "<group>";
 		};
 		D9FB68971EA884F5006B2D40 /* Teams */ = {
