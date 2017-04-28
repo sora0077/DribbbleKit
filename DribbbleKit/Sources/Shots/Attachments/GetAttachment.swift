@@ -10,25 +10,15 @@ import Foundation
 import APIKit
 import Alter
 
-public struct GetAttachments<Data: AttachmentData>: PaginatorRequest {
-    public typealias Element = Data
+public struct GetAttachment<Data: AttachmentData>: GetRequest {
+    public typealias Response = DribbbleKit.Response<Data>
 
-    public let path: String
-    public let parameters: Any?
+    public var path: String { return "/shots/\(shotId)/attachments/\(id.value)" }
+    private let shotId: Shot.Identifier
+    private let id: Attachment.Identifier
 
-    public init(shotId: Shot.Identifier, id: Attachment.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/shots/\(shotId)/attachments/\(id.value)"
-        parameters = [
-            "page": page,
-            "per_page": perPage].cleaned
-    }
-
-    public init(link: Meta.Link) throws {
-        path = link.url.path
-        parameters = link.queries
-    }
-
-    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
-        return try decode(objects)
+    public init(shotId: Shot.Identifier, id: Attachment.Identifier) {
+        self.shotId = shotId
+        self.id = id
     }
 }

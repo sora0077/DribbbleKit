@@ -27,8 +27,4 @@ public struct ListAttachments<Data: AttachmentData>: PaginatorRequest {
         path = link.url.path
         parameters = link.queries
     }
-
-    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
-        return try decode(objects)
-    }
 }

@@ -27,8 +27,4 @@ public struct ListTeamMembers<Data: UserData>: PaginatorRequest {
         path = link.url.path
         parameters = link.queries
     }
-
-    public func responseElements(from objects: [Any], meta: Meta) throws -> [Data] {
-        return try decode(objects)
-    }
 }

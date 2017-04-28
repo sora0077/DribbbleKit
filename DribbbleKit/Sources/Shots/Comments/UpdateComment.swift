@@ -27,8 +27,4 @@ public struct UpdateComment<Data: CommentData>: PutRequest {
         self.commentId = commentId
         self.body = body
     }
-
-    public func responseData(from object: Any, meta: Meta) throws -> Data {
-        return try decode(object)
-    }
 }
