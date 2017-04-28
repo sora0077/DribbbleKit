@@ -32,12 +32,13 @@ extension Authorization: Decodable {
                 scopes: scope.components(separatedBy: " ").flatMap(OAuth.Scope.init(rawValue:)))
         } catch let modelError {
             do {
-                throw OAuth.Error.invalid(error: try decoder.decode(forKeyPath: "error"),
-                                          description: try decoder.decode(forKeyPath: "error_description"))
-            } catch let error as OAuth.Error {
-                throw error
+                throw DribbbleError.invalidOAuth(error: try decoder.decode(forKeyPath: "error"),
+                                                 description: try decoder.decode(forKeyPath: "error_description"))
             } catch {
-                throw modelError
+                switch error {
+                case DribbbleError.invalidOAuth: throw error
+                default: throw modelError
+                }
             }
         }
     }

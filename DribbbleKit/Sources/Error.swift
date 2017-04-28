@@ -18,6 +18,7 @@ public enum DribbbleError: Swift.Error {
     case invalidJSON(message: String)
     case invalidFields(message: String, errors: [Error])
     case invalidScope(current: [OAuth.Scope], require: OAuth.Scope)
+    case invalidOAuth(error: String, description: String)
     case rateLimit(message: String, meta: Meta)
     case unexpected
 }
