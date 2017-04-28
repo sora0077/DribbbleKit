@@ -54,7 +54,8 @@ public struct OAuth {
         return (code, parameters["state"])
     }
 
-    public struct GetToken: APIKit.Request {
+    public struct GetToken: Request {
+        public var scope: OAuth.Scope? { return nil }
         public var method: HTTPMethod { return .post }
         public var baseURL: URL { return URL(string: "https://dribbble.com")! }
         public var path: String { return "/oauth/token" }
@@ -71,7 +72,7 @@ public struct OAuth {
             self.redirectURL = redirectURL
         }
 
-        public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Authorization {
+        public func responseData(from object: Any, meta: Meta) throws -> Authorization {
             return try decode(object)
         }
     }

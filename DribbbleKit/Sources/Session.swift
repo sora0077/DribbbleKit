@@ -54,7 +54,15 @@ public class Session: APIKit.Session {
         _ request: Request,
         callbackQueue: CallbackQueue? = nil,
         handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void)
-        -> SessionTask? where Request : APIKit.Request {
+        -> SessionTask? where Request : DribbbleKit.Request {
+            let scopes = authorization?.scopes ?? []
+            if let scope = request.scope, !scopes.contains(scope) {
+                (callbackQueue ?? CallbackQueue.main).execute {
+                    let error = DribbbleError.invalidScope(current: scopes, require: scope)
+                    handler(Result(error: SessionTaskError.requestError(error)))
+                }
+                return nil
+            }
             return super.send(AnyRequest(request, authorization: authorization),
                               callbackQueue: callbackQueue,
                               handler: handler)
