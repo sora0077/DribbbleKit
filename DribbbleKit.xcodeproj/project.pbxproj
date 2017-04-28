@@ -47,11 +47,11 @@
 		D963DD3E1EB077A300D9F67B /* ListShotLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */; };
 		D963DD401EB077C100D9F67B /* Likes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD3F1EB077C100D9F67B /* Likes.swift */; };
 		D963DD421EB078E000D9F67B /* GetLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD411EB078E000D9F67B /* GetLike.swift */; };
-		D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD431EB0795600D9F67B /* CreateLike.swift */; };
-		D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD451EB079B500D9F67B /* DeleteLike.swift */; };
-		D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */; };
+		D963DD441EB0795600D9F67B /* LikeShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD431EB0795600D9F67B /* LikeShot.swift */; };
+		D963DD461EB079B500D9F67B /* UnlikeShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD451EB079B500D9F67B /* UnlikeShot.swift */; };
+		D963DD481EB07B0900D9F67B /* LikeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD471EB07B0900D9F67B /* LikeComment.swift */; };
 		D963DD4A1EB07B9600D9F67B /* GetCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD491EB07B9600D9F67B /* GetCommentLike.swift */; };
-		D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */; };
+		D963DD4C1EB07BD600D9F67B /* UnlikeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD4B1EB07BD600D9F67B /* UnlikeComment.swift */; };
 		D963DD501EB07FA500D9F67B /* ListUserBuckets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD4F1EB07FA500D9F67B /* ListUserBuckets.swift */; };
 		D963DD521EB07FC000D9F67B /* ListUserFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD511EB07FC000D9F67B /* ListUserFollowers.swift */; };
 		D963DD541EB0800300D9F67B /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963DD531EB0800300D9F67B /* Followers.swift */; };
@@ -171,11 +171,11 @@
 		D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShotLikes.swift; sourceTree = "<group>"; };
 		D963DD3F1EB077C100D9F67B /* Likes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Likes.swift; sourceTree = "<group>"; };
 		D963DD411EB078E000D9F67B /* GetLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLike.swift; sourceTree = "<group>"; };
-		D963DD431EB0795600D9F67B /* CreateLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateLike.swift; sourceTree = "<group>"; };
-		D963DD451EB079B500D9F67B /* DeleteLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteLike.swift; sourceTree = "<group>"; };
-		D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCommentLike.swift; sourceTree = "<group>"; };
+		D963DD431EB0795600D9F67B /* LikeShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeShot.swift; sourceTree = "<group>"; };
+		D963DD451EB079B500D9F67B /* UnlikeShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeShot.swift; sourceTree = "<group>"; };
+		D963DD471EB07B0900D9F67B /* LikeComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeComment.swift; sourceTree = "<group>"; };
 		D963DD491EB07B9600D9F67B /* GetCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCommentLike.swift; sourceTree = "<group>"; };
-		D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentLike.swift; sourceTree = "<group>"; };
+		D963DD4B1EB07BD600D9F67B /* UnlikeComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeComment.swift; sourceTree = "<group>"; };
 		D963DD4F1EB07FA500D9F67B /* ListUserBuckets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserBuckets.swift; sourceTree = "<group>"; };
 		D963DD511EB07FC000D9F67B /* ListUserFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserFollowers.swift; sourceTree = "<group>"; };
 		D963DD531EB0800300D9F67B /* Followers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
@@ -502,8 +502,8 @@
 				D963DD381EB0758600D9F67B /* UpdateComment.swift */,
 				D963DD3A1EB075F500D9F67B /* DeleteComment.swift */,
 				D963DD491EB07B9600D9F67B /* GetCommentLike.swift */,
-				D963DD471EB07B0900D9F67B /* CreateCommentLike.swift */,
-				D963DD4B1EB07BD600D9F67B /* DeleteCommentLike.swift */,
+				D963DD471EB07B0900D9F67B /* LikeComment.swift */,
+				D963DD4B1EB07BD600D9F67B /* UnlikeComment.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -514,8 +514,8 @@
 				D963DD3F1EB077C100D9F67B /* Likes.swift */,
 				D963DD3D1EB077A300D9F67B /* ListShotLikes.swift */,
 				D963DD411EB078E000D9F67B /* GetLike.swift */,
-				D963DD431EB0795600D9F67B /* CreateLike.swift */,
-				D963DD451EB079B500D9F67B /* DeleteLike.swift */,
+				D963DD431EB0795600D9F67B /* LikeShot.swift */,
+				D963DD451EB079B500D9F67B /* UnlikeShot.swift */,
 			);
 			path = Likes;
 			sourceTree = "<group>";
@@ -890,7 +890,7 @@
 				D963DD5E1EB0874C00D9F67B /* UnfollowUser.swift in Sources */,
 				D963DD521EB07FC000D9F67B /* ListUserFollowers.swift in Sources */,
 				D963DD371EB074E100D9F67B /* GetComment.swift in Sources */,
-				D963DD4C1EB07BD600D9F67B /* DeleteCommentLike.swift in Sources */,
+				D963DD4C1EB07BD600D9F67B /* UnlikeComment.swift in Sources */,
 				D945F84D1EA73B770059640E /* GetBucket.swift in Sources */,
 				D9341A3D1EB34F57008DA938 /* ListTeamShots.swift in Sources */,
 				D945F84B1EA73B770059640E /* CreateBucket.swift in Sources */,
@@ -905,13 +905,13 @@
 				D945F84E1EA73B770059640E /* UpdateBucket.swift in Sources */,
 				D9FB68A81EA89105006B2D40 /* DeleteAttachment.swift in Sources */,
 				D963DD561EB081AD00D9F67B /* ListUserFollowing.swift in Sources */,
-				D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */,
+				D963DD481EB07B0900D9F67B /* LikeComment.swift in Sources */,
 				D963DD581EB082BF00D9F67B /* ListUserFollowingShots.swift in Sources */,
 				D963DD5C1EB0853100D9F67B /* FollowUser.swift in Sources */,
 				D9341A301EB3403E008DA938 /* ListUserTeams.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
-				D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */,
+				D963DD441EB0795600D9F67B /* LikeShot.swift in Sources */,
 				D9341A3C1EB34F57008DA938 /* ListTeamMembers.swift in Sources */,
 				D9FB68A21EA88EFF006B2D40 /* ListAttachments.swift in Sources */,
 				D98F55D01EAE28AC008C1861 /* Response.swift in Sources */,
@@ -933,7 +933,7 @@
 				D963DD5A1EB0836700D9F67B /* GetUserFollowing.swift in Sources */,
 				D9A22CFE1EAF3B7900729B14 /* Projects.swift in Sources */,
 				D963DD331EB0720000D9F67B /* Comments.swift in Sources */,
-				D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */,
+				D963DD461EB079B500D9F67B /* UnlikeShot.swift in Sources */,
 				D963DD391EB0758600D9F67B /* UpdateComment.swift in Sources */,
 				D9A22D011EAF3D2900729B14 /* ListProjectShots.swift in Sources */,
 				D990B4BB1EB324EA0086EE6C /* ListUserLikes.swift in Sources */,
