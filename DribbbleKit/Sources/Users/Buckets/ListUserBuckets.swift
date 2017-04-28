@@ -10,8 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-// MARK: - ListUserBucket
-public struct ListUserBucket<Data: BucketData>: PaginatorRequest {
+// MARK: - ListUserBuckets
+public struct ListUserBuckets<Data: BucketData>: PaginatorRequest {
     public typealias Element = Data
 
     public let path: String
@@ -34,8 +34,8 @@ public struct ListUserBucket<Data: BucketData>: PaginatorRequest {
     }
 }
 
-// MARK: - ListAuthenticatedUserBucket
-public struct ListAuthenticatedUserBucket<Data: BucketData>: PaginatorRequest {
+// MARK: - ListAuthenticatedUserBuckets
+public struct ListAuthenticatedUserBuckets<Data: BucketData>: PaginatorRequest {
     public typealias Element = Data
 
     public let path: String
