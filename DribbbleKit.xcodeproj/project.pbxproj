@@ -62,6 +62,9 @@
 		D98F55D61EB249F8008C1861 /* GetBucketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F55D51EB249F8008C1861 /* GetBucketTests.swift */; };
 		D98F55D91EB24C5E008C1861 /* ListAttachmentData.json in Resources */ = {isa = PBXBuildFile; fileRef = D98F55D81EB24C5E008C1861 /* ListAttachmentData.json */; };
 		D98F55DC1EB24C98008C1861 /* ListAttachmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98F55DB1EB24C98008C1861 /* ListAttachmentsTests.swift */; };
+		D990B4BB1EB324EA0086EE6C /* ListUserLikes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990B4BA1EB324EA0086EE6C /* ListUserLikes.swift */; };
+		D990B4BF1EB3272B0086EE6C /* ListUserLikesData.json in Resources */ = {isa = PBXBuildFile; fileRef = D990B4BE1EB3272B0086EE6C /* ListUserLikesData.json */; };
+		D990B4C31EB3278C0086EE6C /* ListUserLikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D990B4C21EB3278C0086EE6C /* ListUserLikesTests.swift */; };
 		D99D32751EA74FFC009561E3 /* ListShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32741EA74FFC009561E3 /* ListShots.swift */; };
 		D99D32771EA75252009561E3 /* GetShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32761EA75252009561E3 /* GetShot.swift */; };
 		D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99D32781EA7532C009561E3 /* CreateShot.swift */; };
@@ -178,6 +181,9 @@
 		D98F55D51EB249F8008C1861 /* GetBucketTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetBucketTests.swift; sourceTree = "<group>"; };
 		D98F55D81EB24C5E008C1861 /* ListAttachmentData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListAttachmentData.json; sourceTree = "<group>"; };
 		D98F55DB1EB24C98008C1861 /* ListAttachmentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAttachmentsTests.swift; sourceTree = "<group>"; };
+		D990B4BA1EB324EA0086EE6C /* ListUserLikes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserLikes.swift; sourceTree = "<group>"; };
+		D990B4BE1EB3272B0086EE6C /* ListUserLikesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserLikesData.json; sourceTree = "<group>"; };
+		D990B4C21EB3278C0086EE6C /* ListUserLikesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserLikesTests.swift; sourceTree = "<group>"; };
 		D99D32741EA74FFC009561E3 /* ListShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListShots.swift; sourceTree = "<group>"; };
 		D99D32761EA75252009561E3 /* GetShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetShot.swift; sourceTree = "<group>"; };
 		D99D32781EA7532C009561E3 /* CreateShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateShot.swift; sourceTree = "<group>"; };
@@ -274,6 +280,7 @@
 				D945F8401EA732730059640E /* GetUser.swift */,
 				D963DD4E1EB07F8900D9F67B /* Buckets */,
 				D963DD4D1EB07F6700D9F67B /* Followers */,
+				D990B4B91EB324AC0086EE6C /* Likes */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -396,6 +403,7 @@
 				D9A22CF81EAF33C300729B14 /* Fixtures */,
 				D98F55D41EB2495B008C1861 /* Buckets */,
 				D9A22CEA1EAF310000729B14 /* Shots */,
+				D990B4C01EB3275E0086EE6C /* Users */,
 				D974C42B1E9FD7DE00C46607 /* DribbbleKitTests.swift */,
 				D963DD611EB0918100D9F67B /* RequestTests.swift */,
 				D974C42D1E9FD7DE00C46607 /* Info.plist */,
@@ -465,6 +473,46 @@
 			path = Attachments;
 			sourceTree = "<group>";
 		};
+		D990B4B91EB324AC0086EE6C /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				D990B4BA1EB324EA0086EE6C /* ListUserLikes.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
+		D990B4BC1EB326F80086EE6C /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				D990B4BD1EB327080086EE6C /* Likes */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		D990B4BD1EB327080086EE6C /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				D990B4BE1EB3272B0086EE6C /* ListUserLikesData.json */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
+		D990B4C01EB3275E0086EE6C /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				D990B4C11EB327730086EE6C /* Likes */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		D990B4C11EB327730086EE6C /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				D990B4C21EB3278C0086EE6C /* ListUserLikesTests.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
 		D9A22CEA1EAF310000729B14 /* Shots */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +527,7 @@
 		D9A22CF81EAF33C300729B14 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				D990B4BC1EB326F80086EE6C /* Users */,
 				D98F55D11EB2491D008C1861 /* Buckets */,
 				D9A22CF91EAF33E800729B14 /* Shots */,
 			);
@@ -673,6 +722,7 @@
 				D91C92171EB199AA007E6933 /* ListLikeData.json in Resources */,
 				D98F55D91EB24C5E008C1861 /* ListAttachmentData.json in Resources */,
 				D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */,
+				D990B4BF1EB3272B0086EE6C /* ListUserLikesData.json in Resources */,
 				D9D1ADCD1EB24FF800CD4748 /* ListCommentData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +806,7 @@
 				D963DD461EB079B500D9F67B /* DeleteLike.swift in Sources */,
 				D963DD391EB0758600D9F67B /* UpdateComment.swift in Sources */,
 				D9A22D011EAF3D2900729B14 /* ListProjectShots.swift in Sources */,
+				D990B4BB1EB324EA0086EE6C /* ListUserLikes.swift in Sources */,
 				D945F83F1EA732690059640E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,6 +818,7 @@
 				D98F55D61EB249F8008C1861 /* GetBucketTests.swift in Sources */,
 				D963DD601EB0900800D9F67B /* DataSet.swift in Sources */,
 				D91C92141EB19939007E6933 /* ListShotLikesTests.swift in Sources */,
+				D990B4C31EB3278C0086EE6C /* ListUserLikesTests.swift in Sources */,
 				D963DD621EB0918100D9F67B /* RequestTests.swift in Sources */,
 				D98F55DC1EB24C98008C1861 /* ListAttachmentsTests.swift in Sources */,
 				D974C42C1E9FD7DE00C46607 /* DribbbleKitTests.swift in Sources */,
