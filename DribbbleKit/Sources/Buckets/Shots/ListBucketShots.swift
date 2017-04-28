@@ -1,8 +1,8 @@
 //
-//  ListProjectShots.swift
+//  ListBucketShots.swift
 //  DribbbleKit
 //
-//  Created by 林 達也 on 2017/04/25.
+//  Created by 林 達也 on 2017/04/28.
 //  Copyright © 2017年 jp.sora0077. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamData>: PaginatorRequest {
-    public typealias Element = (project: Project, user: User, team: Team?)
+public struct ListBucketShots<Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
+    public typealias Element = (shot: Shot, user: User, team: Team?)
 
     public let path: String
     public let parameters: Any?
@@ -29,7 +29,7 @@ public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamD
     }
 
     // swiftlint:disable:next large_tuple
-    public func responseElements(from objects: [Any], meta: Meta) throws -> [(project: Project, user: User, team: Team?)] {
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [(shot: Shot, user: User, team: Team?)] {
         return try objects.map {
             try (decode($0),
                  decode($0, rootKeyPath: "user"),
