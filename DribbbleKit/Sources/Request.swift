@@ -21,12 +21,13 @@ extension Request {
     public var baseURL: URL { return configuration?.baseURL ?? URL(string: "https://api.dribbble.com")! }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
-        try throwIfErrorOccurred(from: object, urlResponse: urlResponse)
+        // pass-through all status code
         return object
     }
 
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
         let meta = Meta(urlResponse)
+        try throwIfErrorOccurred(from: object, meta: meta)
         return try DribbbleKit.Response(meta: meta, data: responseData(from: object, meta: meta))
     }
 }

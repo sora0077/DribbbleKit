@@ -33,11 +33,11 @@ private struct BaseError: Decodable {
     let message: String
     let errors: [DribbbleError.Error]?
 
-    func actualError(_ urlResponse: HTTPURLResponse) -> Error {
+    func actualError(_ meta: Meta) -> Error {
         if let errors = errors {
             return DribbbleError.invalidFields(message: message, errors: errors)
-        } else if urlResponse.statusCode == 429 {
-            return DribbbleError.rateLimit(message: message, meta: Meta(urlResponse))
+        } else if meta.status == 429 {
+            return DribbbleError.rateLimit(message: message, meta: meta)
         } else {
             return DribbbleError.invalidJSON(message: message)
         }
@@ -51,10 +51,10 @@ private struct BaseError: Decodable {
 }
 
 extension Request {
-    func throwIfErrorOccurred(from object: Any, urlResponse: HTTPURLResponse) throws {
-        let code = urlResponse.statusCode
+    func throwIfErrorOccurred(from object: Any, meta: Meta) throws {
+        let code = meta.status
         if (400..<500).contains(code) && code != 404 {
-            throw (try decode(object) as BaseError).actualError(urlResponse)
+            throw (try decode(object) as BaseError).actualError(meta)
         }
     }
 }
