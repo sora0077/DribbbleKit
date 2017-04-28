@@ -35,18 +35,15 @@ public final class Meta {
             return result
         }
     }
-    private(set) lazy var link: (prev: Link?, next: Link?) = self.parseLinks()
-    public var status: Int {
-        return urlResponse.statusCode
-    }
     private let urlResponse: HTTPURLResponse
     private var headers: [AnyHashable: Any] { return urlResponse.allHeaderFields }
 
-    public private(set) lazy var rateLimit: RateLimit = {
+    public private(set) lazy var link: (prev: Link?, next: Link?) = self.prepareLink()
+    public private(set) lazy var status: Int = self.prepareStatus()
+    public private(set) lazy var rateLimit: RateLimit =
         RateLimit(limit: self.headers[intValueForKey: "X-RateLimit-Limit"],
                   remaining: self.headers[intValueForKey: "X-RateLimit-Remaining"],
                   reset: self.headers[intValueForKey: "X-RateLimit-Reset"])
-    }()
 
     public subscript (_ key: AnyHashable) -> Any? {
         return urlResponse.allHeaderFields[key]
@@ -56,7 +53,7 @@ public final class Meta {
         self.urlResponse = urlResponse
     }
 
-    private func parseLinks() -> (prev: Link?, next: Link?) {
+    private func prepareLink() -> (prev: Link?, next: Link?) {
         func parse(_ urlAndRel: [String]) -> (rel: String, link: Link)? {
             var urlString = urlAndRel[0]
             let relString = urlAndRel[1]
@@ -77,6 +74,12 @@ public final class Meta {
             "prev": links.first(where: { $0.rel == "prev" })?.link,
             "next": links.first(where: { $0.rel == "next" })?.link]
         return (map["prev"] ?? nil, map["next"] ?? nil)
+    }
+
+    private func prepareStatus() -> Int {
+        let raw = self["Status"] as? String
+        let str = raw?.components(separatedBy: " ").first
+        return str.flatMap { Int($0) } ?? urlResponse.statusCode
     }
 }
 
