@@ -1,5 +1,5 @@
 //
-//  ListUserShotsTests.swift
+//  ListUserTeamsTests.swift
 //  DribbbleKit
 //
 //  Created by 林 達也 on 2017/04/28.
@@ -9,7 +9,7 @@
 import XCTest
 import DribbbleKit
 
-class ListUserShotsTests: XCTestCase, JSONTestable {
+class ListUserTeamsTests: XCTestCase, JSONTestable {
 
     override func setUp() {
         super.setUp()
@@ -22,10 +22,14 @@ class ListUserShotsTests: XCTestCase, JSONTestable {
     }
 
     func testParse() throws {
-        let json = try load("ListUserShotsData")
-        let req = ListUserShots<DataSet.ShotEntity, DataSet.TeamEntity>(username: "test")
-        let response = try req.response(from: json, urlResponse: DataSet.emptyURLResponse)
-        XCTAssertEqual(response.data.elements.count, 1)
-        XCTAssertNotNil(response.data.elements.first?.team)
+        do {
+            let json = try load("ListUserTeamsData")
+            let req = ListUserTeams<DataSet.TeamEntity>(username: "test")
+            let response = try req.response(from: json, urlResponse: DataSet.emptyURLResponse)
+            XCTAssertEqual(response.data.elements.count, 1)
+            XCTAssertNotNil(response.data.elements.first)
+        } catch {
+            XCTFail("\(error)")
+        }
     }
 }

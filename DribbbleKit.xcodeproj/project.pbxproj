@@ -24,6 +24,9 @@
 		D9341A271EB33CB0008DA938 /* ListUserShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A261EB33CB0008DA938 /* ListUserShots.swift */; };
 		D9341A2A1EB33D8B008DA938 /* ListUserShotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A291EB33D8B008DA938 /* ListUserShotsTests.swift */; };
 		D9341A2D1EB33E31008DA938 /* ListUserShotsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A2C1EB33E31008DA938 /* ListUserShotsData.json */; };
+		D9341A301EB3403E008DA938 /* ListUserTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A2F1EB3403E008DA938 /* ListUserTeams.swift */; };
+		D9341A331EB34167008DA938 /* ListUserTeamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A321EB34167008DA938 /* ListUserTeamsTests.swift */; };
+		D9341A361EB341E9008DA938 /* ListUserTeamsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A351EB341E9008DA938 /* ListUserTeamsData.json */; };
 		D945F83F1EA732690059640E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F83E1EA732690059640E /* User.swift */; };
 		D945F8411EA732730059640E /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8401EA732730059640E /* GetUser.swift */; };
 		D945F84A1EA73B770059640E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8451EA73B770059640E /* Bucket.swift */; };
@@ -145,6 +148,9 @@
 		D9341A261EB33CB0008DA938 /* ListUserShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserShots.swift; sourceTree = "<group>"; };
 		D9341A291EB33D8B008DA938 /* ListUserShotsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserShotsTests.swift; sourceTree = "<group>"; };
 		D9341A2C1EB33E31008DA938 /* ListUserShotsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserShotsData.json; sourceTree = "<group>"; };
+		D9341A2F1EB3403E008DA938 /* ListUserTeams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserTeams.swift; sourceTree = "<group>"; };
+		D9341A321EB34167008DA938 /* ListUserTeamsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserTeamsTests.swift; sourceTree = "<group>"; };
+		D9341A351EB341E9008DA938 /* ListUserTeamsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserTeamsData.json; sourceTree = "<group>"; };
 		D945F83E1EA732690059640E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D945F8401EA732730059640E /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		D945F8451EA73B770059640E /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
@@ -352,6 +358,7 @@
 		D9341A161EB335B5008DA938 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				D9341A311EB34148008DA938 /* Teams */,
 				D9341A281EB33D57008DA938 /* Shots */,
 				D9341A171EB335B5008DA938 /* Likes */,
 				D9341A191EB335B5008DA938 /* Projects */,
@@ -399,6 +406,30 @@
 			path = Shots;
 			sourceTree = "<group>";
 		};
+		D9341A2E1EB3401E008DA938 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A2F1EB3403E008DA938 /* ListUserTeams.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		D9341A311EB34148008DA938 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A321EB34167008DA938 /* ListUserTeamsTests.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		D9341A341EB341E9008DA938 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A351EB341E9008DA938 /* ListUserTeamsData.json */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
 		D945F83D1EA731F20059640E /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +440,7 @@
 				D990B4B91EB324AC0086EE6C /* Likes */,
 				D93419FF1EB330AF008DA938 /* Projects */,
 				D9341A251EB33C88008DA938 /* Shots */,
+				D9341A2E1EB3401E008DA938 /* Teams */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -591,6 +623,7 @@
 		D990B4BC1EB326F80086EE6C /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				D9341A341EB341E9008DA938 /* Teams */,
 				D9341A2B1EB33E31008DA938 /* Shots */,
 				D9341A021EB331ED008DA938 /* Projects */,
 				D990B4BD1EB327080086EE6C /* Likes */,
@@ -797,6 +830,7 @@
 				D98F55D31EB24949008C1861 /* BucketData.json in Resources */,
 				D91C92171EB199AA007E6933 /* ListLikeData.json in Resources */,
 				D98F55D91EB24C5E008C1861 /* ListAttachmentData.json in Resources */,
+				D9341A361EB341E9008DA938 /* ListUserTeamsData.json in Resources */,
 				D9341A2D1EB33E31008DA938 /* ListUserShotsData.json in Resources */,
 				D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */,
 				D990B4BF1EB3272B0086EE6C /* ListUserLikesData.json in Resources */,
@@ -859,6 +893,7 @@
 				D963DD481EB07B0900D9F67B /* CreateCommentLike.swift in Sources */,
 				D963DD581EB082BF00D9F67B /* ListUserFollowingShots.swift in Sources */,
 				D963DD5C1EB0853100D9F67B /* FollowUser.swift in Sources */,
+				D9341A301EB3403E008DA938 /* ListUserTeams.swift in Sources */,
 				D945F8551EA7443F0059640E /* Shots.swift in Sources */,
 				D99D32791EA7532C009561E3 /* CreateShot.swift in Sources */,
 				D963DD441EB0795600D9F67B /* CreateLike.swift in Sources */,
@@ -901,6 +936,7 @@
 				D9341A1E1EB335B5008DA938 /* RequestTests.swift in Sources */,
 				D9341A1B1EB335B5008DA938 /* GetBucketTests.swift in Sources */,
 				D9341A241EB335B5008DA938 /* ListUserProjectsTests.swift in Sources */,
+				D9341A331EB34167008DA938 /* ListUserTeamsTests.swift in Sources */,
 				D9341A1D1EB335B5008DA938 /* DribbbleKitTests.swift in Sources */,
 				D9341A2A1EB33D8B008DA938 /* ListUserShotsTests.swift in Sources */,
 				D9341A211EB335B5008DA938 /* ListShotLikesTests.swift in Sources */,

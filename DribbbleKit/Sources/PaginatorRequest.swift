@@ -48,3 +48,9 @@ extension PaginatorRequest {
                              requests: pagingRequests(from: list, meta: meta))
     }
 }
+
+extension PaginatorRequest where Element: Decodable {
+    public func responseElements(from objects: [Any], meta: Meta) throws -> [Element] {
+        return try decode(objects)
+    }
+}
