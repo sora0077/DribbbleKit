@@ -15,6 +15,9 @@ public struct CreateComment<Data: CommentData>: PostRequest {
 
     public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments" }
+    public var parameters: Any? {
+        return ["body": body]
+    }
 
     private let id: Shot.Identifier
     public var body: String

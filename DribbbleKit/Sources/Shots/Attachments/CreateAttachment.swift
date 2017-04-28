@@ -15,6 +15,11 @@ public struct CreateAttachment: PostRequest {
 
     public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots/\(id.value)/attachments" }
+    public var bodyParameters: BodyParameters? {
+        return MultipartFormDataBodyParameters(parts: [
+            MultipartFormDataBodyParameters.Part(data: data, name: "file")])
+    }
+
     private let id: Shot.Identifier
     public var data: Data
 

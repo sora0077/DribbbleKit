@@ -15,6 +15,9 @@ public struct UpdateComment<Data: CommentData>: PutRequest {
 
     public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }
+    public var parameters: Any? {
+        return ["body": body]
+    }
     private let id: DribbbleKit.Shot.Identifier
     private let commentId: DribbbleKit.Comment.Identifier
     public var body: String

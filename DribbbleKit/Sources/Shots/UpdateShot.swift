@@ -15,6 +15,14 @@ public struct UpdateShot<Data: ShotData>: PostRequest {
 
     public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots/\(id.value)" }
+    public var parameters: Any? {
+        return [
+            "title": title,
+            "description": description,
+            "tags": tags,
+            "team_id": teamId,
+            "low_profile": lowProfile].cleaned
+    }
 
     private let id: Shot.Identifier
     public var title: String?
