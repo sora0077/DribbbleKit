@@ -143,6 +143,17 @@ struct DataSet {
         }
     }
 
+    struct ProjectEntity: ProjectData {
+        init(id: Project.Identifier,
+             name: String,
+             description: String,
+             shotsCount: Int,
+             createdAt: Date,
+             updatedAt: Date
+            ) throws {
+        }
+    }
+
     struct LikeEntity: LikeData {
         let id: Int
         init(id: Int, createdAt: Date) throws {
