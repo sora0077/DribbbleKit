@@ -43,7 +43,7 @@ public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: Paginat
     public let path: String
     public let parameters: Any?
 
-    public init(list: List? = nil, date: Date? = nil, sort: Sort? = nil, page: Int? = nil, perPage: Int? = configuration.perPage) {
+    public init(list: List? = nil, date: Date? = nil, sort: Sort? = nil, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/shots"
         parameters = [
             "list": list?.rawValue,

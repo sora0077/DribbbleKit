@@ -18,7 +18,7 @@ public protocol Request: APIKit.Request {
 }
 
 extension Request {
-    public var baseURL: URL { return configuration.baseURL ?? URL(string: "https://api.dribbble.com")! }
+    public var baseURL: URL { return configuration?.baseURL ?? URL(string: "https://api.dribbble.com")! }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         try throwIfErrorOccurred(from: object, urlResponse: urlResponse)
