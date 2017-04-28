@@ -13,6 +13,7 @@ import Alter
 public struct CreateComment<Data: CommentData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
+    public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments" }
 
     private let id: Shot.Identifier

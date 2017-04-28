@@ -14,6 +14,8 @@ public protocol Request: APIKit.Request {
     associatedtype Data
     typealias Response = DribbbleKit.Response<Data>
 
+    var scope: OAuth.Scope? { get }
+
     func responseData(from object: Any, meta: Meta) throws -> Data
 }
 
@@ -44,6 +46,7 @@ public protocol DeleteRequest: Request {}
 
 extension GetRequest {
     public var method: HTTPMethod { return .get }
+    public var scope: OAuth.Scope? { return nil }
 }
 extension PostRequest {
     public var method: HTTPMethod { return .post }

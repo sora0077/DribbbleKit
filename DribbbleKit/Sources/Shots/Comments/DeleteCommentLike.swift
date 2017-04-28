@@ -13,6 +13,7 @@ import Alter
 public struct DeleteCommentLike: DeleteRequest {
     public typealias Response = DribbbleKit.Response<Void>
 
+    public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)/like" }
 
     private let id: Shot.Identifier

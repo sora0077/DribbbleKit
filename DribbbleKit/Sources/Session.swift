@@ -20,7 +20,7 @@ private struct AnyRequest<R>: APIKit.Request {
     let headerFields: [String : String]
     let parameters: Any?
 
-    private let _response: (Any, HTTPURLResponse) throws -> R
+    private let response: (Any, HTTPURLResponse) throws -> R
     fileprivate let raw: Any
 
     init<Req: APIKit.Request>(_ request: Req, authorization: Authorization?) where Req.Response == R {
@@ -28,7 +28,7 @@ private struct AnyRequest<R>: APIKit.Request {
         baseURL = request.baseURL
         path = request.path
         parameters = request.parameters
-        _response = request.response
+        response = request.response
         raw = request
 
         var headers = request.headerFields
@@ -39,7 +39,7 @@ private struct AnyRequest<R>: APIKit.Request {
     }
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> R {
-        return try _response(object, urlResponse)
+        return try response(object, urlResponse)
     }
 }
 

@@ -13,6 +13,7 @@ import Alter
 public struct CreateShot: PostRequest {
     public typealias Response = DribbbleKit.Response<Shot.Identifier>
 
+    public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots" }
 
     public var title: String

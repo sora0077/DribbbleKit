@@ -13,6 +13,7 @@ import Alter
 public struct UnfollowUser: DeleteRequest {
     public typealias Response = DribbbleKit.Response<Void>
 
+    public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/users/\(target)/follow" }
     private let target: String
 

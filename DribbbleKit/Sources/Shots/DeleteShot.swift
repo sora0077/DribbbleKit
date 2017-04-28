@@ -13,6 +13,7 @@ import Alter
 public struct DeleteShot: DeleteRequest {
     public typealias Response = DribbbleKit.Response<Void>
 
+    public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots/\(id.value)" }
     private let id: Shot.Identifier
 

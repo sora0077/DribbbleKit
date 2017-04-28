@@ -13,6 +13,7 @@ import Alter
 public struct CreateBucket<Data: BucketData>: PostRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
+    public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/buckets" }
     public var parameters: Any? {
         return [
