@@ -21,6 +21,9 @@
 		D9341A221EB335B5008DA938 /* ShotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A151EB335B5008DA938 /* ShotsTests.swift */; };
 		D9341A231EB335B5008DA938 /* ListUserLikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A181EB335B5008DA938 /* ListUserLikesTests.swift */; };
 		D9341A241EB335B5008DA938 /* ListUserProjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A1A1EB335B5008DA938 /* ListUserProjectsTests.swift */; };
+		D9341A271EB33CB0008DA938 /* ListUserShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A261EB33CB0008DA938 /* ListUserShots.swift */; };
+		D9341A2A1EB33D8B008DA938 /* ListUserShotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9341A291EB33D8B008DA938 /* ListUserShotsTests.swift */; };
+		D9341A2D1EB33E31008DA938 /* ListUserShotsData.json in Resources */ = {isa = PBXBuildFile; fileRef = D9341A2C1EB33E31008DA938 /* ListUserShotsData.json */; };
 		D945F83F1EA732690059640E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F83E1EA732690059640E /* User.swift */; };
 		D945F8411EA732730059640E /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8401EA732730059640E /* GetUser.swift */; };
 		D945F84A1EA73B770059640E /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945F8451EA73B770059640E /* Bucket.swift */; };
@@ -139,6 +142,9 @@
 		D9341A151EB335B5008DA938 /* ShotsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShotsTests.swift; sourceTree = "<group>"; };
 		D9341A181EB335B5008DA938 /* ListUserLikesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserLikesTests.swift; sourceTree = "<group>"; };
 		D9341A1A1EB335B5008DA938 /* ListUserProjectsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserProjectsTests.swift; sourceTree = "<group>"; };
+		D9341A261EB33CB0008DA938 /* ListUserShots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserShots.swift; sourceTree = "<group>"; };
+		D9341A291EB33D8B008DA938 /* ListUserShotsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserShotsTests.swift; sourceTree = "<group>"; };
+		D9341A2C1EB33E31008DA938 /* ListUserShotsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListUserShotsData.json; sourceTree = "<group>"; };
 		D945F83E1EA732690059640E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D945F8401EA732730059640E /* GetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		D945F8451EA73B770059640E /* Bucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
@@ -346,6 +352,7 @@
 		D9341A161EB335B5008DA938 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				D9341A281EB33D57008DA938 /* Shots */,
 				D9341A171EB335B5008DA938 /* Likes */,
 				D9341A191EB335B5008DA938 /* Projects */,
 			);
@@ -368,6 +375,30 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
+		D9341A251EB33C88008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A261EB33CB0008DA938 /* ListUserShots.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9341A281EB33D57008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A291EB33D8B008DA938 /* ListUserShotsTests.swift */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
+		D9341A2B1EB33E31008DA938 /* Shots */ = {
+			isa = PBXGroup;
+			children = (
+				D9341A2C1EB33E31008DA938 /* ListUserShotsData.json */,
+			);
+			path = Shots;
+			sourceTree = "<group>";
+		};
 		D945F83D1EA731F20059640E /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +408,7 @@
 				D963DD4D1EB07F6700D9F67B /* Followers */,
 				D990B4B91EB324AC0086EE6C /* Likes */,
 				D93419FF1EB330AF008DA938 /* Projects */,
+				D9341A251EB33C88008DA938 /* Shots */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -559,6 +591,7 @@
 		D990B4BC1EB326F80086EE6C /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				D9341A2B1EB33E31008DA938 /* Shots */,
 				D9341A021EB331ED008DA938 /* Projects */,
 				D990B4BD1EB327080086EE6C /* Likes */,
 			);
@@ -764,6 +797,7 @@
 				D98F55D31EB24949008C1861 /* BucketData.json in Resources */,
 				D91C92171EB199AA007E6933 /* ListLikeData.json in Resources */,
 				D98F55D91EB24C5E008C1861 /* ListAttachmentData.json in Resources */,
+				D9341A2D1EB33E31008DA938 /* ListUserShotsData.json in Resources */,
 				D9A22CFB1EAF33FC00729B14 /* ShotData.json in Resources */,
 				D990B4BF1EB3272B0086EE6C /* ListUserLikesData.json in Resources */,
 				D9D1ADCD1EB24FF800CD4748 /* ListCommentData.json in Resources */,
@@ -840,6 +874,7 @@
 				D963DD3B1EB075F500D9F67B /* DeleteComment.swift in Sources */,
 				D974C43A1E9FDD8700C46607 /* DribbbleKit.swift in Sources */,
 				D98F55CE1EAE2479008C1861 /* Request.swift in Sources */,
+				D9341A271EB33CB0008DA938 /* ListUserShots.swift in Sources */,
 				D9A22D041EAF429A00729B14 /* ListShotBuckets.swift in Sources */,
 				D963DD2F1EB0719F00D9F67B /* ListShotCommentLikes.swift in Sources */,
 				D963DDA91EB0C8D100D9F67B /* PaginatorRequest.swift in Sources */,
@@ -867,6 +902,7 @@
 				D9341A1B1EB335B5008DA938 /* GetBucketTests.swift in Sources */,
 				D9341A241EB335B5008DA938 /* ListUserProjectsTests.swift in Sources */,
 				D9341A1D1EB335B5008DA938 /* DribbbleKitTests.swift in Sources */,
+				D9341A2A1EB33D8B008DA938 /* ListUserShotsTests.swift in Sources */,
 				D9341A211EB335B5008DA938 /* ListShotLikesTests.swift in Sources */,
 				D9341A221EB335B5008DA938 /* ShotsTests.swift in Sources */,
 			);
