@@ -1,5 +1,5 @@
 //
-//  ListUserLikes.swift
+//  ListUserProjects.swift
 //  DribbbleKit
 //
 //  Created by 林 達也 on 2017/04/28.
@@ -10,15 +10,15 @@ import Foundation
 import APIKit
 import Alter
 
-// MARK: - ListUserLikes
-public struct ListUserLikes<Like: LikeData, Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
-    public typealias Element = (like: Like, shot: Shot, user: User, team: Team?)
+// MARK: - ListUserProjects
+public struct ListUserProjects<Data: ProjectData>: PaginatorRequest {
+    public typealias Element = Data
 
     public let path: String
     public let parameters: Any?
 
     public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/users/\(username)/likes"
+        path = "/users/\(username)/projects"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned
@@ -30,24 +30,19 @@ public struct ListUserLikes<Like: LikeData, Shot: ShotData, User: UserData, Team
     }
 
     public func responseElements(from objects: [Any], meta: Meta) throws -> [Element] {
-        return try objects.map {
-            try (decode($0),
-                 decode($0, rootKeyPath: "shot"),
-                 decode($0, rootKeyPath: ["shot", "user"]),
-                 decode($0, rootKeyPath: ["shot", "team"], optional: true))
-        }
+        return try decode(objects)
     }
 }
 
-// MARK: - ListAuthenticatedUserLikes
-public struct ListAuthenticatedUserLikes<Like: LikeData, Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
-    public typealias Element = (like: Like, shot: Shot, user: User, team: Team?)
+// MARK: - ListAuthenticatedUserProjects
+public struct ListAuthenticatedUserProjects<Data: ProjectData>: PaginatorRequest {
+    public typealias Element = Data
 
     public let path: String
     public let parameters: Any?
 
     public init(page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/user/likes"
+        path = "/user/projects"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned
@@ -59,11 +54,6 @@ public struct ListAuthenticatedUserLikes<Like: LikeData, Shot: ShotData, User: U
     }
 
     public func responseElements(from objects: [Any], meta: Meta) throws -> [Element] {
-        return try objects.map {
-            try (decode($0),
-                 decode($0, rootKeyPath: "shot"),
-                 decode($0, rootKeyPath: ["shot", "user"]),
-                 decode($0, rootKeyPath: ["shot", "team"], optional: true))
-        }
+        return try decode(objects)
     }
 }
