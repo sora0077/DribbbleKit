@@ -56,7 +56,11 @@ extension Request {
     func throwIfErrorOccurred(from object: Any, meta: Meta) throws {
         let code = meta.status
         if (400..<500).contains(code) && code != 404 {
-            throw (try decode(object) as BaseError).actualError(meta)
+            do {
+                throw (try decode(object) as BaseError).actualError(meta)
+            } catch let error as DribbbleError {
+                throw error
+            } catch {}
         }
     }
 }
