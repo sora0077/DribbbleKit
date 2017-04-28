@@ -14,10 +14,6 @@ public struct OAuth {
     public enum Scope: String {
         case `public`, write, comment, upload
     }
-    public enum Error: Swift.Error {
-        case unknown
-        case invalid(error: String, description: String)
-    }
 
     public static func authorizeURL(
         clientId: String,
@@ -46,10 +42,8 @@ public struct OAuth {
             }
         }
         guard let code = parameters["code"] else {
-            if let error = parameters["error"] {
-                throw Error.invalid(error: error, description: parameters["error_description"] ?? "")
-            }
-            throw Error.unknown
+            throw DribbbleError.invalidOAuth(
+                error: parameters["error"] ?? "", description: parameters["error_description"] ?? "")
         }
         return (code, parameters["state"])
     }
