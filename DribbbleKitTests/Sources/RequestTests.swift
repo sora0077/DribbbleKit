@@ -25,7 +25,7 @@ class RequestTests: XCTestCase {
         let json = [
             "message": "Problem parsing JSON."
         ]
-        let request = GetUser<DataSet.UserEntity>(username: "hoge")
+        let request = GetUser<DataSet.UserEntity>(id: 1)
         do {
             _ = try request.intercept(object: json, urlResponse: DataSet.badRequestURLResponse)
         } catch DribbbleError.invalidJSON(let message) {
@@ -43,7 +43,7 @@ class RequestTests: XCTestCase {
                  "message": "can't be blank"]
             ]
         ]
-        let request = GetUser<DataSet.UserEntity>(username: "hoge")
+        let request = GetUser<DataSet.UserEntity>(id: 1)
         do {
             _ = try request.intercept(object: json, urlResponse: DataSet.badRequestURLResponse)
         } catch DribbbleError.invalidFields(let message, let errors) {
@@ -58,7 +58,7 @@ class RequestTests: XCTestCase {
         let json = [
             "message": "Rate limit"
         ]
-        let request = GetUser<DataSet.UserEntity>(username: "hoge")
+        let request = GetUser<DataSet.UserEntity>(id: 1)
         do {
             _ = try request.intercept(object: json, urlResponse: DataSet.rateLimitURLResponse())
         } catch let DribbbleError.rateLimit(message, _) {

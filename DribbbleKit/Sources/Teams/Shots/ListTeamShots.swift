@@ -16,8 +16,8 @@ public struct ListTeamShots<Shot: ShotData, User: UserData>: PaginatorRequest {
     public let path: String
     public let parameters: Any?
 
-    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/teams/\(username)/shots"
+    public init(id: Team.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+        path = "/teams/\(id.value)/shots"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned

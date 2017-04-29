@@ -23,7 +23,7 @@ class ListUserProjectsTests: XCTestCase, JSONTestable {
 
     func testParse() throws {
         let json = try load("ListUserProjectsData")
-        let req = ListUserProjects<DataSet.ProjectEntity>(username: "test")
+        let req = ListUserProjects<DataSet.ProjectEntity>(id: 1)
         let response = try req.response(from: json, urlResponse: DataSet.emptyURLResponse)
         XCTAssertEqual(response.data.elements.count, 1)
     }

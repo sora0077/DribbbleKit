@@ -16,7 +16,7 @@ public struct ListBucketShots<Shot: ShotData, User: UserData, Team: TeamData>: P
     public let path: String
     public let parameters: Any?
 
-    public init(projectId: DribbbleKit.Project.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+    public init(projectId: Project.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
         path = "/projects/\(projectId.value)/shots"
         parameters = [
             "page": page,

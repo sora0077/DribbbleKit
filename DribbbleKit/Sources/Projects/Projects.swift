@@ -29,6 +29,7 @@ extension Int {
 }
 
 public protocol ProjectData: Decodable {
+    typealias Identifier = Project.Identifier
     init(
         id: Project.Identifier,
         name: String,

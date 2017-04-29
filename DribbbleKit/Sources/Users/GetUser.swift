@@ -14,11 +14,11 @@ import Alter
 public struct GetUser<Data: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<Data>
 
-    public var path: String { return "/users/\(username)" }
-    private let username: String
+    public var path: String { return "/users/\(id.value)" }
+    private let id: User.Identifier
 
-    public init(username: String) {
-        self.username = username
+    public init(id: User.Identifier) {
+        self.id = id
     }
 }
 

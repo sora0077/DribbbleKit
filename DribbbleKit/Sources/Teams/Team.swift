@@ -9,9 +9,30 @@
 import Foundation
 import Alter
 
+public struct Team {
+    public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
+        let value: Int
+        public init(integerLiteral value: Int) {
+            self.value = value
+        }
+
+        public static func decode(_ decoder: Decoder) throws -> Team.Identifier {
+            return try self.init(integerLiteral: Int.decode(decoder))
+        }
+    }
+}
+
+extension Int {
+    public init(_ teamId: Team.Identifier) {
+        self = teamId.value
+    }
+}
+
+// MARK: - TeamData
 public protocol TeamData: Decodable {
+    typealias Identifier = Team.Identifier
     init(
-        id: Int,
+        id: Team.Identifier,
         name: String,
         username: String,
         htmlURL: URL,

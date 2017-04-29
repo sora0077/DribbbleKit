@@ -17,8 +17,8 @@ public struct ListUserLikes<Like: LikeData, Shot: ShotData, User: UserData, Team
     public let path: String
     public let parameters: Any?
 
-    public init(username: String, page: Int? = nil, perPage: Int? = configuration?.perPage) {
-        path = "/users/\(username)/likes"
+    public init(id: User.Identifier, page: Int? = nil, perPage: Int? = configuration?.perPage) {
+        path = "/users/\(id.value)/likes"
         parameters = [
             "page": page,
             "per_page": perPage].cleaned
