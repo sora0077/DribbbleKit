@@ -14,10 +14,10 @@ public struct GetComment<Comment: CommentData, User: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<(comment: Comment, user: User)>
 
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }
-    private let id: DribbbleKit.Shot.Identifier
-    private let commentId: DribbbleKit.Comment.Identifier
+    private let id: Shot.Identifier
+    private let commentId: Comment.Identifier
 
-    public init(id: DribbbleKit.Shot.Identifier, commentId: DribbbleKit.Comment.Identifier) {
+    public init(id: Shot.Identifier, commentId: Comment.Identifier) {
         self.id = id
         self.commentId = commentId
     }

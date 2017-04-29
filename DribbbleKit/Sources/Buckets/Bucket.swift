@@ -30,6 +30,7 @@ extension Int {
 
 // MARK: - BucketData
 public protocol BucketData: Decodable {
+    typealias Identifier = Bucket.Identifier
     init(
         id: Bucket.Identifier,
         name: String,

@@ -9,10 +9,30 @@
 import Foundation
 import Alter
 
+public struct User {
+    public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
+        let value: Int
+        public init(integerLiteral value: Int) {
+            self.value = value
+        }
+
+        public static func decode(_ decoder: Decoder) throws -> User.Identifier {
+            return try self.init(integerLiteral: Int.decode(decoder))
+        }
+    }
+}
+
+extension Int {
+    public init(_ userId: User.Identifier) {
+        self = userId.value
+    }
+}
+
 // MARK: - UserData
 public protocol UserData: Decodable {
+    typealias Identifier = User.Identifier
     init(
-        id: Int,
+        id: User.Identifier,
         name: String,
         username: String,
         htmlURL: URL,

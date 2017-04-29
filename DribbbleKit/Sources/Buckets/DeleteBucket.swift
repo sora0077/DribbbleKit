@@ -15,9 +15,9 @@ public struct DeleteBucket: DeleteRequest {
 
     public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/buckets/\(id.value)" }
-    private let id: DribbbleKit.Bucket.Identifier
+    private let id: Bucket.Identifier
 
-    public init(id: DribbbleKit.Bucket.Identifier) {
+    public init(id: Bucket.Identifier) {
         self.id = id
     }
 }

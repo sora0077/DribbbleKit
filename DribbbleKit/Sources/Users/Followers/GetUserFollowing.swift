@@ -13,13 +13,13 @@ import Alter
 public struct GetUserFollowingUser: GetRequest {
     public typealias Response = DribbbleKit.Response<Bool>
 
-    public var path: String { return "/users\(username)/following/\(target)" }
-    private let username: String
-    private let target: String
+    public var path: String { return "/users\(id.value)/following/\(targetId.value)" }
+    private let id: User.Identifier
+    private let targetId: User.Identifier
 
-    public init(username: String, target: String) {
-        self.username = username
-        self.target = target
+    public init(id: User.Identifier, targetId: User.Identifier) {
+        self.id = id
+        self.targetId = targetId
     }
 
     public func responseData(from object: Any, meta: Meta) throws -> Bool {

@@ -14,9 +14,9 @@ public struct GetBucket<Bucket: BucketData, User: UserData>: GetRequest {
     public typealias Response = DribbbleKit.Response<(bucket: Bucket, user: User)>
 
     public var path: String { return "/buckets/\(id.value)" }
-    private let id: DribbbleKit.Bucket.Identifier
+    private let id: Bucket.Identifier
 
-    public init(id: DribbbleKit.Bucket.Identifier) {
+    public init(id: Bucket.Identifier) {
         self.id = id
     }
 

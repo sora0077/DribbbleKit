@@ -18,11 +18,11 @@ public struct UpdateComment<Data: CommentData>: PutRequest {
     public var parameters: Any? {
         return ["body": body]
     }
-    private let id: DribbbleKit.Shot.Identifier
-    private let commentId: DribbbleKit.Comment.Identifier
+    private let id: Shot.Identifier
+    private let commentId: Comment.Identifier
     public var body: String
 
-    public init(id: DribbbleKit.Shot.Identifier, commentId: DribbbleKit.Comment.Identifier, body: String) {
+    public init(id: Shot.Identifier, commentId: Comment.Identifier, body: String) {
         self.id = id
         self.commentId = commentId
         self.body = body

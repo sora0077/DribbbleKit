@@ -43,7 +43,7 @@ struct DataSet {
     }
 
     struct UserEntity: UserData {
-        init(id: Int,
+        init(id: User.Identifier,
              name: String,
              username: String,
              htmlURL: URL,
@@ -76,7 +76,7 @@ struct DataSet {
     }
 
     struct TeamEntity: TeamData {
-        init(id: Int,
+        init(id: Team.Identifier,
              name: String,
              username: String,
              htmlURL: URL,

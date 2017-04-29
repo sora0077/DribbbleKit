@@ -15,10 +15,10 @@ public struct DeleteComment: DeleteRequest {
 
     public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }
-    private let id: DribbbleKit.Shot.Identifier
-    private let commentId: DribbbleKit.Comment.Identifier
+    private let id: Shot.Identifier
+    private let commentId: Comment.Identifier
 
-    public init(id: DribbbleKit.Shot.Identifier, commentId: DribbbleKit.Comment.Identifier) {
+    public init(id: Shot.Identifier, commentId: Comment.Identifier) {
         self.id = id
         self.commentId = commentId
     }

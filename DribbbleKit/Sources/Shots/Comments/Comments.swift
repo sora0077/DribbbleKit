@@ -30,6 +30,7 @@ extension Int {
 
 // MARK: - CommentData
 public protocol CommentData: Decodable {
+    typealias Identifier = Comment.Identifier
     init(
         id: Comment.Identifier,
         body: String,

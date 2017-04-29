@@ -30,6 +30,7 @@ extension Int {
 
 // MARK: - ShotData
 public protocol ShotData: Decodable {
+    typealias Identifier = Shot.Identifier
     init(
         id: Shot.Identifier,
         title: String,
