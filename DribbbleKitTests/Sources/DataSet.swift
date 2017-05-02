@@ -52,7 +52,7 @@ struct DataSet {
              location: String,
              links: [String : URL],
              bucketsCount: Int,
-             commentsRecievedCount: Int,
+             commentsReceivedCount: Int,
              followersCount: Int,
              followingsCount: Int,
              likesCount: Int,
