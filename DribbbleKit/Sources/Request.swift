@@ -16,14 +16,27 @@ public protocol Request: APIKit.Request {
 
     var scope: OAuth.Scope? { get }
 
+    func intercept(object: Any, meta: Meta) throws
     func responseData(from object: Any, meta: Meta) throws -> Data
 }
 
 extension Request {
     public var baseURL: URL { return configuration?.baseURL ?? URL(string: "https://api.dribbble.com")! }
 
+    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+        // pass-through all status code
+        return object
+    }
+
+    public func intercept(object: Any, meta: Meta) throws {
+        if meta.status == 404 {
+            throw DribbbleError.notFound
+        }
+    }
+
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
         let meta = Meta(urlResponse)
+        try intercept(object: object, meta: meta)
         try throwIfErrorOccurred(from: object, meta: meta)
         return try DribbbleKit.Response(meta: meta, data: responseData(from: object, meta: meta))
     }

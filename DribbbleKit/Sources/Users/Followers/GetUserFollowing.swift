@@ -22,6 +22,8 @@ public struct GetUserFollowingUser: GetRequest {
         self.targetId = targetId
     }
 
+    public func intercept(object: Any, meta: Meta) throws {}
+
     public func responseData(from object: Any, meta: Meta) throws -> Bool {
         return meta.status == 204
     }
