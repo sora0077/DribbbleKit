@@ -67,7 +67,7 @@ extension ShotData {
         return try self.init(
             id: decoder.decode(forKeyPath: "id"),
             title: decoder.decode(forKeyPath: "title"),
-            description: decoder.decode(forKeyPath: "description"),
+            description: decoder.decode(forKeyPath: "description", optional: true) ?? "",
             width: decoder.decode(forKeyPath: "width"),
             height: decoder.decode(forKeyPath: "height"),
             images: decoder.decode(forKeyPath: "images", skipInvalidElements: true, Transformer.url),
