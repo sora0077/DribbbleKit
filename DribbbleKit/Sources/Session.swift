@@ -39,13 +39,6 @@ private struct AnyRequest<R>: APIKit.Request {
         headerFields = headers
     }
 
-    func parse(data: Data, urlResponse: HTTPURLResponse) throws -> R {
-        print(String(data: data, encoding: .utf8) ?? "[empty]", urlResponse)
-        let parsedObject = try dataParser.parse(data: data)
-        let passedObject = try intercept(object: parsedObject, urlResponse: urlResponse)
-        return try response(from: passedObject, urlResponse: urlResponse)
-    }
-
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         // pass-through all status code
         return object
@@ -58,10 +51,18 @@ private struct AnyRequest<R>: APIKit.Request {
 
 public class Session: APIKit.Session {
 
-    public override class var shared: Session { return _shared }
+    public override class var shared: Session {
+        get { return _custom ?? _shared }
+        set { _custom = newValue }
+    }
+    private static var _custom: Session?
     private static let _shared = Session(adapter: URLSessionAdapter(configuration: URLSessionConfiguration.default))
 
     public var authorization: Authorization?
+
+    public override init(adapter: SessionAdapter, callbackQueue: CallbackQueue = .main) {
+        super.init(adapter: adapter, callbackQueue: callbackQueue)
+    }
 
     @discardableResult
     public override class func send<Request>(
