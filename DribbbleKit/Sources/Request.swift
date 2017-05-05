@@ -14,6 +14,7 @@ public protocol Request: APIKit.Request {
     associatedtype Data
     typealias Response = DribbbleKit.Response<Data>
 
+    var version: String? { get }
     var scope: OAuth.Scope? { get }
 
     func intercept(object: Any, meta: Meta) throws
@@ -22,6 +23,8 @@ public protocol Request: APIKit.Request {
 
 extension Request {
     public var baseURL: URL { return configuration?.baseURL ?? URL(string: "https://api.dribbble.com")! }
+
+    public var version: String? { return "/v1" }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
         // pass-through all status code
