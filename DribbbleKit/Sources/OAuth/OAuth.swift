@@ -55,6 +55,14 @@ public struct OAuth {
         public var version: String? { return nil }
         public var path: String { return "/oauth/token" }
 
+        public var parameters: Any? {
+            return [
+                "client_id": clientId,
+                "client_secret": clientSecret,
+                "code": code,
+                "redirect_uri": redirectURL?.absoluteString].cleaned
+        }
+
         private let clientId: String
         private let clientSecret: String
         private let code: String
