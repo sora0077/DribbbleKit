@@ -52,6 +52,7 @@ public struct OAuth {
         public var scope: OAuth.Scope? { return nil }
         public var method: HTTPMethod { return .post }
         public var baseURL: URL { return URL(string: "https://dribbble.com")! }
+        public var version: String? { return nil }
         public var path: String { return "/oauth/token" }
 
         private let clientId: String

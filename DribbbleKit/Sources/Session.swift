@@ -24,10 +24,10 @@ private struct AnyRequest<R>: APIKit.Request {
     private let response: (Any, HTTPURLResponse) throws -> R
     fileprivate let raw: Any
 
-    init<Req: APIKit.Request>(_ request: Req, authorization: Authorization?) where Req.Response == R {
+    init<Req: DribbbleKit.Request>(_ request: Req, authorization: Authorization?) where Req.Response == R {
         method = request.method
         baseURL = request.baseURL
-        path = request.path
+        path = "\(request.version ?? "")\(request.path)"
         dataParser = request.dataParser
         parameters = request.parameters
         intercept = request.intercept
