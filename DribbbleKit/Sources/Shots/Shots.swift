@@ -16,6 +16,10 @@ public struct Shot {
             self.value = value
         }
 
+        public init(_ value: Int) {
+            self.value = value
+        }
+
         public static func decode(_ decoder: Decoder) throws -> Shot.Identifier {
             return try self.init(integerLiteral: Int.decode(decoder))
         }

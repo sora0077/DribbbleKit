@@ -16,6 +16,10 @@ public struct Project {
             self.value = value
         }
 
+        public init(_ value: Int) {
+            self.value = value
+        }
+
         public static func decode(_ decoder: Decoder) throws -> Project.Identifier {
             return try self.init(integerLiteral: Int.decode(decoder))
         }

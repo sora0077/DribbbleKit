@@ -22,11 +22,6 @@ public protocol Request: APIKit.Request {
 extension Request {
     public var baseURL: URL { return configuration?.baseURL ?? URL(string: "https://api.dribbble.com")! }
 
-    public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
-        // pass-through all status code
-        return object
-    }
-
     public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> DribbbleKit.Response<Data> {
         let meta = Meta(urlResponse)
         try throwIfErrorOccurred(from: object, meta: meta)

@@ -16,6 +16,10 @@ public struct Bucket {
             self.value = value
         }
 
+        public init(_ value: Int) {
+            self.value = value
+        }
+
         public static func decode(_ decoder: Decoder) throws -> Bucket.Identifier {
             return try self.init(integerLiteral: Int.decode(decoder))
         }
