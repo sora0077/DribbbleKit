@@ -16,7 +16,7 @@ private struct AnyRequest<R>: APIKit.Request {
     let method: HTTPMethod
     let baseURL: URL
     let path: String
-
+    let dataParser: DataParser
     let headerFields: [String : String]
     let parameters: Any?
 
@@ -27,6 +27,7 @@ private struct AnyRequest<R>: APIKit.Request {
         method = request.method
         baseURL = request.baseURL
         path = request.path
+        dataParser = request.dataParser
         parameters = request.parameters
         response = request.response
         raw = request
@@ -36,6 +37,13 @@ private struct AnyRequest<R>: APIKit.Request {
             headers["Authorization"] = "Bearer \(authorization.accessToken)"
         }
         headerFields = headers
+    }
+
+    func parse(data: Data, urlResponse: HTTPURLResponse) throws -> R {
+        print(String(data: data, encoding: .utf8) ?? "[empty]", urlResponse)
+        let parsedObject = try dataParser.parse(data: data)
+        let passedObject = try intercept(object: parsedObject, urlResponse: urlResponse)
+        return try response(from: passedObject, urlResponse: urlResponse)
     }
 
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
