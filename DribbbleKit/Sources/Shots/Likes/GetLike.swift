@@ -20,6 +20,8 @@ public struct GetLike<Data: LikeData>: GetRequest {
         self.id = id
     }
 
+    public func intercept(object: Any, meta: Meta) throws {}
+
     public func responseData(from object: Any, meta: Meta) throws -> Data? {
         return meta.status == 404  ? nil : try decode(object)
     }

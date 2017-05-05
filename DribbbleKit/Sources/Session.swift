@@ -20,6 +20,7 @@ private struct AnyRequest<R>: APIKit.Request {
     let headerFields: [String : String]
     let parameters: Any?
 
+    private let intercept: (Any, HTTPURLResponse) throws -> Any
     private let response: (Any, HTTPURLResponse) throws -> R
     fileprivate let raw: Any
 
@@ -29,6 +30,7 @@ private struct AnyRequest<R>: APIKit.Request {
         path = request.path
         dataParser = request.dataParser
         parameters = request.parameters
+        intercept = request.intercept
         response = request.response
         raw = request
 
@@ -40,8 +42,7 @@ private struct AnyRequest<R>: APIKit.Request {
     }
 
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
-        // pass-through all status code
-        return object
+        return try intercept(object, urlResponse)
     }
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> R {
