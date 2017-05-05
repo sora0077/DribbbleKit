@@ -38,6 +38,11 @@ private struct AnyRequest<R>: APIKit.Request {
         headerFields = headers
     }
 
+    func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+        // pass-through all status code
+        return object
+    }
+
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> R {
         return try response(object, urlResponse)
     }
@@ -50,6 +55,16 @@ public class Session: APIKit.Session {
 
     public var authorization: Authorization?
 
+    @discardableResult
+    public override class func send<Request>(
+        _ request: Request,
+        callbackQueue: CallbackQueue? = nil,
+        handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void)
+        -> SessionTask? where Request : DribbbleKit.Request {
+            return shared.send(request, callbackQueue: callbackQueue, handler: handler)
+    }
+
+    @discardableResult
     public override func send<Request>(
         _ request: Request,
         callbackQueue: CallbackQueue? = nil,
