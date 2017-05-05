@@ -14,6 +14,12 @@ public struct Authorization {
     public let tokenType: String
     public let scopes: [OAuth.Scope]
 
+    public init(accessToken: String, tokenType: String, scopes: [OAuth.Scope]) {
+        self.accessToken = accessToken
+        self.tokenType = tokenType
+        self.scopes = scopes
+    }
+
     public func encode() -> [String: Any] {
         return [
             "access_token": accessToken,
