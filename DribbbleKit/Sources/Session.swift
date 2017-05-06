@@ -27,7 +27,11 @@ private struct AnyRequest<R>: APIKit.Request {
     init<Req: DribbbleKit.Request>(_ request: Req, authorization: Authorization?) where Req.Response == R {
         method = request.method
         baseURL = request.baseURL
-        path = "\(request.version ?? "")\(request.path)"
+        if let version = request.version, !request.path.hasPrefix(version) {
+            path = "\(version)\(request.path)"
+        } else {
+            path = request.path
+        }
         dataParser = request.dataParser
         parameters = request.parameters
         intercept = request.intercept
