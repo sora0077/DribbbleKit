@@ -23,9 +23,9 @@ public struct ListShotLikes<Like: LikeData, User: UserData>: PaginatorRequest {
             "per_page": perPage].cleaned
     }
 
-    public init(link: Meta.Link) throws {
-        path = link.url.path
-        parameters = link.queries
+    public init(path: String, parameters: [String : Any]) throws {
+        self.path = path
+        self.parameters = parameters
     }
 
     public func responseElements(from objects: [Any], meta: Meta) throws -> [(like: Like, user: User)] {

@@ -24,9 +24,9 @@ public struct ListUserProjects<Data: ProjectData>: PaginatorRequest {
             "per_page": perPage].cleaned
     }
 
-    public init(link: Meta.Link) throws {
-        path = link.url.path
-        parameters = link.queries
+    public init(path: String, parameters: [String : Any]) throws {
+        self.path = path
+        self.parameters = parameters
     }
 }
 
@@ -44,8 +44,8 @@ public struct ListAuthenticatedUserProjects<Data: ProjectData>: PaginatorRequest
             "per_page": perPage].cleaned
     }
 
-    public init(link: Meta.Link) throws {
-        path = link.url.path
-        parameters = link.queries
+    public init(path: String, parameters: [String : Any]) throws {
+        self.path = path
+        self.parameters = parameters
     }
 }

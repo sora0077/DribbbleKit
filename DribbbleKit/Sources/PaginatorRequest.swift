@@ -15,6 +15,7 @@ public protocol PaginatorRequest: Request {
     typealias Response = DribbbleKit.Response<Paginator<Self>>
 
     init(link: Meta.Link) throws
+    init(path: String, parameters: [String: Any]) throws
 
     func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?)
 
@@ -35,6 +36,10 @@ public struct Paginator<P: PaginatorRequest> {
 extension PaginatorRequest {
     public var scope: OAuth.Scope? { return nil }
     public var method: HTTPMethod { return .get }
+
+    public init(link: Meta.Link) throws {
+        try self.init(path: link.url.path, parameters: link.queries)
+    }
 
     public func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?) {
         return try (meta.link.prev.map(type(of: self).init), meta.link.next.map(type(of: self).init))
