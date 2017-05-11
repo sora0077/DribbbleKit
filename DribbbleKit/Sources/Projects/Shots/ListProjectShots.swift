@@ -23,9 +23,9 @@ public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamD
             "per_page": perPage].cleaned
     }
 
-    public init(link: Meta.Link) throws {
-        path = link.url.path
-        parameters = link.queries
+    public init(path: String, parameters: [String : Any]) throws {
+        self.path = path
+        self.parameters = parameters
     }
 
     // swiftlint:disable:next large_tuple
