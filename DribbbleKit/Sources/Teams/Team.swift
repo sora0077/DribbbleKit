@@ -10,8 +10,10 @@ import Foundation
 import Alter
 
 public struct Team {
-    public struct Identifier: Decodable, ExpressibleByIntegerLiteral {
+    public struct Identifier: Decodable, Hashable, ExpressibleByIntegerLiteral {
         let value: Int
+        public var hashValue: Int { return value.hashValue }
+
         public init(integerLiteral value: Int) {
             self.value = value
         }
@@ -22,6 +24,10 @@ public struct Team {
 
         public static func decode(_ decoder: Decoder) throws -> Team.Identifier {
             return try self.init(integerLiteral: Int.decode(decoder))
+        }
+
+        public static func == (lhs: Identifier, rhs: Identifier) -> Bool {
+            return lhs.value == rhs.value
         }
     }
 }
