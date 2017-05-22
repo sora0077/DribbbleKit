@@ -84,7 +84,7 @@ extension TeamData {
             htmlURL: decoder.decode(forKeyPath: "html_url", Transformer.url),
             avatarURL: decoder.decode(forKeyPath: "avatar_url", Transformer.url),
             bio: decoder.decode(forKeyPath: "bio"),
-            location: decoder.decode(forKeyPath: "location"),
+            location: decoder.decode(forKeyPath: "location", optional: true) ?? "",
             links: decoder.decode(forKeyPath: "links", Transformer.url),
             bucketsCount: decoder.decode(forKeyPath: "buckets_count"),
             commentsReceivedCount: decoder.decode(forKeyPath: "comments_received_count"),
