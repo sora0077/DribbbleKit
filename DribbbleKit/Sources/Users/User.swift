@@ -94,7 +94,7 @@ extension UserData {
             projectsCount: decoder.decode(forKeyPath: "projects_count"),
             reboundsReceivedCount: decoder.decode(forKeyPath: "rebounds_received_count"),
             shotsCount: decoder.decode(forKeyPath: "shots_count"),
-            teamsCount: decoder.decode(forKeyPath: "teams_count", optional: true) ?? 0,
+            teamsCount: decoder.decode(forKeyPath: "teams_count"),
             canUploadShot: decoder.decode(forKeyPath: "can_upload_shot"),
             type: decoder.decode(forKeyPath: "type"),
             pro: decoder.decode(forKeyPath: "pro"),

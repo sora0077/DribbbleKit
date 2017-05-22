@@ -11,15 +11,15 @@ import APIKit
 import Alter
 
 public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: PaginatorRequest {
-    public typealias Element = (shot: Shot, user: User, team: Team?)
+    public typealias Element = (shot: Shot, userOrTeam: UserOrTeam<User, Team>, team: Team?)
 
     public enum List: String {
         case animated, attachments, debuts, playoffs, rebounds, terms
     }
-    public enum Timeframe: String {
-        case week, month, year, ever
-    }
     public enum Sort {
+        public enum Timeframe: String {
+            case week, month, year, ever
+        }
         case comments(Timeframe?)
         case views(Timeframe?)
         case recent
