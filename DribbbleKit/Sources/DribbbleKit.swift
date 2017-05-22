@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alter
 
 public struct Configuration {
     public var perPage: Int?
@@ -22,6 +23,23 @@ private(set) var configuration: Configuration?
 
 public func setup(_ config: Configuration) {
     configuration = config
+}
+
+public enum UserOrTeam<User: UserData, Team: TeamData>: Decodable {
+    case user(User)
+    case team(Team)
+
+    private enum `Type`: String, Decodable {
+        case Player, Team
+    }
+
+    public static func decode(_ decoder: Decoder) throws -> UserOrTeam<User, Team> {
+        let type: Type = try decoder.decode(forKeyPath: "type")
+        switch type {
+        case .Player: return try .user(.decode(decoder))
+        case .Team: return try .team(.decode(decoder))
+        }
+    }
 }
 
 // MARK: - helper
