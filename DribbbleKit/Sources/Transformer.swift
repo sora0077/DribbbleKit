@@ -21,14 +21,14 @@ struct Transformer {
         }
     }()
     static let url: (String) throws -> URL = {
-        guard let url = URL(string: $0) else {
+        guard let url = URL(string: $0.trimmingCharacters(in: .whitespacesAndNewlines)) else {
             throw typeMismatch(expected: URL.self, actual: $0)
         }
         return url
     }
 
     private static func typeMismatch(expected: Any.Type, actual: Any) -> Error {
-        return DecodeError.typeMismatch(expected: expected, actual: actual, keyPath: [])
+        return DecodeError.typeMismatch(expected: expected, actual: actual, keyPath: .empty)
     }
 
     private init() {}
