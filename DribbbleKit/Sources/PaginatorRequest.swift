@@ -12,17 +12,15 @@ import Alter
 
 public protocol PaginatorRequest: Request {
     associatedtype Element
-    typealias Response = DribbbleKit.Response<Paginator<Self>>
+    typealias Response = DribbbleKit.Response<Page<Self>>
 
-    init(link: Meta.Link) throws
     init(path: String, parameters: [String: Any]) throws
 
     func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?)
-
     func responseElements(from objects: [Any], meta: Meta) throws -> [Element]
 }
 
-public struct Paginator<P: PaginatorRequest> {
+public struct Page<P: PaginatorRequest> {
     public let elements: [P.Element]
     public let prev: P?
     public let next: P?
@@ -37,20 +35,21 @@ extension PaginatorRequest {
     public var scope: OAuth.Scope? { return nil }
     public var method: HTTPMethod { return .get }
 
-    public init(link: Meta.Link) throws {
+    private init(link: Meta.Link) throws {
         try self.init(path: link.url.path, parameters: link.queries)
     }
 
     public func pagingRequests(from objects: [Any], meta: Meta) throws -> (prev: Self?, next: Self?) {
-        return try (meta.link.prev.map(type(of: self).init), meta.link.next.map(type(of: self).init))
+        return try (meta.link.prev.map(type(of: self).init),
+                    meta.link.next.map(type(of: self).init))
     }
 
-    public func responseData(from object: Any, meta: Meta) throws -> Paginator<Self> {
+    public func responseData(from object: Any, meta: Meta) throws -> Page<Self> {
         guard let list = object as? [Any] else {
             throw DecodeError.typeMismatch(expected: [Any].self, actual: object, keyPath: .empty)
         }
-        return try Paginator(elements: responseElements(from: list, meta: meta),
-                             requests: pagingRequests(from: list, meta: meta))
+        return try Page(elements: responseElements(from: list, meta: meta),
+                        requests: pagingRequests(from: list, meta: meta))
     }
 }
 
