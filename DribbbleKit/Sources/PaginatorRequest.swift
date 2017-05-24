@@ -12,7 +12,7 @@ import Alter
 
 public protocol PaginatorRequest: Request {
     associatedtype Element
-    typealias Response = DribbbleKit.Response<Page<Self>>
+    typealias ResponseType = DribbbleKit.Response<Page<Self>>
 
     init(path: String, parameters: [String: Any]) throws
 

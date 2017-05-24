@@ -11,7 +11,7 @@ import APIKit
 import Result
 
 private struct AnyRequest<R>: APIKit.Request {
-    typealias Response = R
+    typealias ResponseType = R
 
     let method: HTTPMethod
     let baseURL: URL

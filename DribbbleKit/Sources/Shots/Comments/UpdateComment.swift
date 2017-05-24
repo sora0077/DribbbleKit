@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct UpdateComment<Data: CommentData>: PutRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias ResponseType = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }

@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct GetUserFollowingUser: GetRequest {
-    public typealias Response = DribbbleKit.Response<Bool>
+    public typealias ResponseType = DribbbleKit.Response<Bool>
 
     public var path: String { return "/users\(id.value)/following/\(targetId.value)" }
     private let id: User.Identifier
@@ -30,7 +30,7 @@ public struct GetUserFollowingUser: GetRequest {
 }
 
 public struct GetAuthenticatedUserFollowing: GetRequest {
-    public typealias Response = DribbbleKit.Response<Bool>
+    public typealias ResponseType = DribbbleKit.Response<Bool>
 
     public var path: String { return "/user/following/\(target)" }
     private let target: String
