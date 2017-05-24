@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct DeleteComment: DeleteRequest {
-    public typealias Response = DribbbleKit.Response<Void>
+    public typealias ResponseType = DribbbleKit.Response<Void>
 
     public var scope: OAuth.Scope? { return .comment }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }

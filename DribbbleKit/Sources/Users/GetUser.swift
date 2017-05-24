@@ -12,7 +12,7 @@ import Alter
 
 // MARK: - GetUser
 public struct GetUser<Data: UserData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias ResponseType = DribbbleKit.Response<Data>
 
     public var path: String { return "/users/\(id.value)" }
     private let id: User.Identifier
@@ -24,7 +24,7 @@ public struct GetUser<Data: UserData>: GetRequest {
 
 // MARK: - GetAuthenticatedUser
 public struct GetAuthenticatedUser<Data: UserData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias ResponseType = DribbbleKit.Response<Data>
 
     public var path: String { return "/user" }
 

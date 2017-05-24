@@ -20,7 +20,7 @@ private func make(data value: Data, key: String) -> MultipartFormDataBodyParamet
 }
 
 public struct CreateShot: PostRequest {
-    public typealias Response = DribbbleKit.Response<Shot.Identifier>
+    public typealias ResponseType = DribbbleKit.Response<Shot.Identifier>
 
     public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots" }

@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct GetComment<Comment: CommentData, User: UserData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<(comment: Comment, user: User)>
+    public typealias ResponseType = DribbbleKit.Response<(comment: Comment, user: User)>
 
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)" }
     private let id: Shot.Identifier

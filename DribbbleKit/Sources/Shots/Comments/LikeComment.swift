@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct LikeComment<Data: LikeData>: PostRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias ResponseType = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/shots/\(id.value)/comments/\(commentId.value)/like" }

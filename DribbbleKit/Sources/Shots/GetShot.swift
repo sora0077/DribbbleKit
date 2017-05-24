@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<(shot: Shot, user: User)>
+    public typealias ResponseType = DribbbleKit.Response<(shot: Shot, user: User)>
 
     public var path: String { return "/shots/\(id.value)" }
     private let id: Shot.Identifier

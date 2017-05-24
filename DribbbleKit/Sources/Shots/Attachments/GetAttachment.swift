@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct GetAttachment<Data: AttachmentData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<Data>
+    public typealias ResponseType = DribbbleKit.Response<Data>
 
     public var path: String { return "/shots/\(shotId)/attachments/\(id.value)" }
     private let shotId: Shot.Identifier

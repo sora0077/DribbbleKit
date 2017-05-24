@@ -11,7 +11,7 @@ import APIKit
 import Alter
 
 public struct RemoveShot: DeleteRequest {
-    public typealias Response = DribbbleKit.Response<Void>
+    public typealias ResponseType = DribbbleKit.Response<Void>
 
     public var scope: OAuth.Scope? { return .write }
     public var path: String { return "/buckets/\(id.value)/shots" }

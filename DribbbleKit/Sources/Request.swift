@@ -12,7 +12,7 @@ import Alter
 
 public protocol Request: APIKit.Request {
     associatedtype Data
-    typealias Response = DribbbleKit.Response<Data>
+    typealias ResponseType = DribbbleKit.Response<Data>
 
     var version: String? { get }
     var scope: OAuth.Scope? { get }
