@@ -10,8 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
-    public typealias Response = DribbbleKit.Response<(shot: Shot, user: User)>
+public struct GetShot<Shot: ShotData, User: UserData, Team: TeamData>: GetRequest {
+    public typealias Response = DribbbleKit.Response<(shot: Shot, userOrTeam: UserOrTeam<User, Team>, team: Team?)>
 
     public var path: String { return "/shots/\(id.value)" }
     private let id: Shot.Identifier
@@ -20,7 +20,10 @@ public struct GetShot<Shot: ShotData, User: UserData>: GetRequest {
         self.id = id
     }
 
-    public func responseData(from object: Any, meta: Meta) throws -> (shot: Shot, user: User) {
-        return try (decode(object), decode(object, rootKeyPath: "user"))
+    // swiftlint:disable:next large_tuple
+    public func responseData(from object: Any, meta: Meta) throws -> (shot: Shot, userOrTeam: UserOrTeam<User, Team>, team: Team?) {
+        return try (decode(object),
+                    decode(object, rootKeyPath: "user"),
+                    decode(object, rootKeyPath: "team", optional: true))
     }
 }
