@@ -29,7 +29,7 @@ class ShotsTests: XCTestCase, JSONTestable {
 
     func testGetShot() throws {
         let json = try load("ShotData")
-        let req = GetShot<DataSet.ShotEntity, DataSet.UserEntity>(id: 1)
+        let req = GetShot<DataSet.ShotEntity, DataSet.UserEntity, DataSet.TeamEntity>(id: 1)
         _ = try req.response(from: json, urlResponse: DataSet.emptyURLResponse)
     }
 }
