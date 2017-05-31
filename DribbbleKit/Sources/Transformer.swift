@@ -21,7 +21,11 @@ struct Transformer {
         }
     }()
     static let url: (String) throws -> URL = {
-        guard let url = URL(string: $0.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+        var str: String? = $0
+        if str?.contains(" ") ?? false {
+            str = str?.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: " ").first
+        }
+        guard let url = str.flatMap(URL.init(string:)) else {
             throw typeMismatch(expected: URL.self, actual: $0)
         }
         return url
