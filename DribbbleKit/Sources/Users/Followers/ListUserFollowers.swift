@@ -24,7 +24,7 @@ public struct ListUserFollowers<Data: FollowerData, User: UserData>: PaginatorRe
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }
@@ -50,7 +50,7 @@ public struct ListAuthenticatedUserFollowers<Data: FollowerData, User: UserData>
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

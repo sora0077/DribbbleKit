@@ -12,7 +12,6 @@ import Alter
 
 public protocol PaginatorRequest: Request {
     associatedtype Element
-    typealias Response = DribbbleKit.Response<Page<Self>>
 
     init(path: String, parameters: [String: Any]) throws
 
@@ -31,7 +30,7 @@ public struct Page<P: PaginatorRequest> {
     }
 }
 
-extension PaginatorRequest {
+extension PaginatorRequest where Response == DribbbleKit.Response<Page<Self>> {
     public var scope: OAuth.Scope? { return nil }
     public var method: HTTPMethod { return .get }
 

@@ -25,7 +25,7 @@ public struct OAuth {
             "client_id": clientId,
             "redirect_uri": redirectURL?.absoluteString,
             "scope": scopes.map { $0.rawValue }.joined(separator: "+"),
-            "state": state]
+            "state": state] as [String: String?]
         comps.queryItems = parameters.flatMap { (key, value) in
             guard let value = value else { return nil }
             return URLQueryItem(name: key, value: value)

@@ -17,7 +17,7 @@ private struct AnyRequest<R>: APIKit.Request {
     let baseURL: URL
     let path: String
     let dataParser: DataParser
-    let headerFields: [String : String]
+    let headerFields: [String: String]
     let parameters: Any?
 
     private let intercept: (Any, HTTPURLResponse) throws -> Any
@@ -74,7 +74,7 @@ public class Session: APIKit.Session {
         _ request: Request,
         callbackQueue: CallbackQueue? = nil,
         handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void)
-        -> SessionTask? where Request : DribbbleKit.Request {
+        -> SessionTask? where Request: DribbbleKit.Request {
             return shared.send(request, callbackQueue: callbackQueue, handler: handler)
     }
 
@@ -83,7 +83,7 @@ public class Session: APIKit.Session {
         _ request: Request,
         callbackQueue: CallbackQueue? = nil,
         handler: @escaping (Result<Request.Response, SessionTaskError>) -> Void)
-        -> SessionTask? where Request : DribbbleKit.Request {
+        -> SessionTask? where Request: DribbbleKit.Request {
             let scopes = authorization?.scopes ?? []
             if let scope = request.scope, !scopes.contains(scope) {
                 (callbackQueue ?? CallbackQueue.main).execute {
@@ -100,7 +100,7 @@ public class Session: APIKit.Session {
     public override func cancelRequests<Request>(
         with requestType: Request.Type,
         passingTest test: @escaping (Request) -> Bool)
-        where Request : APIKit.Request {
+        where Request: APIKit.Request {
             super.cancelRequests(with: AnyRequest<Request.Response>.self) { request in
                 (request.raw as? Request).map(test) ?? false
             }

@@ -10,7 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct LikeComment<Data: LikeData>: PostRequest {
+public struct LikeComment<D: LikeData>: PostRequest {
+    public typealias Data = D
     public typealias Response = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .write }

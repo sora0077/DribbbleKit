@@ -23,7 +23,7 @@ public struct ListProjectShots<Project: ProjectData, User: UserData, Team: TeamD
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

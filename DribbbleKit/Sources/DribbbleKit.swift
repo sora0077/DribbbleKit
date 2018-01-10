@@ -9,6 +9,9 @@
 import Foundation
 import Alter
 
+public typealias Decodable = Alter.Decodable
+public typealias Decoder = Alter.Decoder
+
 public struct Configuration {
     public var perPage: Int?
     public var baseURL: URL?

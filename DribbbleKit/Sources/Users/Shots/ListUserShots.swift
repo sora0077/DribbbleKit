@@ -24,7 +24,7 @@ public struct ListUserShots<Shot: ShotData, Team: TeamData>: PaginatorRequest {
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }
@@ -50,7 +50,7 @@ public struct ListAuthenticatedUserShots<Shot: ShotData, Team: TeamData>: Pagina
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

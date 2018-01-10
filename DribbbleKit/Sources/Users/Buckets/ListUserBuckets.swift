@@ -24,7 +24,7 @@ public struct ListUserBuckets<Data: BucketData>: PaginatorRequest {
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }
@@ -48,7 +48,7 @@ public struct ListAuthenticatedUserBuckets<Data: BucketData>: PaginatorRequest {
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

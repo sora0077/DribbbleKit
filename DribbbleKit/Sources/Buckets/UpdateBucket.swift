@@ -10,7 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct UpdateBucket<Data: BucketData>: PutRequest {
+public struct UpdateBucket<D: BucketData>: PutRequest {
+    public typealias Data = D
     public typealias Response = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .write }

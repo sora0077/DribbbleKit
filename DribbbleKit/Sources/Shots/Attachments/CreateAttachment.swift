@@ -11,7 +11,8 @@ import APIKit
 import Alter
 
 public struct CreateAttachment: PostRequest {
-    public typealias Response = DribbbleKit.Response<Attachment.Identifier>
+    public typealias Data = Attachment.Identifier
+    public typealias Response = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .upload }
     public var path: String { return "/shots/\(id.value)/attachments" }
@@ -21,9 +22,9 @@ public struct CreateAttachment: PostRequest {
     }
 
     private let id: Shot.Identifier
-    public var data: Data
+    public var data: Foundation.Data
 
-    public init(id: Shot.Identifier, data: Data) {
+    public init(id: Shot.Identifier, data: Foundation.Data) {
         self.id = id
         self.data = data
     }

@@ -10,7 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct GetAttachment<Data: AttachmentData>: GetRequest {
+public struct GetAttachment<D: AttachmentData>: GetRequest {
+    public typealias Data = D
     public typealias Response = DribbbleKit.Response<Data>
 
     public var path: String { return "/shots/\(shotId)/attachments/\(id.value)" }

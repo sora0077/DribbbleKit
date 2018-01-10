@@ -55,7 +55,7 @@ public struct ListShots<Shot: ShotData, User: UserData, Team: TeamData>: Paginat
         ].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

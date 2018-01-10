@@ -24,7 +24,7 @@ public struct ListUserLikes<Like: LikeData, Shot: ShotData, User: UserData, Team
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }
@@ -53,7 +53,7 @@ public struct ListAuthenticatedUserLikes<Like: LikeData, Shot: ShotData, User: U
             "per_page": perPage].cleaned
     }
 
-    public init(path: String, parameters: [String : Any]) throws {
+    public init(path: String, parameters: [String: Any]) throws {
         self.path = path
         self.parameters = parameters
     }

@@ -12,7 +12,6 @@ import Alter
 
 public protocol Request: APIKit.Request {
     associatedtype Data
-    typealias Response = DribbbleKit.Response<Data>
 
     var version: String? { get }
     var scope: OAuth.Scope? { get }
@@ -44,6 +43,7 @@ extension Request {
         return try DribbbleKit.Response(meta: meta, data: responseData(from: object, meta: meta))
     }
 }
+
 extension Request where Data: Decodable {
     public func responseData(from object: Any, meta: Meta) throws -> Data {
         return try decode(object)

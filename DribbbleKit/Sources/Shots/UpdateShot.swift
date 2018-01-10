@@ -10,7 +10,8 @@ import Foundation
 import APIKit
 import Alter
 
-public struct UpdateShot<Data: ShotData>: PostRequest {
+public struct UpdateShot<D: ShotData>: PostRequest {
+    public typealias Data = D
     public typealias Response = DribbbleKit.Response<Data>
 
     public var scope: OAuth.Scope? { return .upload }
